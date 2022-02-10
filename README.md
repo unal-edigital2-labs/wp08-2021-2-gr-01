@@ -1,8 +1,8 @@
 # Entrega Final - Digital II - Grupo 1
 ## Integrantes 🥵
-- Diego Alejandro Sanchez Lopez 🕒
-- Leonardo Daniel Talledos Rodriguez 🌮
-- Juan Sebastián Martínez Bohórquez ⚽
+- Diego Alejandro Sanchez Lopez 😴🕑
+- Leonardo Daniel Talledos Rodriguez 😎🌮
+- Juan Sebastián Martínez Bohórquez 🙃⚽
 
 ## Introducción 📖
 
