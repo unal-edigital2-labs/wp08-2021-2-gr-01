@@ -54,7 +54,7 @@ Para la construcción del carrito se utilizaron los siguientes materiales:
 
 
 
-## [Módulos](/SoC_project/module/) 💻
+## Módulos 💻
 Aquí presentamos una lista de los módulos usados en el robot cartógrafo, cada uno de estos links mostraran el módulo en verilog.
 - [Cámara](/SoC_project/module/verilog/camara/)
 - [Infrarrojos](/SoC_project/module/verilog/infrarojo/)
