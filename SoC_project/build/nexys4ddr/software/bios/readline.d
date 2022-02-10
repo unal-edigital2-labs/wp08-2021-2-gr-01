@@ -1,7 +1,7 @@
 readline.o: /tools/Litex/litex/litex/soc/software/bios/readline.c \
  /tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/stdlib.h \
  /tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/machine/ieeefp.h \
- /home/diego_sanchez/Dokumente/GitHub/wp04-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc/picolibc.h \
+ /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc/picolibc.h \
  /tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/_ansi.h \
  /tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/newlib.h \
  /tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/config.h \
@@ -35,7 +35,7 @@ readline.o: /tools/Litex/litex/litex/soc/software/bios/readline.c \
 
 /tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/machine/ieeefp.h:
 
-/home/diego_sanchez/Dokumente/GitHub/wp04-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc/picolibc.h:
+/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc/picolibc.h:
 
 /tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/_ansi.h:
 

@@ -6,18 +6,13 @@ set_msg_config -id {Common 17-55} -new_severity {Warning}
 
 # Add Sources
 
-read_verilog {/home/diego_sanchez/Dokumente/GitHub/wp04-2021-2-gr-01/SoC_project/module/verilog/movimiento/movimiento.v}
-read_verilog {/home/diego_sanchez/Dokumente/GitHub/wp04-2021-2-gr-01/SoC_project/module/verilog/servomotor/servomotor.v}
-read_verilog {/home/diego_sanchez/Dokumente/GitHub/wp04-2021-2-gr-01/SoC_project/module/verilog/ultrasonido/ultrasonido.v}
-read_verilog {/home/diego_sanchez/Dokumente/GitHub/wp04-2021-2-gr-01/SoC_project/module/verilog/ultrasonido/divFreq.v}
-read_verilog {/home/diego_sanchez/Dokumente/GitHub/wp04-2021-2-gr-01/SoC_project/module/verilog/infrarojo/infrarojo.v}
-read_verilog {/home/diego_sanchez/Dokumente/GitHub/wp04-2021-2-gr-01/SoC_project/module/verilog/camara/camara.v}
-read_verilog {/home/diego_sanchez/Dokumente/GitHub/wp04-2021-2-gr-01/SoC_project/module/verilog/camara/Analyzer.v}
-read_verilog {/home/diego_sanchez/Dokumente/GitHub/wp04-2021-2-gr-01/SoC_project/module/verilog/camara/cam_read.v}
-read_verilog {/home/diego_sanchez/Dokumente/GitHub/wp04-2021-2-gr-01/SoC_project/module/verilog/camara/buffer_ram_dp.v}
-read_verilog {/home/diego_sanchez/Dokumente/GitHub/wp04-2021-2-gr-01/SoC_project/module/verilog/camara/clk24_25_nexys4.v}
+read_verilog {/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/module/verilog/movimiento/movimiento.v}
+read_verilog {/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/module/verilog/servomotor/servomotor.v}
+read_verilog {/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/module/verilog/ultrasonido/ultrasonido.v}
+read_verilog {/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/module/verilog/ultrasonido/divFreq.v}
+read_verilog {/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/module/verilog/infrarojo/infrarojo.v}
 read_verilog {/home/diego_sanchez/.local/lib/python3.8/site-packages/pythondata_cpu_picorv32/verilog/picorv32.v}
-read_verilog {/home/diego_sanchez/Dokumente/GitHub/wp04-2021-2-gr-01/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v}
+read_verilog {/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v}
 
 # Add EDIFs
 

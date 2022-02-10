@@ -2,7 +2,7 @@ cmd_mem.o: /tools/Litex/litex/litex/soc/software/bios/cmds/cmd_mem.c \
  /tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio/stdio.h \
  /tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/inttypes.h \
  /tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/newlib.h \
- /home/diego_sanchez/Dokumente/GitHub/wp04-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc/picolibc.h \
+ /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc/picolibc.h \
  /tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/config.h \
  /tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/machine/ieeefp.h \
  /tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/features.h \
@@ -23,11 +23,11 @@ cmd_mem.o: /tools/Litex/litex/litex/soc/software/bios/cmds/cmd_mem.c \
  /tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/alloca.h \
  /tools/Litex/litex/litex/soc/software/libbase/memtest.h \
  /tools/Litex/riscv64-unknown-elf-gcc-8.3.0-2019.08.0-x86_64-linux-ubuntu14/lib/gcc/riscv64-unknown-elf/8.3.0/include/stdbool.h \
- /home/diego_sanchez/Dokumente/GitHub/wp04-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/generated/csr.h \
- /home/diego_sanchez/Dokumente/GitHub/wp04-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/generated/soc.h \
+ /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/generated/csr.h \
+ /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/generated/soc.h \
  /tools/Litex/litex/litex/soc/cores/cpu/picorv32/system.h \
  /tools/Litex/litex/litex/soc/software/include/hw/common.h \
- /home/diego_sanchez/Dokumente/GitHub/wp04-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/generated/mem.h \
+ /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/generated/mem.h \
  /tools/Litex/litex/litex/soc/software/bios/cmds/../command.h \
  /tools/Litex/litex/litex/soc/software/bios/cmds/../helpers.h
 
@@ -37,7 +37,7 @@ cmd_mem.o: /tools/Litex/litex/litex/soc/software/bios/cmds/cmd_mem.c \
 
 /tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/newlib.h:
 
-/home/diego_sanchez/Dokumente/GitHub/wp04-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc/picolibc.h:
+/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc/picolibc.h:
 
 /tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/config.h:
 
@@ -79,15 +79,15 @@ cmd_mem.o: /tools/Litex/litex/litex/soc/software/bios/cmds/cmd_mem.c \
 
 /tools/Litex/riscv64-unknown-elf-gcc-8.3.0-2019.08.0-x86_64-linux-ubuntu14/lib/gcc/riscv64-unknown-elf/8.3.0/include/stdbool.h:
 
-/home/diego_sanchez/Dokumente/GitHub/wp04-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/generated/csr.h:
+/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/generated/csr.h:
 
-/home/diego_sanchez/Dokumente/GitHub/wp04-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/generated/soc.h:
+/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/generated/soc.h:
 
 /tools/Litex/litex/litex/soc/cores/cpu/picorv32/system.h:
 
 /tools/Litex/litex/litex/soc/software/include/hw/common.h:
 
-/home/diego_sanchez/Dokumente/GitHub/wp04-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/generated/mem.h:
+/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/generated/mem.h:
 
 /tools/Litex/litex/litex/soc/software/bios/cmds/../command.h:
 
