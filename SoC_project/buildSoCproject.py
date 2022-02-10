@@ -21,7 +21,7 @@ from module import movimiento
 from module import servomotor
 from module import ultrasonido
 from module import infrarojo
-from module import camara
+#from module import camara
 
 # BaseSoC
 class BaseSoC(SoCCore):
