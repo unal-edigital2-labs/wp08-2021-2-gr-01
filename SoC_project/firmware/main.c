@@ -202,6 +202,97 @@ static void vga_test(void)
 	}
 }
 
+
+
+static int medir_distancia(void)
+{
+	ultrasonido_cntrl_init_write(1);
+	delay_ms(2);
+	while(1){
+		if(ultrasonido_cntrl_done_read() == 1){
+			int distancia = ultrasonido_cntrl_distance_read();
+			ultrasonido_cntrl_init_write(0);
+			return distancia;
+		}
+	}
+}
+
+static void avanzar(void)
+{
+	const int PararMotor = 0;
+	const int AvanzarMotor = 1;
+	const int IzquierdaMotor = 3;
+	const int DerechaMotor = 4;
+	_Bool L = infrarojo_cntrl_oL_read();
+	_Bool LC = infrarojo_cntrl_oLC_read();
+	_Bool C = infrarojo_cntrl_oC_read();
+	_Bool RC = infrarojo_cntrl_oRC_read();
+	_Bool R = infrarojo_cntrl_oR_read();
+
+	while(!(L && R))
+	{
+		if(!L && C && !R){
+			movimiento_cntrl_estado_write(AvanzarMotor);
+		}
+		else if(L || LC){
+			movimiento_cntrl_estado_write(IzquierdaMotor);
+		}
+		else if(R || RC){
+			movimiento_cntrl_estado_write(DerechaMotor);
+		}
+	}
+	movimiento_cntrl_estado_write(PararMotor);
+}
+
+static void girar(int direccion) 
+{
+	const int PararMotor = 0;
+	const int IzquierdaMotor = 3;
+	const int DerechaMotor = 4;
+	const int GiroEjeMotor = 5;
+
+	switch (direccion)
+	{
+		case 1: movimiento_cntrl_estado_write(IzquierdaMotor);
+				delay_ms(2000);
+				movimiento_cntrl_estado_write(PararMotor);
+			break;
+		case 3: movimiento_cntrl_estado_write(DerechaMotor);
+				delay_ms(2000);
+				movimiento_cntrl_estado_write(PararMotor);
+			break;
+		case 0: movimiento_cntrl_estado_write(GiroEjeMotor);
+				delay_ms(2000);
+				movimiento_cntrl_estado_write(PararMotor);
+			break;
+		default:movimiento_cntrl_estado_write(PararMotor);
+			break;
+	}
+}
+
+static int camara(void)
+{
+	unsigned int col = 0;
+	unsigned int done = 0;
+	unsigned int error = 0;
+	camara_cntrl_init_write(1);
+	delay_ms(10);
+	while (1)
+	{
+		col = camara_cntrl_res_read(); 
+		done = camara_cntrl_done_read();
+		error = camara_cntrl_error_read();
+		if(done){
+			camara_cntrl_init_write(0);
+			if(!error){
+				return col;
+			}
+		}
+	}
+}
+
+
+
 static void movimiento_test(void)
 {
 	const int Parar = 0;
@@ -249,6 +340,7 @@ static void servomotor_test(void)
 static void ultrasonido_test(void)
 {
 	int d = 0;
+	printf("Test de Modulo de Ultrasonido. Para activar oprimir botton 2.\n Para interrumpir oprimir el botton 1.\n");
 	while(!(buttons_in_read()&1)){
 		if(buttons_in_read()&(1<<1)){ 
 			d = medir_distancia();
@@ -262,27 +354,19 @@ static void infrarojo_test(void)
 	printf("Test de Modulo de Infrarojo. Para interrumpir oprimir el botton 1\n");
 	while(!(buttons_in_read()&1))
 	{
-		bool L = infrarojo_cntrl_oL_read();
-		bool LC = infrarojo_cntrl_oLC_read();
-		bool C = infrarojo_cntrl_oC_read();
-		bool RC = infrarojo_cntrl_oRC_read();
-		bool R = infrarojo_cntrl_oR_read();
+		_Bool L = infrarojo_cntrl_oL_read();
+		_Bool LC = infrarojo_cntrl_oLC_read();
+		_Bool C = infrarojo_cntrl_oC_read();
+		_Bool RC = infrarojo_cntrl_oRC_read();
+		_Bool R = infrarojo_cntrl_oR_read();
 
-		bool IR[5] = {L, LC, C, RC, R};
+		_Bool IR[5] = {L, LC, C, RC, R};
 
 		for(int i = 0; i<5; i++){
 			printf("%i, ", IR[i]);
 		}
 		printf("\n");
 	}
-}
-
-static void radar_test(void)
-{
-	int informacion[6] = radar();
-	for (int i = 0; i < 6; ++i) {
-        printf("%i, ", informacion[i]);
-    }
 }
 
 static void camara_test(void)
@@ -304,151 +388,6 @@ static void camara_test(void)
 	}
 }
 
-
-
-
-static int medir_distancia(void)
-{
-	ultrasonido_cntrl_init_write(1);
-	delay_ms(2);
-	while(1){
-		if(ultrasonido_cntrl_done_read() == 1){
-			int dis = ultrasonido_cntrl_distance_read();
-			ultrasonido_cntrl_init_write(0);
-			return dis;
-		}
-	}
-}
-
-static int Radar()
-{
-	const int CentroServo = 0;
-	const int IzquierdaServo = 1;
-	const int DerechaServo = 2;
-	const int distLibre = 15;
-
-	int informacion[6];
-	int caminolibre;
-	int color;
-
-	for (int i = 0; i < 3; i++)
-	{
-		caminolibre = 0;
-		color = 0;
-		switch (i)
-		{
-			case 0: servomotor_cntrl_posicion_write(IzquierdaServo);
-					break;
-			case 1: servomotor_cntrl_posicion_write(CentroServo);
-					break;
-			case 2: servomotor_cntrl_posicion_write(DerechaServo);
-					break;
-		}
-		delay_ms(1000);
-		caminolibre = (medir_distancia() > distLibre) ? 1 : 0; 
-		color = (caminolibre) ? 0 : camara();
-		informacion[i] = caminolibre;
-		informacion[3+i] = color;
-	}
-	servomotor_cntrl_posicion_write(IzquierdaServo);
-	delay_ms(1000);
-	return informacion;
-}
-
-static int capitan(int caminoslibres[3])
-{
-	int eleccion = 0; 
-
-	for (int i = 0; i < 3; i++)
-	{
-		if(caminoslibres[i])
-		{
-			eleccion = i;
-			return eleccion;
-		}
-	}
-	return eleccion;
-}
-
-static void avanzar(void)
-{
-	const int PararMotor = 0;
-	const int AvanzarMotor = 1;
-	const int IzquierdaMotor = 3;
-	const int DerechaMotor = 4;
-	bool L = infrarojo_cntrl_oL_read();
-	bool LC = infrarojo_cntrl_oLC_read();
-	bool C = infrarojo_cntrl_oC_read();
-	bool RC = infrarojo_cntrl_oRC_read();
-	bool R = infrarojo_cntrl_oR_read();
-
-	while(!(L && R))
-	{
-		if(!L && C && !R){
-			movimiento_cntrl_estado_write(AvanzarMotor);
-		}
-		else if(L || LC){
-			movimiento_cntrl_estado_write(IzquierdaMotor);
-		}
-		else if(R || RC){
-			movimiento_cntrl_estado_write(DerechaMotor);
-		}
-	}
-	movimiento_cntrl_estado_write(PararMotor);
-}
-
-static void girar(int direccion) 
-{
-	const int PararMotor = 0;
-	const int AvanzarMotor = 1;
-	const int RetrocederMotor = 2;
-	const int IzquierdaMotor = 3;
-	const int DerechaMotor = 4;
-	const int GiroEjeMotor = 5;
-
-	switch (direccion)
-	{
-		case 1: movimiento_cntrl_estado_write(IzquierdaMotor);
-				delay_ms(2000);
-				movimiento_cntrl_estado_write(PararMotor);
-			break;
-		case 3: movimiento_cntrl_estado_write(DerechaMotor);
-				delay_ms(2000);
-				movimiento_cntrl_estado_write(PararMotor);
-			break;
-		case 0: movimiento_cntrl_estado_write(GiroEjeMotor);
-				delay_ms(2000);
-				movimiento_cntrl_estado_write(PararMotor);
-			break;
-		default:movimiento_cntrl_estado_write(PararMotor);
-			break;
-	}
-}
-
-static int camara(void)
-{
-	unsigned int col = 0;
-	unsigned int done = 0;
-	unsigned int error = 0;
-	const int Azul = 1;
-	const int Verde = 2;
-	const int Rojo = 4;
-	const int Ninguno = 0;
-	camara_cntrl_init_write(1);
-	delay_ms(10);
-	while (1)
-	{
-		col = camara_cntrl_res_read(); 
-		done = camara_cntrl_done_read();
-		error = camara_cntrl_error_read();
-		if(done){
-			camara_cntrl_init_write(0);
-			if(!error){
-				return col;
-			}
-		}
-	}
-}
 
 
 static void console_service(void)
@@ -481,8 +420,6 @@ static void console_service(void)
 		ultrasonido_test();
 	else if(strcmp(token, "infrarojo") == 0)
 		infrarojo_test();
-	else if(strcmp(token, "radar") == 0)
-		radar_test();
 	else if(strcmp(token, "camara") == 0)
 		camara_test();
 	prompt();
