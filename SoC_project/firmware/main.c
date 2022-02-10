@@ -270,7 +270,7 @@ static void girar(int direccion)
 	}
 }
 
-static int camara(void)
+/* static int camara(void)
 {
 	unsigned int col = 0;
 	unsigned int done = 0;
@@ -289,7 +289,7 @@ static int camara(void)
 			}
 		}
 	}
-}
+} */
 
 
 
@@ -369,7 +369,7 @@ static void infrarojo_test(void)
 	}
 }
 
-static void camara_test(void)
+/* static void camara_test(void)
 {	
 	int color = camara();
 	delay_ms(10);
@@ -386,7 +386,7 @@ static void camara_test(void)
 	default:printf("._.\n");
 		break;
 	}
-}
+} */
 
 
 
@@ -420,18 +420,17 @@ static void console_service(void)
 		ultrasonido_test();
 	else if(strcmp(token, "infrarojo") == 0)
 		infrarojo_test();
-	else if(strcmp(token, "camara") == 0)
-		camara_test();
+	/* else if(strcmp(token, "camara") == 0)
+		camara_test(); */
 	prompt();
 }
 
 
 int main(void)
 {
-#ifdef CONFIG_CPU_HAS_INTERRUPT
 	irq_setmask(0);
 	irq_setie(1);
-#endif
+
 	uart_init();
 
 	puts("\nSoC - RiscV project UNAL 2021-2 Grupo 1 :D-- CPU testing software built "__DATE__" "__TIME__"\n");

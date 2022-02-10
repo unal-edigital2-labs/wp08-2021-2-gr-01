@@ -117,7 +117,7 @@ _io = [
     ("iRC", 0, Pins("J4"), IOStandard("LVCMOS33")),
     ("iR", 0, Pins("F3"), IOStandard("LVCMOS33")),
 
-    # Camara
+    """ # Camara
     ("CAM_xclk", 0, Pins("H14"), IOStandard("LVCMOS33")),
     ("CAM_pclk", 0, Pins("G17"), IOStandard("LVCMOS33")),
     ("CAM_href", 0, Pins("G16"), IOStandard("LVCMOS33")),
@@ -130,7 +130,7 @@ _io = [
     ("CAM_px_data", 4, Pins("F13"), IOStandard("LVCMOS33")),
     ("CAM_px_data", 5, Pins("E17"), IOStandard("LVCMOS33")),
     ("CAM_px_data", 6, Pins("E16"), IOStandard("LVCMOS33")),
-    ("CAM_px_data", 7, Pins("D17"), IOStandard("LVCMOS33")),
+    ("CAM_px_data", 7, Pins("D17"), IOStandard("LVCMOS33")), """
 
 
 

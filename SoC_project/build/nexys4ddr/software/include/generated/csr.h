@@ -361,7 +361,7 @@ static inline uint32_t infrarojo_cntrl_oR_read(void) {
 }
 
 /* camara_cntrl */
-#define CSR_CAMARA_CNTRL_BASE (CSR_BASE + 0x5800L)
+/* #define CSR_CAMARA_CNTRL_BASE (CSR_BASE + 0x5800L)
 #define CSR_CAMARA_CNTRL_INIT_ADDR (CSR_BASE + 0x5800L)
 #define CSR_CAMARA_CNTRL_INIT_SIZE 1
 static inline uint32_t camara_cntrl_init_read(void) {
@@ -384,7 +384,7 @@ static inline uint32_t camara_cntrl_done_read(void) {
 #define CSR_CAMARA_CNTRL_RES_SIZE 1
 static inline uint32_t camara_cntrl_res_read(void) {
 	return csr_read_simple(CSR_BASE + 0x580cL);
-}
+} */
 
 /* ctrl */
 #define CSR_CTRL_BASE (CSR_BASE + 0x6000L)
