@@ -21,7 +21,7 @@ El mapa de memoria se encuentra detalladamente en el archivo [Soc_MemoryMap.csv]
 A continuación haremos una breve explicación del Soc, el firmware y los perfiféricos integrados al Soc junto a sus respectivos links en donde se puede observar su funcionamiento más en detalle.
 
 
-## [SoC](/SoC_project/)
+## [SoC](/SoC_project/) 🤖
 
 En este enlace se describe la arquitectura del robot cartógrafo y el proceso que se llevo a cabo usando el entorno Litex para el ensamble y la integración del microprocesador picoRV32, el bus de datos Wishbone y los diferentes módulos de los periféricos que componen el robot.
 
@@ -31,15 +31,15 @@ El diagrama que describe cómo se encuentra conformado el robot cartógrafo y la
 
 ![Screenshot](/images/SoC.png)
 
-## [ Mapa de Memoria ](https://github.com/unal-edigital2/w07_entrega-_final-grupo11/tree/main/module)
+## [ Mapa de Memoria ](https://github.com/unal-edigital2/w07_entrega-_final-grupo11/tree/main/module) 🧠
 
 En la presente sección se encuentran los diferentes perífericos que se usaron para la elaboración del robot cartógrafo junto con sus respectivos espacios en memoria que fueron utilizados y como cada uno de estos se creo en hardware y del mismo modo se implemento.
 
-## [ Firmware ](/SoC_project/firmware/)
+## [ Firmware ](/SoC_project/firmware/) ⚡
 
 En esta seccion se encuentra como se realizo el procesamiento desde software, realizando el codigo para las respectivas pruebas de cada periférico y como se ejecuto para su funcionamiento completo.
 
-## Construcción
+## Construcción 🛠
 
 Para la construcción del carrito se utilizaron los siguientes materiales:
 - [Kit carro robot](/images/kit_robot.png)
@@ -54,7 +54,7 @@ Para la construcción del carrito se utilizaron los siguientes materiales:
 
 
 
-## [Módulos](/SoC_project/module/)
+## [Módulos](/SoC_project/module/) 💻
 Aquí presentamos una lista de los módulos usados en el robot cartógrafo, cada uno de estos links mostraran el módulo en verilog.
 - [Cámara](/SoC_project/module/verilog/camara/)
 - [Infrarrojos](/SoC_project/module/verilog/infrarojo/)
@@ -64,7 +64,7 @@ Aquí presentamos una lista de los módulos usados en el robot cartógrafo, cada
 - [Ultrasonido](/SoC_project/module/verilog/ultrasonido/)
 
 
-## Pruebas de Funcionamiento
+## Pruebas de Funcionamiento ⚙
 
 En los siguientes enlaces se encuentran los videos correspondientes a las pruebas de funcionamiento realizadas al robot cartógrafo, en ellos se puede observar al robot recorriendo el laberinto de forma autónoma a medida que reconoce los colores de las paredes. De igual forma, se observa simultaneamente la impresión del mapeo realizado por el robot que se envía a un celular por medio de bluetooth.
 - [Video 1](https://www.youtube.com/watch?v=-sIw7MB7exA)
