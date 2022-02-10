@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+#from operator import imod
+#from turtle import distance
 from migen import *
 from migen.genlib.io import CRG
 from migen.genlib.cdc import MultiReg
@@ -16,18 +18,30 @@ from module import rgbled
 from module import sevensegment
 from module import vgacontroller
 
-# BaseSoC ------------------------------------------------------------------------------------------
+from module import movimiento
+from module import servomotor
+from module import ultrasonido
+from module import infrarojo
+#from module import camara
 
+# BaseSoC
 class BaseSoC(SoCCore):
 	def __init__(self):
 		platform = tarjeta.Platform()
+
+		# add source verilog
+		platform.add_source("module/verilog/movimiento/movimiento.v")
+		platform.add_source("module/verilog/servomotor/servomotor.v")
+		platform.add_source("module/verilog/ultrasonido/ultrasonido.v")
+		platform.add_source("module/verilog/ultrasonido/divFreq.v")
+		platform.add_source("module/verilog/infrarojo/infrarojo.v")
+
 		# SoC with CPU
 		SoCCore.__init__(self, platform,
- 			cpu_type="picorv32",
-#			cpu_type="vexriscv",
-			clk_freq=100e6,
-			integrated_rom_size=0x6000,
-			integrated_main_ram_size=16*1024)
+ 			cpu_type = "picorv32",
+			clk_freq = 100e6,
+			integrated_rom_size = 0x8000,
+			integrated_main_ram_size = 16*1024)
 
 		# Clock Reset Generation
 		self.submodules.crg = CRG(platform.request("clk"), ~platform.request("cpu_reset"))
@@ -51,16 +65,14 @@ class BaseSoC(SoCCore):
 		SoCCore.add_csr(self,"display")
 		display_segments = Cat(*[platform.request("display_segment", i) for i in range(8)])
 		display_digits = Cat(*[platform.request("display_digit", i) for i in range(8)])
-		self.submodules.display = sevensegment.SevenSegment(display_segments,display_digits)
+		self.submodules.display = sevensegment.SevenSegment(display_segments, display_digits)
 
 		# RGB leds
 		SoCCore.add_csr(self,"ledRGB_1")
 		self.submodules.ledRGB_1 = rgbled.RGBLed(platform.request("ledRGB",1))
-		
 		SoCCore.add_csr(self,"ledRGB_2")
 		self.submodules.ledRGB_2 = rgbled.RGBLed(platform.request("ledRGB",2))
 		
-				
 		# VGA
 		SoCCore.add_csr(self,"vga_cntrl")
 		vga_red = Cat(*[platform.request("vga_red", i) for i in range(4)])
@@ -68,8 +80,27 @@ class BaseSoC(SoCCore):
 		vga_blue = Cat(*[platform.request("vga_blue", i) for i in range(4)])
 		self.submodules.vga_cntrl = vgacontroller.VGAcontroller(platform.request("hsync"),platform.request("vsync"), vga_red, vga_green, vga_blue)
 
+		# Movimiento
+		SoCCore.add_csr(self,"movimiento_cntrl")
+		right = Cat(*[platform.request("right", i) for i in range(2)])
+		left = Cat(*[platform.request("left", i) for i in range(2)])
+		self.submodules.movimiento_cntrl = movimiento.movimiento(right, left)
+
+		# Servomotor
+		SoCCore.add_csr(self,"servomotor_cntrl")
+		self.submodules.servomotor_cntrl = servomotor.servomotor(platform.request("servo"))
+
+		# Ultrasonido
+		SoCCore.add_csr(self,"ultrasonido_cntrl")
+		self.submodules.ultrasonido_cntrl = ultrasonido.ultrasonido(platform.request("echo"), platform.request("trig"))
+
+		# Infrarojo
+		SoCCore.add_csr(self,"infrarojo_cntrl")
+		self.submodules.infrarojo_cntrl = infrarojo.infrarojo(platform.request("ising"))
+
+
 # Build --------------------------------------------------------------------------------------------
 if __name__ == "__main__":
-	builder = Builder(BaseSoC())
+	builder = Builder(BaseSoC(),csr_csv="Soc_MemoryMap.csv")
 	builder.build()
 

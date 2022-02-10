@@ -78,11 +78,46 @@ static void help(void)
 	puts("display                         - display test");
 	puts("rgbled                          - rgb led test");
 	puts("vga                             - vga test");
+	puts("movimiento                      - movimiento test");
+	puts("servomotor                      - servomotor test");
+	puts("ultrasonido                     - ultrasonido test");
+	puts("infrarojo                       - infrarojo test");
 }
 
 static void reboot(void)
 {
 	ctrl_reset_write(1);
+}
+
+
+static void led_test(void)
+{
+	unsigned int i;
+	printf("Test del los leds... se interrumpe con el botton 1\n");
+	while(!(buttons_in_read()&1)) {
+		for(i=1; i<65536; i=i*2) {
+			leds_out_write(i);
+			delay_ms(50);
+		}
+		for(i=32768;i>1; i=i/2) {
+			leds_out_write(i);
+			delay_ms(50);
+		}
+	}	
+}
+
+static void switch_test(void)
+{
+	unsigned short temp2 =0;
+	printf("Test del los interruptores... se interrumpe con el botton 1\n");
+	while(!(buttons_in_read()&1)) {
+		unsigned short temp = switchs_in_read();
+		if (temp2 != temp){
+			printf("switch bus : %i\n", temp);
+			leds_out_write(temp);
+			temp2 = temp;
+		}
+	}
 }
 
 static void display_test(void)
@@ -114,39 +149,6 @@ static void display_test(void)
 	}
 }
 
-static void led_test(void)
-{
-	unsigned int i;
-	printf("Test del los leds... se interrumpe con el botton 1\n");
-	while(!(buttons_in_read()&1)) {
-
-	for(i=1; i<65536; i=i*2) {
-		leds_out_write(i);
-		delay_ms(50);
-	}
-	for(i=32768;i>1; i=i/2) {
-		leds_out_write(i);
-		delay_ms(50);
-	}
-	}
-	
-}
-
-
-static void switch_test(void)
-{
-	unsigned short temp2 =0;
-	printf("Test del los interruptores... se interrumpe con el botton 1\n");
-	while(!(buttons_in_read()&1)) {
-		unsigned short temp = switchs_in_read();
-		if (temp2 != temp){
-			printf("switch bus : %i\n", temp);
-			leds_out_write(temp);
-			temp2 = temp;
-		}
-	}
-}
-
 static void rgbled_test(void)
 {
 	unsigned int T = 128;
@@ -159,12 +161,10 @@ static void rgbled_test(void)
 	ledRGB_1_g_enable_write(1);
 	ledRGB_1_b_enable_write(1);
 
-	
 	ledRGB_2_r_period_write(T);
 	ledRGB_2_g_period_write(T);
 	ledRGB_2_b_period_write(T);
-	
-	
+		
 	ledRGB_2_r_enable_write(1);
 	ledRGB_2_g_enable_write(1);
 	ledRGB_2_b_enable_write(1);
@@ -177,11 +177,7 @@ static void rgbled_test(void)
 			delay_ms(20);
 		}	
 	}
-	
-
-
 }
-
 
 static void vga_test(void)
 {
@@ -201,6 +197,87 @@ static void vga_test(void)
 		}
 	}
 }
+
+
+static void movimiento_test(void)
+{
+	const int Parar = 0;
+	const int Avanzar = 1;
+	const int Retroceder = 2;
+	const int Izquierda = 3;
+	const int Derecha = 4;
+	const int GiroEje = 5; 
+	
+	movimiento_cntrl_estado_write(Avanzar);
+	delay_ms(400);
+	movimiento_cntrl_estado_write(Parar);
+	delay_ms(1000);
+	movimiento_cntrl_estado_write(Retroceder);
+	delay_ms(400);
+	movimiento_cntrl_estado_write(Parar);
+	delay_ms(1000);
+	movimiento_cntrl_estado_write(Izquierda);
+	delay_ms(400);
+	movimiento_cntrl_estado_write(Parar);
+	delay_ms(1000);
+	movimiento_cntrl_estado_write(Derecha);
+	delay_ms(400);
+	movimiento_cntrl_estado_write(Parar);
+	delay_ms(1000);
+	movimiento_cntrl_estado_write(GiroEje);
+	delay_ms(400);
+	movimiento_cntrl_estado_write(Parar);
+	delay_ms(1000);
+}
+
+static void servomotor_test(void)
+{
+	const int Centro = 0;
+	const int Izquierda = 1;
+	const int Derecha = 2;
+	servomotor_cntrl_posicion_write(Centro);
+	delay_ms(1000);
+	servomotor_cntrl_posicion_write(Izquierda);
+	delay_ms(1000);
+	servomotor_cntrl_posicion_write(Derecha);
+	delay_ms(1000);
+	servomotor_cntrl_posicion_write(3);
+}
+
+static int medir_distancia(void)
+{
+	ultrasonido_cntrl_init_write(1);
+	delay_ms(2);
+	while(free){
+		if(ultrasonido_cntrl_done_read() == 1){
+			int d = ultrasonido_cntrl_distance_read();
+			ultrasonido_cntrl_init_write(0);
+			return d;
+		}
+	}
+}
+
+static void ultrasonido_test(void)
+{
+	int d = 0;
+	while(!(buttons_in_read()&1)){
+		if(buttons_in_read()&(1<<1)){ 
+			d = medir_distancia();
+			printf("%d \n", d);
+		}
+	}
+}
+
+static void infrarojo_test(void)
+{
+	printf("Test de Modulo de Infrarojo. Para interrumpir oprimir el botton 1\n");
+	while(!(buttons_in_read()&1)){
+		_Bool osing = infrarojo_cntrl_osing_read();
+		printf("%i", osing);
+		printf("\n");
+	}
+}
+
 
 static void console_service(void)
 {
@@ -224,20 +301,31 @@ static void console_service(void)
 		rgbled_test();
 	else if(strcmp(token, "vga") == 0)
 		vga_test();
+	else if(strcmp(token, "movimiento") == 0)
+		movimiento_test();
+	else if(strcmp(token, "servomotor") == 0)
+		servomotor_test();
+	else if(strcmp(token, "ultrasonido") == 0)
+		ultrasonido_test();
+	else if(strcmp(token, "infrarojo") == 0)
+		infrarojo_test();
 	prompt();
 }
 
+
 int main(void)
 {
+#ifdef CONFIG_CPU_HAS_INTERRUPT
 	irq_setmask(0);
 	irq_setie(1);
+#endif
 	uart_init();
 
-	puts("\nSoC - RiscV project UNAL 2020-2-- CPU testing software built "__DATE__" "__TIME__"\n");
+	puts("\nSoC - RiscV project UNAL 2021-2 Grupo 1 :D-- CPU testing software built "__DATE__" "__TIME__"\n");
 	help();
 	prompt();
 
-	while(1) {
+	while(1){
 		console_service();
 	}
 
