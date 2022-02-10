@@ -349,13 +349,13 @@ static void infrarojo_test(void)
 	printf("Test de Modulo de Infrarojo. Para interrumpir oprimir el botton 1\n");
 	while(!(buttons_in_read()&1))
 	{
-		_Bool L = infrarojo_cntrl_oL_read();
-		_Bool LC = infrarojo_cntrl_oLC_read();
-		_Bool C = infrarojo_cntrl_oC_read();
-		_Bool RC = infrarojo_cntrl_oRC_read();
-		_Bool R = infrarojo_cntrl_oR_read();
+		int L = infrarojo_cntrl_oL_read();
+		int LC = infrarojo_cntrl_oLC_read();
+		int C = infrarojo_cntrl_oC_read();
+		int RC = infrarojo_cntrl_oRC_read();
+		int R = infrarojo_cntrl_oR_read();
 
-		_Bool IR[5] = {L, LC, C, RC, R};
+		int IR[5] = {L, LC, C, RC, R};
 
 		for(int i = 0; i<5; i++){
 			printf("%i, ", IR[i]);
