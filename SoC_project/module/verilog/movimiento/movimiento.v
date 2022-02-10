@@ -58,17 +58,10 @@ always@(posedge clk)begin
                     right[0] = 1;
                     right[1] = 0;
                     left[0]  = 0;
-                    left[1]  = 0;
+                    left[1]  = 1;
                 end
         // Derecha
         3'b100: begin
-                    right[0] = 0;
-                    right[1] = 0;
-                    left[0]  = 1;
-                    left[1]  = 0;
-                end
-        // Giro en el Eje
-        3'b101: begin
                     right[0] = 0;
                     right[1] = 1;
                     left[0]  = 1;

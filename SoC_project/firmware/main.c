@@ -82,9 +82,7 @@ static void help(void)
 	puts("*servomotor                      - servomotor test");
 	puts("*ultrasonido                     - ultrasonido test");
 	puts("*infrarojo                       - infrarojo test");
-	puts("radar                           - radar");
 	puts("*Avanzar                         - avanzar_test");
-	puts("camara                           - camara test");
 }
 
 static void reboot(void)
@@ -249,7 +247,6 @@ static void girar(int direccion)
 	const int PararMotor = 0;
 	const int IzquierdaMotor = 3;
 	const int DerechaMotor = 4;
-	const int GiroEjeMotor = 5;
 
 	switch (direccion)
 	{
@@ -261,8 +258,8 @@ static void girar(int direccion)
 				delay_ms(2000);
 				movimiento_cntrl_estado_write(PararMotor);
 			break;
-		case 0: movimiento_cntrl_estado_write(GiroEjeMotor);
-				delay_ms(2000);
+		case 0: movimiento_cntrl_estado_write(DerechaMotor);
+				delay_ms(4000);
 				movimiento_cntrl_estado_write(PararMotor);
 			break;
 		default:movimiento_cntrl_estado_write(PararMotor);
@@ -299,8 +296,7 @@ static void movimiento_test(void)
 	const int Avanzar = 1;
 	const int Retroceder = 2;
 	const int Izquierda = 3;
-	const int Derecha = 4;
-	const int GiroEje = 5; 
+	const int Derecha = 4; 
 	movimiento_cntrl_estado_write(Avanzar);
 	delay_ms(400);
 	movimiento_cntrl_estado_write(Parar);
@@ -317,10 +313,9 @@ static void movimiento_test(void)
 	delay_ms(400);
 	movimiento_cntrl_estado_write(Parar);
 	delay_ms(1000);
-	movimiento_cntrl_estado_write(GiroEje);
-	delay_ms(400);
-	movimiento_cntrl_estado_write(Parar);
+	movimiento_cntrl_estado_write(Derecha);
 	delay_ms(1000);
+	movimiento_cntrl_estado_write(Parar);
 }
 
 static void servomotor_test(void)
