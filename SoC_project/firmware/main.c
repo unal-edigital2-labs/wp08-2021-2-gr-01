@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <iostream>
+using namespace std;
 
 #include <irq.h>
 #include <uart.h>
@@ -9,6 +11,7 @@
 
 #include "delay.h"
 #include "display.h"
+
 
 static char *readstr(void)
 {
@@ -383,6 +386,16 @@ static void infrarojo_test(void)
 	}
 } */
 
+static void integracion(void){
+	int mapa[10][10];
+
+	//Inicialización de la matriz del laberinto
+	for(int i=0; i<10; i++){
+        for(int j=0; j<10; j++){  
+            mapa[i][j] = 0;
+        }    
+    }
+}
 
 
 static void console_service(void)
