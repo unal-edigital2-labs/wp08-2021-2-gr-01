@@ -39,7 +39,7 @@ module infrarojo(
 assign oL = iL;
 assign oLC = iLC;
 assign oC = iC;
-assign oRC = oRC;
+assign oRC = iRC;
 assign oR = iR;
 
 endmodule
