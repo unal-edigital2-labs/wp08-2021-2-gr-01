@@ -30,10 +30,10 @@ module infrarojo(
 
                     // Registros
                     output oL,
-                    output oLC;
-                    output oC;
-                    output oRC;
-                    output oR;
+                    output oLC,
+                    output oC,
+                    output oRC,
+                    output oR
                     );
 
 assign oL = iL;
