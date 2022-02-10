@@ -111,11 +111,11 @@ _io = [
     ("trig", 0, Pins("E7"), IOStandard("LVCMOS33")),
 
     # Infrarojo
-    ("iL", 0, Pins("J4"), IOStandard("LVCMOS33")),
-    ("iLC", 0, Pins("J4"), IOStandard("LVCMOS33")),
-    ("iC", 0, Pins("J4"), IOStandard("LVCMOS33")),
+    ("iL", 0, Pins("H2"), IOStandard("LVCMOS33")),
+    ("iLC", 0, Pins("G4"), IOStandard("LVCMOS33")),
+    ("iC", 0, Pins("G2"), IOStandard("LVCMOS33")),
     ("iRC", 0, Pins("J4"), IOStandard("LVCMOS33")),
-    ("iR", 0, Pins("J4"), IOStandard("LVCMOS33")),
+    ("iR", 0, Pins("F3"), IOStandard("LVCMOS33")),
 
     # Camara
     ("CAM_xclk", 0, Pins("H14"), IOStandard("LVCMOS33")),
