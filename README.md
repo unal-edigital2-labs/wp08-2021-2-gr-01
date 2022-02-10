@@ -24,12 +24,40 @@ El mapa de memoria se encuentra detalladamente en el archivo [Soc_MemoryMap.csv]
 
 A continuación haremos una breve explicación del Soc, el firmware y los perfiféricos integrados al Soc junto a sus respectivos links en donde se puede observar su funcionamiento más en detalle.
 
+
 ## [SoC](/SoC_project/)
 
 En este enlace se describe la arquitectura del robot cartógrafo y el proceso que se llevo a cabo usando el entorno Litex para el ensamble y la integración del microprocesador picoRV32, el bus de datos Wishbone y los diferentes módulos de los periféricos que componen el robot. Para mas informacion remitase a [Soc](/Soc_project/). 
 
-## [Firmware](/SoC_project/firmware/) 
-Dentro del enlace de firmware se encuentra la información del código usado para el desarrollo del funcionamiento del robot cartógrafo, de igual forma se puede observar la explicación de las funciones que se encuentran dentro del archivo [main.c](/Soc_project/firmware/main.c). Para mas informacion remitase a [firmware](/Soc_project/firmware/). 
+![Screenshot](/images/SoCmem.png)
+
+## [ Mapa de Memoria ](https://github.com/unal-edigital2/w07_entrega-_final-grupo11/tree/main/module)
+
+En la presente sección se encuentran los diferentes perífericos que se usaron para la elaboración del robot cartógrafo junto con sus respectivos espacios en memoria que fueron utilizados y como cada uno de estos se creo en hardware y del mismo modo se implemento.
+
+## [ Firmware ](/SoC_project/firmware/)
+
+Dentro del enlace de firmware se encuentra la información del código usado para el desarrollo del funcionamiento del robot cartógrafo, de igual forma se puede observar la explicación de las funciones que se encuentran dentro del archivo [main.c](/Soc_project/firmware/main.c). Para mas informacion remitase a [firmware](/Soc_project/firmware/).
+
+En esta seccion se encuentra como se realizo el procesamiento desde software, realizando el codigo para las respectivas pruebas de cada periférico y como se ejecuto para su funcionamiento completo.
+
+## Construcción
+
+Para la construcción del carrito se utilizaron los siguientes materiales:
+1. Placa de MDF de 15cmx20cm
+2. 2 motorreductores junto con sus llantas
+3. 1 rueda loca
+4. 1 servomoto
+5. 1 ultrasonido HC-SR04
+6. 5 sensores infrarrojos con su driver
+7. 1 puente H L298N
+8. 1 Bluetooth HC-06
+9. 1 Protoboard
+10. 1 MP3 TF16P
+
+
+
+ 
 
 ## [Módulos](/SoC_project/module/)
 Aquí presentamos una lista de los periféricos usados en el robot cartógrafo, cada uno de estos links mostraran el módulo en verilog y a su vez se hace una explicación detallada del código utilizado para el funcionamiento del módulo de cada periférico.
@@ -40,25 +68,14 @@ Aquí presentamos una lista de los periféricos usados en el robot cartógrafo, 
 - [SHT40](/SoC_project/module/verilog/sht40/)
 - [Ultrasonido](/SoC_project/module/verilog/ultrasonido/)
 
-## Mantener código cargado FPGA
-
-### Alimentación:
+## Alimentación:
 El proyecto en general, a excepción de los motores, se alimenta con una powerbank de dos puertos que provee de energía tanto a la FPGA como a el Arduino Mega2560.
 <p align="center">
   <img src="/Imagenes/powerbank.jpeg" align="center" width="400px">
 </p>
 
-### Mantener Hardware y Firmware FPGA:
-Es claro que al momento de realizar la sintetización del hardware, la compilación del firmware y cargar todo a la FPGA, todo funciona correctamente mientras se mantenga conectada al computador. Sin embargo al momento de desconectar el micro-usb(J6) por el cual se está alimentado y cargando los archivos a la FPGA, se pierden todos los cambios ejecutados sobre esta. Por este motivo se decidio mantener la FPGA encendida en todo momento para que no se pierdan el archivo de hardware y las diferentes compilaciones de firmware que se ejecuten en el proceso de testeo.
-Cabe aclarar que se esta trabajando con una **FPGA - Nexys 4DDR**, y que esta tarjeta nos da la posibilidad de cambiar su puerto de alimentacion, por lo que el procedimiento es simple y consiste en cambiar la alimentacion de la FPGA del puerto micro-usb(J6) al Jack(J13).
 
-<p align="center">
-  <img src="/Imagenes/alime.png" align="center">
-</p>
-
-Para hacer dicho cambio, se cambia la ubicacion de el jumper JP3 dependiendo de la alimentacion que se desee utilizar. (**NOTA : La tension en el Jack(J13) debe ser 5V exclusivamente** para mas informacion remitase a [Nexys4DDR](/datasheets/Nexys4-DDR_rm.pdf)).
-
-## Pruebas de Funcionamiento :clapper:
+## Pruebas de Funcionamiento
 
 En los siguientes enlaces se encuentran los videos correspondientes a las pruebas de funcionamiento realizadas al robot cartógrafo, en ellos se puede observar al robot recorriendo el laberinto de forma autónoma a medida que reconoce los colores de las paredes. De igual forma, se observa simultaneamente la impresión del mapeo realizado por el robot que se envía a un celular por medio de bluetooth.
 - [Video 1](https://www.youtube.com/watch?v=-sIw7MB7exA)
