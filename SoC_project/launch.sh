@@ -1,6 +1,6 @@
 #!/bin/bash
 
-./load.py
+python3 load.py
 echo 'Load done'
 echo '================================'
 cd firmware
@@ -9,4 +9,6 @@ make all
 echo 'make done'
 echo '================================'
 cd .. 
-litex_term.py /dev/ttyUSB1 --kernel firmware/firmware.bin
+litex_term /dev/ttyUSB1 --kernel firmware/firmware.bin
+echo '================================'
+echo 'Press RESET button'

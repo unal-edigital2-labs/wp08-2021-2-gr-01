@@ -2,7 +2,7 @@ sdcard.o: /tools/Litex/litex/litex/soc/software/liblitesdcard/sdcard.c \
  /tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio/stdio.h \
  /tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/inttypes.h \
  /tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/newlib.h \
- /home/diego_sanchez/Dokumente/GitHub/wp04-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc/picolibc.h \
+ /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc/picolibc.h \
  /tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/config.h \
  /tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/machine/ieeefp.h \
  /tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/features.h \
@@ -24,11 +24,11 @@ sdcard.o: /tools/Litex/litex/litex/soc/software/liblitesdcard/sdcard.c \
  /tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/string.h \
  /tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/strings.h \
  /tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/string.h \
- /home/diego_sanchez/Dokumente/GitHub/wp04-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/generated/csr.h \
- /home/diego_sanchez/Dokumente/GitHub/wp04-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/generated/soc.h \
+ /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/generated/csr.h \
+ /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/generated/soc.h \
  /tools/Litex/litex/litex/soc/cores/cpu/picorv32/system.h \
  /tools/Litex/litex/litex/soc/software/include/hw/common.h \
- /home/diego_sanchez/Dokumente/GitHub/wp04-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/generated/mem.h \
+ /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/generated/mem.h \
  /tools/Litex/litex/litex/soc/software/libfatfs/ff.h \
  /tools/Litex/litex/litex/soc/software/libfatfs/ffconf.h \
  /tools/Litex/litex/litex/soc/software/libfatfs/diskio.h \
@@ -41,7 +41,7 @@ sdcard.o: /tools/Litex/litex/litex/soc/software/liblitesdcard/sdcard.c \
 
 /tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/newlib.h:
 
-/home/diego_sanchez/Dokumente/GitHub/wp04-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc/picolibc.h:
+/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc/picolibc.h:
 
 /tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/config.h:
 
@@ -85,15 +85,15 @@ sdcard.o: /tools/Litex/litex/litex/soc/software/liblitesdcard/sdcard.c \
 
 /tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/string.h:
 
-/home/diego_sanchez/Dokumente/GitHub/wp04-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/generated/csr.h:
+/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/generated/csr.h:
 
-/home/diego_sanchez/Dokumente/GitHub/wp04-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/generated/soc.h:
+/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/generated/soc.h:
 
 /tools/Litex/litex/litex/soc/cores/cpu/picorv32/system.h:
 
 /tools/Litex/litex/litex/soc/software/include/hw/common.h:
 
-/home/diego_sanchez/Dokumente/GitHub/wp04-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/generated/mem.h:
+/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/generated/mem.h:
 
 /tools/Litex/litex/litex/soc/software/libfatfs/ff.h:
 

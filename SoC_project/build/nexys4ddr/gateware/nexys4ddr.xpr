@@ -3,10 +3,10 @@
 <!--                                                         -->
 <!-- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="44" Path="/home/diego_sanchez/Dokumente/GitHub/wp04-2021-2-gr-01/SoC_project/build/nexys4ddr/gateware/nexys4ddr.xpr">
+<Project Version="7" Minor="44" Path="/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/gateware/nexys4ddr.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="c09c86f81abe486e816d250250cb4c8e"/>
+    <Option Name="Id" Val="adb5fe91f53748229a1b8229d017e3ec"/>
     <Option Name="Part" Val="xc7a100tcsg324-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>

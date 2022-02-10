@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:/home/diego_sanchez/Dokumente/GitHub/wp04-2021-2-gr-01/SoC_project/build/nexys4ddr/gateware/nexys4ddr.xdc rfile:../nexys4ddr.xdc id:1 order:EARLY} [current_design]
+set_property SRC_FILE_INFO {cfile:/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/gateware/nexys4ddr.xdc rfile:../nexys4ddr.xdc id:1 order:EARLY} [current_design]
 set_property src_info {type:XDC file:1 line:5 export:INPUT save:INPUT read:READ} [current_design]
 set_property LOC D4 [get_ports {serial_tx}]
 set_property src_info {type:XDC file:1 line:9 export:INPUT save:INPUT read:READ} [current_design]

@@ -1,16 +1,35 @@
-Build started at 2022-02-05T11:18:58.550005
+Build started at 2022-02-10T17:25:32.975185
 Main binary: /usr/bin/python3
-Build Options: -Dmultilib=false -Dpicocrt=false -Datomic-ungetc=false -Dthread-local-storage=false -Dio-long-long=true -Dformat-default=integer -Dincludedir=picolibc/riscv64-unknown-elf/include -Dlibdir=picolibc/riscv64-unknown-elf/lib -Dbackend=ninja '--cross-file /home/diego_sanchez/Dokumente/GitHub/wp04-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/cross.txt'
+Build Options: -Dmultilib=false -Dpicocrt=false -Datomic-ungetc=false -Dthread-local-storage=false -Dio-long-long=true -Dformat-default=integer -Dincludedir=picolibc/riscv64-unknown-elf/include -Dlibdir=picolibc/riscv64-unknown-elf/lib '--cross-file cross.txt'
 Python system: Linux
 The Meson build system
 Version: 0.60.2
 Source dir: /tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data
-Build dir: /home/diego_sanchez/Dokumente/GitHub/wp04-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc
+Build dir: /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc
 Build type: cross build
 Project name: picolibc
 Project version: 1.7.4
+Sanity testing C compiler: riscv64-unknown-elf-gcc
+Is cross compiler: True.
+Sanity check compiler command line: riscv64-unknown-elf-gcc sanitycheckc.c -o sanitycheckc_cross.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -c
+Sanity check compile stdout:
+
+-----
+Sanity check compile stderr:
+
+-----
 C compiler for the host machine: riscv64-unknown-elf-gcc (gcc 8.3.0 "riscv64-unknown-elf-gcc (SiFive GCC 8.3.0-2019.08.0) 8.3.0")
 C linker for the host machine: riscv64-unknown-elf-gcc ld.bfd 2.32.0-2019
+Sanity testing C compiler: cc
+Is cross compiler: False.
+Sanity check compiler command line: cc sanitycheckc.c -o sanitycheckc.exe -D_FILE_OFFSET_BITS=64
+Sanity check compile stdout:
+
+-----
+Sanity check compile stderr:
+
+-----
+Running test binary command: /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/sanitycheckc.exe
 C compiler for the build machine: cc (gcc 9.3.0 "cc (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0")
 C linker for the build machine: cc ld.bfd 2.34
 Build machine cpu family: x86_64
@@ -19,8 +38,9 @@ Host machine cpu family: riscv
 Host machine cpu: picorv32
 Target machine cpu family: riscv
 Target machine cpu: picorv32
-Using cached compile:
-Cached command line:   
+Running compile:
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp2oscynch
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp2oscynch/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp2oscynch/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 
 
 Code:
  
@@ -34,108 +54,115 @@ long double test()
 	 return ld;
 }
 
-Cached compiler stdout:
+Compiler stdout:
  
-Cached compiler stderr:
+Compiler stderr:
  
-Checking if "long double check" : compiles: YES (cached)
-Using cached compile:
-Cached command line:   
+Checking if "long double check" : compiles: YES 
+Running compile:
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp_t3uoq23
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp_t3uoq23/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp_t3uoq23/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 
 
 Code:
  
 #include <float.h>
 char size_test[sizeof(double) == sizeof(long double) ? 1 : -1];
 
-Cached compiler stdout:
+Compiler stdout:
  
-Cached compiler stderr:
- /home/diego_sanchez/Dokumente/GitHub/wp04-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp40t2h82j/testfile.c:3:6: error: size of array 'size_test' is negative
+Compiler stderr:
+ /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp_t3uoq23/testfile.c:3:6: error: size of array 'size_test' is negative
  char size_test[sizeof(double) == sizeof(long double) ? 1 : -1];
       ^~~~~~~~~
 
-Checking if "long double same as double" : compiles: NO (cached)
-Using cached compile:
-Cached command line:   
+Checking if "long double same as double" : compiles: NO 
+Running compile:
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp9en0ypn7
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp9en0ypn7/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp9en0ypn7/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 
 
 Code:
  
 #include <float.h>
 char size_test[__LDBL_MANT_DIG__ == 64 ? 1 : -1];
 
-Cached compiler stdout:
+Compiler stdout:
  
-Cached compiler stderr:
- /home/diego_sanchez/Dokumente/GitHub/wp04-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpy1_jsiq2/testfile.c:3:6: error: size of array 'size_test' is negative
+Compiler stderr:
+ /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp9en0ypn7/testfile.c:3:6: error: size of array 'size_test' is negative
  char size_test[__LDBL_MANT_DIG__ == 64 ? 1 : -1];
       ^~~~~~~~~
 
-Checking if "long double mantissa is 64 bits" : compiles: NO (cached)
-Using cached compile:
-Cached command line:   
+Checking if "long double mantissa is 64 bits" : compiles: NO 
+Running compile:
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp25fnc87e
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp25fnc87e/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp25fnc87e/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 
 
 Code:
  
 #include <float.h>
 char size_test[__LDBL_MANT_DIG__ == 113 ? 1 : -1];
 
-Cached compiler stdout:
+Compiler stdout:
  
-Cached compiler stderr:
+Compiler stderr:
  
-Checking if "long double mantissa is 113 bits" : compiles: YES (cached)
-Using cached compile:
-Cached command line:   
+Checking if "long double mantissa is 113 bits" : compiles: YES 
+Running compile:
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp2iq26pe5
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp2iq26pe5/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp2iq26pe5/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -fno-common 
 
 Code:
  extern int i;
 int i;
 
-Cached compiler stdout:
+Compiler stdout:
  
-Cached compiler stderr:
+Compiler stderr:
  
-Compiler for C supports arguments -fno-common: YES (cached)
-Using cached compile:
-Cached command line:   
+Compiler for C supports arguments -fno-common: YES 
+Running compile:
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpt5994xa0
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpt5994xa0/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpt5994xa0/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -frounding-math 
 
 Code:
  extern int i;
 int i;
 
-Cached compiler stdout:
+Compiler stdout:
  
-Cached compiler stderr:
+Compiler stderr:
  
-Compiler for C supports arguments -frounding-math: YES (cached)
-Using cached compile:
-Cached command line:   
+Compiler for C supports arguments -frounding-math: YES 
+Running compile:
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpwbcw2x3l
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpwbcw2x3l/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpwbcw2x3l/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -Wunsupported-floating-point-opt -Wno-unsupported-floating-point-opt 
 
 Code:
  extern int i;
 int i;
 
-Cached compiler stdout:
+Compiler stdout:
  
-Cached compiler stderr:
+Compiler stderr:
  riscv64-unknown-elf-gcc: error: unrecognized command line option '-Wunsupported-floating-point-opt'; did you mean '-Wunsuffixed-float-constants'?
 
-Compiler for C supports arguments -Wno-unsupported-floating-point-opt: NO (cached)
-Using cached compile:
-Cached command line:   
+Compiler for C supports arguments -Wno-unsupported-floating-point-opt: NO 
+Running compile:
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpyg1kelot
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpyg1kelot/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpyg1kelot/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -fno-stack-protector 
 
 Code:
  extern int i;
 int i;
 
-Cached compiler stdout:
+Compiler stdout:
  
-Cached compiler stderr:
+Compiler stderr:
  
-Compiler for C supports arguments -fno-stack-protector: YES (cached)
+Compiler for C supports arguments -fno-stack-protector: YES 
 Running compile:
-Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp04-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpet3fmcrx
-Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp04-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp04-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp04-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpet3fmcrx/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp04-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpet3fmcrx/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -O0 
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpylaata3k
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpylaata3k/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpylaata3k/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -O0 
 
 Code:
  #ifdef __cplusplus
@@ -153,52 +180,56 @@ Compiler stderr:
 Symbols have underscore prefix: NO
 Program riscv64-unknown-elf-gcc-nm found: YES
 Program scripts/duplicate-names found: YES (/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/scripts/duplicate-names)
-Using cached compile:
-Cached command line:   
+Running compile:
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpyoexvmdl
+Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpyoexvmdl/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpyoexvmdl/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -Wl,--fatal-warnings -Wl,--defsym=_start=0 -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
 
 Code:
  int main(void) { return 0; }
 
-Cached compiler stdout:
+Compiler stdout:
  
-Cached compiler stderr:
+Compiler stderr:
  
-Compiler for C supports link arguments -Wl,--defsym=_start=0: YES (cached)
-Using cached compile:
-Cached command line:   
+Compiler for C supports link arguments -Wl,--defsym=_start=0: YES 
+Running compile:
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpfex6_gqy
+Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpfex6_gqy/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpfex6_gqy/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -Wl,--fatal-warnings -Wl,-alias,main,testalias -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
 
 Code:
  int main(void) { return 0; }
 
-Cached compiler stdout:
+Compiler stdout:
  
-Cached compiler stderr:
+Compiler stderr:
  /tools/Litex/riscv64-unknown-elf-gcc-8.3.0-2019.08.0-x86_64-linux-ubuntu14/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/../../../../riscv64-unknown-elf/bin/ld: unrecognized -a option `lias'
 collect2: error: ld returned 1 exit status
 
-Compiler for C supports link arguments -Wl,-alias,main,testalias: NO (cached)
-Using cached compile:
-Cached command line:   
+Compiler for C supports link arguments -Wl,-alias,main,testalias: NO 
+Running compile:
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpwzzbbxxc
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpwzzbbxxc/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpwzzbbxxc/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -Werror=attributes 
 
 Code:
  
         int foo(void) { return 0; }
         int bar(void) __attribute__((alias("foo")));
-Cached compiler stdout:
+Compiler stdout:
  
-Cached compiler stderr:
+Compiler stderr:
  
-Compiler for C supports function attribute alias: YES (cached)
-Using cached compile:
-Cached command line:   
+Compiler for C supports function attribute alias: YES 
+Running compile:
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpy3npt5t_
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpy3npt5t_/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpy3npt5t_/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -Werror=attributes 
 
 Code:
  int foo(const char * p, ...) __attribute__((format(printf, 1, 2)));
-Cached compiler stdout:
+Compiler stdout:
  
-Cached compiler stderr:
+Compiler stderr:
  
-Compiler for C supports function attribute format: YES (cached)
+Compiler for C supports function attribute format: YES 
 Running command: /tools/Litex/riscv64-unknown-elf-gcc-8.3.0-2019.08.0-x86_64-linux-ubuntu14/bin/riscv64-unknown-elf-gcc -print-search-dirs
 --- stdout ---
 install: /tools/Litex/riscv64-unknown-elf-gcc-8.3.0-2019.08.0-x86_64-linux-ubuntu14/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/
@@ -220,118 +251,128 @@ Configuring picolibcpp.specs using configuration
 Configuring test.specs using configuration
 Configuring picolibc.ld using configuration
 Configuring picolibcpp.ld using configuration
-Using cached compile:
-Cached command line:   
+Running compile:
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpmcqoen5a
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpmcqoen5a/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpmcqoen5a/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -Werror=implicit-function-declaration 
 
 Code:
  extern int i;
 int i;
 
-Cached compiler stdout:
+Compiler stdout:
  
-Cached compiler stderr:
+Compiler stderr:
  
-Compiler for C supports arguments -Werror=implicit-function-declaration: YES (cached)
-Using cached compile:
-Cached command line:   
+Compiler for C supports arguments -Werror=implicit-function-declaration: YES 
+Running compile:
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpupxhf61b
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpupxhf61b/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpupxhf61b/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -Werror=vla 
 
 Code:
  extern int i;
 int i;
 
-Cached compiler stdout:
+Compiler stdout:
  
-Cached compiler stderr:
+Compiler stderr:
  
-Compiler for C supports arguments -Werror=vla: YES (cached)
-Using cached compile:
-Cached command line:   
+Compiler for C supports arguments -Werror=vla: YES 
+Running compile:
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpti2jhxmg
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpti2jhxmg/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpti2jhxmg/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -Warray-bounds 
 
 Code:
  extern int i;
 int i;
 
-Cached compiler stdout:
+Compiler stdout:
  
-Cached compiler stderr:
+Compiler stderr:
  
-Compiler for C supports arguments -Warray-bounds: YES (cached)
-Using cached compile:
-Cached command line:   
+Compiler for C supports arguments -Warray-bounds: YES 
+Running compile:
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmps0susr38
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmps0susr38/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmps0susr38/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -Wold-style-definition 
 
 Code:
  extern int i;
 int i;
 
-Cached compiler stdout:
+Compiler stdout:
  
-Cached compiler stderr:
+Compiler stderr:
  
-Compiler for C supports arguments -Wold-style-definition: YES (cached)
-Using cached compile:
-Cached command line:   
+Compiler for C supports arguments -Wold-style-definition: YES 
+Running compile:
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpw4gitbh_
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpw4gitbh_/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpw4gitbh_/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -Wmissing-braces -Wno-missing-braces 
 
 Code:
  extern int i;
 int i;
 
-Cached compiler stdout:
+Compiler stdout:
  
-Cached compiler stderr:
+Compiler stderr:
  
-Compiler for C supports arguments -Wno-missing-braces: YES (cached)
-Using cached compile:
-Cached command line:   
+Compiler for C supports arguments -Wno-missing-braces: YES 
+Running compile:
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpxr7l5duf
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpxr7l5duf/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpxr7l5duf/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -Wimplicit-int -Wno-implicit-int 
 
 Code:
  extern int i;
 int i;
 
-Cached compiler stdout:
+Compiler stdout:
  
-Cached compiler stderr:
+Compiler stderr:
  
-Compiler for C supports arguments -Wno-implicit-int: YES (cached)
-Using cached compile:
-Cached command line:   
+Compiler for C supports arguments -Wno-implicit-int: YES 
+Running compile:
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmps8suaaru
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmps8suaaru/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmps8suaaru/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -Wreturn-type -Wno-return-type 
 
 Code:
  extern int i;
 int i;
 
-Cached compiler stdout:
+Compiler stdout:
  
-Cached compiler stderr:
+Compiler stderr:
  
-Compiler for C supports arguments -Wno-return-type: YES (cached)
-Using cached compile:
-Cached command line:   
+Compiler for C supports arguments -Wno-return-type: YES 
+Running compile:
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp7es3vbms
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp7es3vbms/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp7es3vbms/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -Wunused-command-line-argument -Wno-unused-command-line-argument 
 
 Code:
  extern int i;
 int i;
 
-Cached compiler stdout:
+Compiler stdout:
  
-Cached compiler stderr:
+Compiler stderr:
  riscv64-unknown-elf-gcc: error: unrecognized command line option '-Wunused-command-line-argument'; did you mean '-Wunused-dummy-argument'?
 
-Compiler for C supports arguments -Wno-unused-command-line-argument: NO (cached)
-Using cached compile:
-Cached command line:   
+Compiler for C supports arguments -Wno-unused-command-line-argument: NO 
+Running compile:
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp3p7s1qls
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp3p7s1qls/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp3p7s1qls/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 
 
 Code:
  
 struct test { int part: 24; } __attribute__((packed));
 unsigned int foobar (const struct test *p) { return p->part; }
 
-Cached compiler stdout:
+Compiler stdout:
  
-Cached compiler stderr:
+Compiler stderr:
  
-Checking if "packed structs may contain bitfields" : compiles: YES (cached)
-Using cached compile:
-Cached command line:   
+Checking if "packed structs may contain bitfields" : compiles: YES 
+Running compile:
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpyc7brstr
+Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpyc7brstr/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpyc7brstr/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
 
 Code:
  
@@ -340,26 +381,28 @@ int overflows (size_t a, size_t b) { size_t x; return __builtin_mul_overflow(a, 
 volatile size_t aa = 42;
 int main (void) { return overflows(aa, aa); }
 
-Cached compiler stdout:
+Compiler stdout:
  
-Cached compiler stderr:
+Compiler stderr:
  /tools/Litex/riscv64-unknown-elf-gcc-8.3.0-2019.08.0-x86_64-linux-ubuntu14/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/../../../../riscv64-unknown-elf/bin/ld: warning: cannot find entry symbol _start; defaulting to 0000000000010074
 
-Checking if "has __builtin_mul_overflow" : links: YES (cached)
-Using cached compile:
-Cached command line:   
+Checking if "has __builtin_mul_overflow" : links: YES 
+Running compile:
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpnm5q1gjl
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpnm5q1gjl/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpnm5q1gjl/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 
 
 Code:
  
 float _Complex test(float _Complex z) { return z; }
 
-Cached compiler stdout:
+Compiler stdout:
  
-Cached compiler stderr:
+Compiler stderr:
  
-Checking if "supports _Complex" : compiles: YES (cached)
-Using cached compile:
-Cached command line:   
+Checking if "supports _Complex" : compiles: YES 
+Running compile:
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpzcsdjqz8
+Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpzcsdjqz8/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpzcsdjqz8/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
 
 Code:
  
@@ -368,46 +411,48 @@ int main (void) {
   return __builtin_expect(a, 1);
 }
 
-Cached compiler stdout:
+Compiler stdout:
  
-Cached compiler stderr:
+Compiler stderr:
  /tools/Litex/riscv64-unknown-elf-gcc-8.3.0-2019.08.0-x86_64-linux-ubuntu14/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/../../../../riscv64-unknown-elf/bin/ld: warning: cannot find entry symbol _start; defaulting to 0000000000010074
 
-Checking if "has __builtin_expect" : links: YES (cached)
-Using cached compile:
-Cached command line:   
+Checking if "has __builtin_expect" : links: YES 
+Running compile:
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpvbuavo0_
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpvbuavo0_/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpvbuavo0_/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -Werror 
 
 Code:
  extern int i;
 int i;
 
-Cached compiler stdout:
+Compiler stdout:
  
-Cached compiler stderr:
+Compiler stderr:
  
-Compiler for C supports arguments -Werror: YES (cached)
-Using cached compile:
-Cached command line:   
+Compiler for C supports arguments -Werror: YES 
+Running compile:
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp7wriz1_9
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp7wriz1_9/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp7wriz1_9/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -Werror 
 
 Code:
  
 void *foobar(size_t) __attribute__((__alloc_size__(1)));
 void *foobar2(size_t, size_t) __attribute__((__alloc_size__(1, 2)));
 
-Cached compiler stdout:
+Compiler stdout:
  
-Cached compiler stderr:
- /home/diego_sanchez/Dokumente/GitHub/wp04-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpl8prrthm/testfile.c:2:1: error: parameter names (without types) in function declaration [-Werror]
+Compiler stderr:
+ /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp7wriz1_9/testfile.c:2:1: error: parameter names (without types) in function declaration [-Werror]
  void *foobar(size_t) __attribute__((__alloc_size__(1)));
  ^~~~
-/home/diego_sanchez/Dokumente/GitHub/wp04-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpl8prrthm/testfile.c:2:1: error: alloc_size parameter outside range [-Werror=attributes]
-/home/diego_sanchez/Dokumente/GitHub/wp04-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpl8prrthm/testfile.c:3:1: error: parameter names (without types) in function declaration [-Werror]
+/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp7wriz1_9/testfile.c:2:1: error: alloc_size parameter outside range [-Werror=attributes]
+/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp7wriz1_9/testfile.c:3:1: error: parameter names (without types) in function declaration [-Werror]
  void *foobar2(size_t, size_t) __attribute__((__alloc_size__(1, 2)));
  ^~~~
-/home/diego_sanchez/Dokumente/GitHub/wp04-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpl8prrthm/testfile.c:3:1: error: alloc_size parameter outside range [-Werror=attributes]
+/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp7wriz1_9/testfile.c:3:1: error: alloc_size parameter outside range [-Werror=attributes]
 cc1: all warnings being treated as errors
 
-Checking if "attribute __alloc_size__" : compiles: NO (cached)
+Checking if "attribute __alloc_size__" : compiles: NO 
 Using cached compile:
 Cached command line:   
 
@@ -420,299 +465,321 @@ Cached compiler stdout:
 Cached compiler stderr:
  
 Compiler for C supports arguments -Werror: YES (cached)
-Using cached compile:
-Cached command line:   
+Running compile:
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpx8dxg604
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpx8dxg604/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpx8dxg604/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -Werror 
 
 Code:
  
 void __attribute__((constructor(101))) ctor (void) {}
 void __attribute__((destructor(101))) dtor (void) {}
 
-Cached compiler stdout:
+Compiler stdout:
  
-Cached compiler stderr:
+Compiler stderr:
  
-Checking if "attributes constructor/destructor" : compiles: YES (cached)
-Using cached compile:
-Cached command line:   
+Checking if "attributes constructor/destructor" : compiles: YES 
+Running compile:
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp47g0ieee
+Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp47g0ieee/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp47g0ieee/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
 
 Code:
  
 static int foo(void * i __attribute__((unused))) { return 0; }
 int main(void) { return foo(__builtin_alloca(1)); }
 
-Cached compiler stdout:
+Compiler stdout:
  
-Cached compiler stderr:
+Compiler stderr:
  /tools/Litex/riscv64-unknown-elf-gcc-8.3.0-2019.08.0-x86_64-linux-ubuntu14/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/../../../../riscv64-unknown-elf/bin/ld: warning: cannot find entry symbol _start; defaulting to 0000000000010054
 
-Checking if "test for __builtin_alloca" : links: YES (cached)
-Using cached compile:
-Cached command line:   
+Checking if "test for __builtin_alloca" : links: YES 
+Running compile:
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpy1_evbr5
+Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpy1_evbr5/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpy1_evbr5/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
 
 Code:
  
 static int foo(int i __attribute__((unused))) { return 0; }
 int main(void) { return foo(__builtin_ffs(42)); }
 
-Cached compiler stdout:
+Compiler stdout:
  
-Cached compiler stderr:
+Compiler stderr:
  /tools/Litex/riscv64-unknown-elf-gcc-8.3.0-2019.08.0-x86_64-linux-ubuntu14/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/../../../../riscv64-unknown-elf/bin/ld: warning: cannot find entry symbol _start; defaulting to 0000000000010054
 
-Checking if "test for __builtin_ffs" : links: YES (cached)
-Using cached compile:
-Cached command line:   
+Checking if "test for __builtin_ffs" : links: YES 
+Running compile:
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp0ljyuohc
+Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp0ljyuohc/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp0ljyuohc/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
 
 Code:
  
 static int foo(long i __attribute__((unused))) { return 0; }
 int main(void) { return foo(__builtin_ffsl((long)42)); }
 
-Cached compiler stdout:
+Compiler stdout:
  
-Cached compiler stderr:
+Compiler stderr:
  /tools/Litex/riscv64-unknown-elf-gcc-8.3.0-2019.08.0-x86_64-linux-ubuntu14/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/../../../../riscv64-unknown-elf/bin/ld: warning: cannot find entry symbol _start; defaulting to 0000000000010054
 
-Checking if "test for __builtin_ffsl" : links: YES (cached)
-Using cached compile:
-Cached command line:   
+Checking if "test for __builtin_ffsl" : links: YES 
+Running compile:
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpxda1m9qz
+Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpxda1m9qz/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpxda1m9qz/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
 
 Code:
  
 static int foo(long long i __attribute__((unused))) { return 0; }
 int main(void) { return foo(__builtin_ffsll((long long)42)); }
 
-Cached compiler stdout:
+Compiler stdout:
  
-Cached compiler stderr:
+Compiler stderr:
  /tools/Litex/riscv64-unknown-elf-gcc-8.3.0-2019.08.0-x86_64-linux-ubuntu14/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/../../../../riscv64-unknown-elf/bin/ld: warning: cannot find entry symbol _start; defaulting to 0000000000010054
 
-Checking if "test for __builtin_ffsll" : links: YES (cached)
-Using cached compile:
-Cached command line:   
+Checking if "test for __builtin_ffsll" : links: YES 
+Running compile:
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpay8ju0rz
+Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpay8ju0rz/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpay8ju0rz/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
 
 Code:
  
 static int foo(int i __attribute__((unused))) { return 0; }
 int main(void) { return foo(__builtin_ctz((unsigned int)42)); }
 
-Cached compiler stdout:
+Compiler stdout:
  
-Cached compiler stderr:
+Compiler stderr:
  /tools/Litex/riscv64-unknown-elf-gcc-8.3.0-2019.08.0-x86_64-linux-ubuntu14/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/../../../../riscv64-unknown-elf/bin/ld: warning: cannot find entry symbol _start; defaulting to 0000000000010054
 
-Checking if "test for __builtin_ctz" : links: YES (cached)
-Using cached compile:
-Cached command line:   
+Checking if "test for __builtin_ctz" : links: YES 
+Running compile:
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpn_tbx5em
+Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpn_tbx5em/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpn_tbx5em/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
 
 Code:
  
 static int foo(int i __attribute__((unused))) { return 0; }
 int main(void) { return foo(__builtin_ctzl((unsigned long)42)); }
 
-Cached compiler stdout:
+Compiler stdout:
  
-Cached compiler stderr:
+Compiler stderr:
  /tools/Litex/riscv64-unknown-elf-gcc-8.3.0-2019.08.0-x86_64-linux-ubuntu14/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/../../../../riscv64-unknown-elf/bin/ld: warning: cannot find entry symbol _start; defaulting to 0000000000010054
 
-Checking if "test for __builtin_ctzl" : links: YES (cached)
-Using cached compile:
-Cached command line:   
+Checking if "test for __builtin_ctzl" : links: YES 
+Running compile:
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpobz8dm84
+Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpobz8dm84/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpobz8dm84/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
 
 Code:
  
 static int foo(int i __attribute__((unused))) { return 0; }
 int main(void) { return foo(__builtin_ctzll((unsigned long long)42)); }
 
-Cached compiler stdout:
+Compiler stdout:
  
-Cached compiler stderr:
+Compiler stderr:
  /tools/Litex/riscv64-unknown-elf-gcc-8.3.0-2019.08.0-x86_64-linux-ubuntu14/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/../../../../riscv64-unknown-elf/bin/ld: warning: cannot find entry symbol _start; defaulting to 0000000000010054
 
-Checking if "test for __builtin_ctzll" : links: YES (cached)
-Using cached compile:
-Cached command line:   
+Checking if "test for __builtin_ctzll" : links: YES 
+Running compile:
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp0zfj2bhl
+Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp0zfj2bhl/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp0zfj2bhl/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
 
 Code:
  
 static int foo(long double i __attribute__((unused))) { return 0; }
 int main(void) { return foo(__builtin_copysignl((long double)42, (long double) 42)); }
 
-Cached compiler stdout:
+Compiler stdout:
  
-Cached compiler stderr:
+Compiler stderr:
  /tools/Litex/riscv64-unknown-elf-gcc-8.3.0-2019.08.0-x86_64-linux-ubuntu14/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/../../../../riscv64-unknown-elf/bin/ld: warning: cannot find entry symbol _start; defaulting to 0000000000010054
 
-Checking if "test for __builtin_copysignl" : links: YES (cached)
-Using cached compile:
-Cached command line:   
+Checking if "test for __builtin_copysignl" : links: YES 
+Running compile:
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpea9_x4m1
+Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpea9_x4m1/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpea9_x4m1/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
 
 Code:
  
 static int foo(double i __attribute__((unused))) { return 0; }
 int main(void) { return foo(__builtin_copysign(42, 42)); }
 
-Cached compiler stdout:
+Compiler stdout:
  
-Cached compiler stderr:
+Compiler stderr:
  /tools/Litex/riscv64-unknown-elf-gcc-8.3.0-2019.08.0-x86_64-linux-ubuntu14/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/../../../../riscv64-unknown-elf/bin/ld: warning: cannot find entry symbol _start; defaulting to 0000000000010054
 
-Checking if "test for __builtin_copysign" : links: YES (cached)
-Using cached compile:
-Cached command line:   
+Checking if "test for __builtin_copysign" : links: YES 
+Running compile:
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpc6ddn1e8
+Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpc6ddn1e8/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpc6ddn1e8/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
 
 Code:
  
 static int foo(int i __attribute__((unused))) { return 0; }
 int main(void) { return foo(__builtin_isinfl((long double)42)); }
 
-Cached compiler stdout:
+Compiler stdout:
  
-Cached compiler stderr:
+Compiler stderr:
  /tools/Litex/riscv64-unknown-elf-gcc-8.3.0-2019.08.0-x86_64-linux-ubuntu14/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/../../../../riscv64-unknown-elf/bin/ld: warning: cannot find entry symbol _start; defaulting to 0000000000010054
 
-Checking if "test for __builtin_isinfl" : links: YES (cached)
-Using cached compile:
-Cached command line:   
+Checking if "test for __builtin_isinfl" : links: YES 
+Running compile:
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpncbso136
+Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpncbso136/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpncbso136/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
 
 Code:
  
 static int foo(int i __attribute__((unused))) { return 0; }
 int main(void) { return foo(__builtin_isinf((long double)42)); }
 
-Cached compiler stdout:
+Compiler stdout:
  
-Cached compiler stderr:
+Compiler stderr:
  /tools/Litex/riscv64-unknown-elf-gcc-8.3.0-2019.08.0-x86_64-linux-ubuntu14/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/../../../../riscv64-unknown-elf/bin/ld: warning: cannot find entry symbol _start; defaulting to 0000000000010054
 
-Checking if "test for __builtin_isinf" : links: YES (cached)
-Using cached compile:
-Cached command line:   
+Checking if "test for __builtin_isinf" : links: YES 
+Running compile:
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp205j8gqt
+Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp205j8gqt/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp205j8gqt/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
 
 Code:
  
 static int foo(int i __attribute__((unused))) { return 0; }
 int main(void) { return foo(__builtin_isnanl((long double)42)); }
 
-Cached compiler stdout:
+Compiler stdout:
  
-Cached compiler stderr:
+Compiler stderr:
  /tools/Litex/riscv64-unknown-elf-gcc-8.3.0-2019.08.0-x86_64-linux-ubuntu14/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/../../../../riscv64-unknown-elf/bin/ld: warning: cannot find entry symbol _start; defaulting to 0000000000010054
 
-Checking if "test for __builtin_isnanl" : links: YES (cached)
-Using cached compile:
-Cached command line:   
+Checking if "test for __builtin_isnanl" : links: YES 
+Running compile:
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmptj81pyh7
+Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmptj81pyh7/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmptj81pyh7/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
 
 Code:
  
 static int foo(int i __attribute__((unused))) { return 0; }
 int main(void) { return foo(__builtin_isnan((long double)42)); }
 
-Cached compiler stdout:
+Compiler stdout:
  
-Cached compiler stderr:
+Compiler stderr:
  /tools/Litex/riscv64-unknown-elf-gcc-8.3.0-2019.08.0-x86_64-linux-ubuntu14/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/../../../../riscv64-unknown-elf/bin/ld: warning: cannot find entry symbol _start; defaulting to 0000000000010054
 
-Checking if "test for __builtin_isnan" : links: YES (cached)
-Using cached compile:
-Cached command line:   
+Checking if "test for __builtin_isnan" : links: YES 
+Running compile:
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpmtb0jhoc
+Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpmtb0jhoc/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpmtb0jhoc/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
 
 Code:
  
 static int foo(int i __attribute__((unused))) { return 0; }
 int main(void) { return foo(__builtin_finitel((long double)42)); }
 
-Cached compiler stdout:
+Compiler stdout:
  
-Cached compiler stderr:
+Compiler stderr:
  /tools/Litex/riscv64-unknown-elf-gcc-8.3.0-2019.08.0-x86_64-linux-ubuntu14/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/../../../../riscv64-unknown-elf/bin/ld: warning: cannot find entry symbol _start; defaulting to 0000000000010054
 
-Checking if "test for __builtin_finitel" : links: YES (cached)
-Using cached compile:
-Cached command line:   
+Checking if "test for __builtin_finitel" : links: YES 
+Running compile:
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpqshz681x
+Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpqshz681x/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpqshz681x/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
 
 Code:
  
 static int foo(int i __attribute__((unused))) { return 0; }
 int main(void) { return foo(__builtin_isfinite((long double)42)); }
 
-Cached compiler stdout:
+Compiler stdout:
  
-Cached compiler stderr:
+Compiler stderr:
  /tools/Litex/riscv64-unknown-elf-gcc-8.3.0-2019.08.0-x86_64-linux-ubuntu14/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/../../../../riscv64-unknown-elf/bin/ld: warning: cannot find entry symbol _start; defaulting to 0000000000010054
 
-Checking if "test for __builtin_isfinite" : links: YES (cached)
-Using cached compile:
-Cached command line:   
+Checking if "test for __builtin_isfinite" : links: YES 
+Running compile:
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpuw7x4150
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpuw7x4150/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpuw7x4150/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -fno-tree-loop-distribute-patterns 
 
 Code:
  extern int i;
 int i;
 
-Cached compiler stdout:
+Compiler stdout:
  
-Cached compiler stderr:
+Compiler stderr:
  
-Compiler for C supports arguments -fno-tree-loop-distribute-patterns: YES (cached)
-Using cached compile:
-Cached command line:   
+Compiler for C supports arguments -fno-tree-loop-distribute-patterns: YES 
+Running compile:
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpxrho2hiu
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpxrho2hiu/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpxrho2hiu/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -Werror=attributes 
 
 Code:
  extern int i;
 int i;
 
-Cached compiler stdout:
+Compiler stdout:
  
-Cached compiler stderr:
+Compiler stderr:
  
-Compiler for C supports arguments -Werror=attributes: YES (cached)
-Using cached compile:
-Cached command line:   
+Compiler for C supports arguments -Werror=attributes: YES 
+Running compile:
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpfoaukct2
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpfoaukct2/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpfoaukct2/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -Werror=attributes 
 
 Code:
  int __attribute__((no_builtin)) foo(int x) { return x + 1; }
-Cached compiler stdout:
+Compiler stdout:
  
-Cached compiler stderr:
- /home/diego_sanchez/Dokumente/GitHub/wp04-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp322jk2kg/testfile.c:1:1: error: 'no_builtin' attribute directive ignored [-Werror=attributes]
+Compiler stderr:
+ /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpfoaukct2/testfile.c:1:1: error: 'no_builtin' attribute directive ignored [-Werror=attributes]
  int __attribute__((no_builtin)) foo(int x) { return x + 1; }
  ^~~
 cc1: some warnings being treated as errors
 
-Checking if "no_builtin attribute" : compiles: NO (cached)
-Using cached compile:
-Cached command line:   
+Checking if "no_builtin attribute" : compiles: NO 
+Running compile:
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpgdvren1i
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpgdvren1i/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpgdvren1i/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -Werror=attributes 
 
 Code:
  inline __attribute__((always_inline)) int foo(void) { return 0; }
-Cached compiler stdout:
+Compiler stdout:
  
-Cached compiler stderr:
+Compiler stderr:
  
-Compiler for C supports function attribute always_inline: YES (cached)
-Using cached compile:
-Cached command line:   
+Compiler for C supports function attribute always_inline: YES 
+Running compile:
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpdsv1_syx
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpdsv1_syx/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpdsv1_syx/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -Werror=attributes 
 
 Code:
  inline __attribute__((gnu_inline)) int foo(void) { return 0; }
-Cached compiler stdout:
+Compiler stdout:
  
-Cached compiler stderr:
+Compiler stderr:
  
-Compiler for C supports function attribute gnu_inline: YES (cached)
-Using cached compile:
-Cached command line:   
+Compiler for C supports function attribute gnu_inline: YES 
+Running compile:
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpe419ybbh
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpe419ybbh/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpe419ybbh/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -fno-builtin 
 
 Code:
  extern int i;
 int i;
 
-Cached compiler stdout:
+Compiler stdout:
  
-Cached compiler stderr:
+Compiler stderr:
  
-Compiler for C supports arguments -fno-builtin: YES (cached)
+Compiler for C supports arguments -fno-builtin: YES 
 Running command: /usr/bin/sed -e /^#/d -e /^$/d -e s/ .*$// /tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/iconv/encoding.aliases
 --- stdout ---
 big5
@@ -769,66 +836,71 @@ win_1258
 --- stderr ---
 
 
-Using cached compile:
-Cached command line:   
+Running compile:
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpnusg27lk
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpnusg27lk/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpnusg27lk/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -ffunction-sections 
 
 Code:
  extern int i;
 int i;
 
-Cached compiler stdout:
+Compiler stdout:
  
-Cached compiler stderr:
+Compiler stderr:
  
-Compiler for C supports arguments -ffunction-sections: YES (cached)
-Using cached compile:
-Cached command line:   
+Compiler for C supports arguments -ffunction-sections: YES 
+Running compile:
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpfviuxbm1
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpfviuxbm1/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpfviuxbm1/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -fstack-protector-all 
 
 Code:
  extern int i;
 int i;
 
-Cached compiler stdout:
+Compiler stdout:
  
-Cached compiler stderr:
+Compiler stderr:
  
-Compiler for C supports arguments -fstack-protector-all: YES (cached)
-Using cached compile:
-Cached command line:   
+Compiler for C supports arguments -fstack-protector-all: YES 
+Running compile:
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpbw30okhs
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpbw30okhs/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpbw30okhs/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -fstack-protector-strong 
 
 Code:
  extern int i;
 int i;
 
-Cached compiler stdout:
+Compiler stdout:
  
-Cached compiler stderr:
+Compiler stderr:
  
-Compiler for C supports arguments -fstack-protector-strong: YES (cached)
-Using cached compile:
-Cached command line:   
+Compiler for C supports arguments -fstack-protector-strong: YES 
+Running compile:
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpbxa9cibx
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpbxa9cibx/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpbxa9cibx/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -fno-builtin-malloc 
 
 Code:
  extern int i;
 int i;
 
-Cached compiler stdout:
+Compiler stdout:
  
-Cached compiler stderr:
+Compiler stderr:
  
-Compiler for C supports arguments -fno-builtin-malloc: YES (cached)
-Using cached compile:
-Cached command line:   
+Compiler for C supports arguments -fno-builtin-malloc: YES 
+Running compile:
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpwrzatvak
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpwrzatvak/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpwrzatvak/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -fno-builtin-free 
 
 Code:
  extern int i;
 int i;
 
-Cached compiler stdout:
+Compiler stdout:
  
-Cached compiler stderr:
+Compiler stderr:
  
-Compiler for C supports arguments -fno-builtin-free: YES (cached)
+Compiler for C supports arguments -fno-builtin-free: YES 
 Message: libc/string/memcpy.c: machine overrides generic
 Message: libc/string/memmove.S: machine overrides generic
 Message: libc/string/memset.S: machine overrides generic
@@ -882,8 +954,7 @@ Build targets in project: 9
 picolibc 1.7.4
 
   User defined options
-    Cross files         : /home/diego_sanchez/Dokumente/GitHub/wp04-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/cross.txt
-    backend             : ninja
+    Cross files         : cross.txt
     includedir          : picolibc/riscv64-unknown-elf/include
     libdir              : picolibc/riscv64-unknown-elf/lib
     atomic-ungetc       : false
