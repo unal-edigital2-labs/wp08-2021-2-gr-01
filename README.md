@@ -12,14 +12,10 @@ Este es el repositorio del proyecto final de la asignatura Electrónica Digital 
 
 Los periféricos que se utilizaron en este proyecto, fueron una camara (OV7670), 4 sensores infrarrojos, 2 Motorreductores con caja reductora 6V 1:48 controlados a partir de un puente H, un sensor de ultrasonido HC-SR04, un sensor de humedad y temperatura SHT40 y finalmente se utilizó un microprocesador Arduino Uno para realizar diferentes procesos que se explican posteriormente.
 
-El diagrama que describe cómo se encuentra conformado el robot cartógrafo y las diversas conexiones entre el SoC, el microprocesador Arduino y los periféricos usados es el siguiente:
-
-![Screenshot](/Imagenes/Diagrama.png)
-
 El mapa de memoria se encuentra detalladamente en el archivo [Soc_MemoryMap.csv](/SoC_project/Soc_MemoryMap.csv), las bases correspondientes para cada driver del SoC son las siguientes:
 
 <p align="center">
-  <img src="/Imagenes/mem_bases.PNG" align="center">
+  <img src="/images/mapa_memoria.png" align="center">
 </p>
 
 A continuación haremos una breve explicación del Soc, el firmware y los perfiféricos integrados al Soc junto a sus respectivos links en donde se puede observar su funcionamiento más en detalle.
@@ -27,7 +23,12 @@ A continuación haremos una breve explicación del Soc, el firmware y los perfif
 
 ## [SoC](/SoC_project/)
 
-En este enlace se describe la arquitectura del robot cartógrafo y el proceso que se llevo a cabo usando el entorno Litex para el ensamble y la integración del microprocesador picoRV32, el bus de datos Wishbone y los diferentes módulos de los periféricos que componen el robot. Para mas informacion remitase a [Soc](/Soc_project/). 
+En este enlace se describe la arquitectura del robot cartógrafo y el proceso que se llevo a cabo usando el entorno Litex para el ensamble y la integración del microprocesador picoRV32, el bus de datos Wishbone y los diferentes módulos de los periféricos que componen el robot. Para mas informacion remitase a [Soc](/Soc_project/).
+
+
+El diagrama que describe cómo se encuentra conformado el robot cartógrafo y las diversas conexiones entre el SoC, el microprocesador Arduino y los periféricos usados es el siguiente:
+
+![Screenshot](/Imagenes/Diagrama.png)
 
 ![Screenshot](/images/SoCmem.png)
 
