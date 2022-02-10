@@ -78,11 +78,50 @@ static void help(void)
 	puts("display                         - display test");
 	puts("rgbled                          - rgb led test");
 	puts("vga                             - vga test");
+	puts("*movimiento                      - movimiento test");
+	puts("*servomotor                      - servomotor test");
+	puts("*ultrasonido                     - ultrasonido test");
+	puts("*infrarojo                       - infrarojo test");
+	puts("radar                           - radar");
+	puts("*Avanzar                         - avanzar_test");
+	puts("camara                           - camara test");
 }
 
 static void reboot(void)
 {
 	ctrl_reset_write(1);
+}
+
+
+
+static void led_test(void)
+{
+	unsigned int i;
+	printf("Test del los leds... se interrumpe con el botton 1\n");
+	while(!(buttons_in_read()&1)) {
+		for(i=1; i<65536; i=i*2) {
+			leds_out_write(i);
+			delay_ms(50);
+		}
+		for(i=32768;i>1; i=i/2) {
+			leds_out_write(i);
+			delay_ms(50);
+		}
+	}	
+}
+
+static void switch_test(void)
+{
+	unsigned short temp2 = 0;
+	printf("Test del los interruptores... se interrumpe con el botton 1\n");
+	while(!(buttons_in_read()&1)) {
+		unsigned short temp = switchs_in_read();
+		if (temp2 != temp){
+			printf("switch bus : %i\n", temp);
+			leds_out_write(temp);
+			temp2 = temp;
+		}
+	}
 }
 
 static void display_test(void)
@@ -114,39 +153,6 @@ static void display_test(void)
 	}
 }
 
-static void led_test(void)
-{
-	unsigned int i;
-	printf("Test del los leds... se interrumpe con el botton 1\n");
-	while(!(buttons_in_read()&1)) {
-
-	for(i=1; i<65536; i=i*2) {
-		leds_out_write(i);
-		delay_ms(50);
-	}
-	for(i=32768;i>1; i=i/2) {
-		leds_out_write(i);
-		delay_ms(50);
-	}
-	}
-	
-}
-
-
-static void switch_test(void)
-{
-	unsigned short temp2 =0;
-	printf("Test del los interruptores... se interrumpe con el botton 1\n");
-	while(!(buttons_in_read()&1)) {
-		unsigned short temp = switchs_in_read();
-		if (temp2 != temp){
-			printf("switch bus : %i\n", temp);
-			leds_out_write(temp);
-			temp2 = temp;
-		}
-	}
-}
-
 static void rgbled_test(void)
 {
 	unsigned int T = 128;
@@ -159,12 +165,10 @@ static void rgbled_test(void)
 	ledRGB_1_g_enable_write(1);
 	ledRGB_1_b_enable_write(1);
 
-	
 	ledRGB_2_r_period_write(T);
 	ledRGB_2_g_period_write(T);
 	ledRGB_2_b_period_write(T);
-	
-	
+		
 	ledRGB_2_r_enable_write(1);
 	ledRGB_2_g_enable_write(1);
 	ledRGB_2_b_enable_write(1);
@@ -177,11 +181,7 @@ static void rgbled_test(void)
 			delay_ms(20);
 		}	
 	}
-	
-
-
 }
-
 
 static void vga_test(void)
 {
@@ -201,6 +201,255 @@ static void vga_test(void)
 		}
 	}
 }
+
+static void movimiento_test(void)
+{
+	const int Parar = 0;
+	const int Avanzar = 1;
+	const int Retroceder = 2;
+	const int Izquierda = 3;
+	const int Derecha = 4;
+	const int GiroEje = 5; 
+	movimiento_cntrl_estado_write(Avanzar);
+	delay_ms(400);
+	movimiento_cntrl_estado_write(Parar);
+	delay_ms(1000);
+	movimiento_cntrl_estado_write(Retroceder);
+	delay_ms(400);
+	movimiento_cntrl_estado_write(Parar);
+	delay_ms(1000);
+	movimiento_cntrl_estado_write(Izquierda);
+	delay_ms(400);
+	movimiento_cntrl_estado_write(Parar);
+	delay_ms(1000);
+	movimiento_cntrl_estado_write(Derecha);
+	delay_ms(400);
+	movimiento_cntrl_estado_write(Parar);
+	delay_ms(1000);
+	movimiento_cntrl_estado_write(GiroEje);
+	delay_ms(400);
+	movimiento_cntrl_estado_write(Parar);
+	delay_ms(1000);
+}
+
+static void servomotor_test(void)
+{
+	const int Centro = 0;
+	const int Izquierda = 1;
+	const int Derecha = 2;
+	servomotor_cntrl_posicion_write(Centro);
+	delay_ms(1000);
+	servomotor_cntrl_posicion_write(Izquierda);
+	delay_ms(1000);
+	servomotor_cntrl_posicion_write(Derecha);
+	delay_ms(1000);
+	servomotor_cntrl_posicion_write(3);
+}
+
+static void ultrasonido_test(void)
+{
+	int d = 0;
+	while(!(buttons_in_read()&1)){
+		if(buttons_in_read()&(1<<1)){ 
+			d = medir_distancia();
+			printf("%d \n", d);
+		}
+	}
+}
+
+static void infrarojo_test(void)
+{
+	printf("Test de Modulo de Infrarojo. Para interrumpir oprimir el botton 1\n");
+	while(!(buttons_in_read()&1))
+	{
+		bool L = infrarojo_cntrl_oL_read();
+		bool LC = infrarojo_cntrl_oLC_read();
+		bool C = infrarojo_cntrl_oC_read();
+		bool RC = infrarojo_cntrl_oRC_read();
+		bool R = infrarojo_cntrl_oR_read();
+
+		bool IR[5] = {L, LC, C, RC, R};
+
+		for(int i = 0; i<5; i++){
+			printf("%i, ", IR[i]);
+		}
+		printf("\n");
+	}
+}
+
+static void radar_test(void)
+{
+	int informacion[6] = radar();
+	for (int i = 0; i < 6; ++i) {
+        printf("%i, ", informacion[i]);
+    }
+}
+
+static void camara_test(void)
+{	
+	int color = camara();
+	delay_ms(10);
+	switch (color)
+	{
+	case 1: printf("Azul \n");
+		break;
+	case 2: printf("Verde \n");
+		break;
+	case 4: printf("Rojo \n");
+		break;
+	case 0: printf("Ninguno \n");
+		break;
+	default:printf("._.\n");
+		break;
+	}
+}
+
+
+
+
+static int medir_distancia(void)
+{
+	ultrasonido_cntrl_init_write(1);
+	delay_ms(2);
+	while(1){
+		if(ultrasonido_cntrl_done_read() == 1){
+			int dis = ultrasonido_cntrl_distance_read();
+			ultrasonido_cntrl_init_write(0);
+			return dis;
+		}
+	}
+}
+
+static int Radar()
+{
+	const int CentroServo = 0;
+	const int IzquierdaServo = 1;
+	const int DerechaServo = 2;
+	const int distLibre = 15;
+
+	int informacion[6];
+	int caminolibre;
+	int color;
+
+	for (int i = 0; i < 3; i++)
+	{
+		caminolibre = 0;
+		color = 0;
+		switch (i)
+		{
+			case 0: servomotor_cntrl_posicion_write(IzquierdaServo);
+					break;
+			case 1: servomotor_cntrl_posicion_write(CentroServo);
+					break;
+			case 2: servomotor_cntrl_posicion_write(DerechaServo);
+					break;
+		}
+		delay_ms(1000);
+		caminolibre = (medir_distancia() > distLibre) ? 1 : 0; 
+		color = (caminolibre) ? 0 : camara();
+		informacion[i] = caminolibre;
+		informacion[3+i] = color;
+	}
+	servomotor_cntrl_posicion_write(IzquierdaServo);
+	delay_ms(1000);
+	return informacion;
+}
+
+static int capitan(int caminoslibres[3])
+{
+	int eleccion = 0; 
+
+	for (int i = 0; i < 3; i++)
+	{
+		if(caminoslibres[i])
+		{
+			eleccion = i;
+			return eleccion;
+		}
+	}
+	return eleccion;
+}
+
+static void avanzar(void)
+{
+	const int PararMotor = 0;
+	const int AvanzarMotor = 1;
+	const int IzquierdaMotor = 3;
+	const int DerechaMotor = 4;
+	bool L = infrarojo_cntrl_oL_read();
+	bool LC = infrarojo_cntrl_oLC_read();
+	bool C = infrarojo_cntrl_oC_read();
+	bool RC = infrarojo_cntrl_oRC_read();
+	bool R = infrarojo_cntrl_oR_read();
+
+	while(!(L && R))
+	{
+		if(!L && C && !R){
+			movimiento_cntrl_estado_write(AvanzarMotor);
+		}
+		else if(L || LC){
+			movimiento_cntrl_estado_write(IzquierdaMotor);
+		}
+		else if(R || RC){
+			movimiento_cntrl_estado_write(DerechaMotor);
+		}
+	}
+	movimiento_cntrl_estado_write(PararMotor);
+}
+
+static void girar(int direccion) 
+{
+	const int PararMotor = 0;
+	const int AvanzarMotor = 1;
+	const int RetrocederMotor = 2;
+	const int IzquierdaMotor = 3;
+	const int DerechaMotor = 4;
+	const int GiroEjeMotor = 5;
+
+	switch (direccion)
+	{
+		case 1: movimiento_cntrl_estado_write(IzquierdaMotor);
+				delay_ms(2000);
+				movimiento_cntrl_estado_write(PararMotor);
+			break;
+		case 3: movimiento_cntrl_estado_write(DerechaMotor);
+				delay_ms(2000);
+				movimiento_cntrl_estado_write(PararMotor);
+			break;
+		case 0: movimiento_cntrl_estado_write(GiroEjeMotor);
+				delay_ms(2000);
+				movimiento_cntrl_estado_write(PararMotor);
+			break;
+		default:movimiento_cntrl_estado_write(PararMotor);
+			break;
+	}
+}
+
+static int camara(void)
+{
+	unsigned int col = 0;
+	unsigned int done = 0;
+	unsigned int error = 0;
+	const int Azul = 1;
+	const int Verde = 2;
+	const int Rojo = 4;
+	const int Ninguno = 0;
+	camara_cntrl_init_write(1);
+	delay_ms(10);
+	while (1)
+	{
+		col = camara_cntrl_res_read(); 
+		done = camara_cntrl_done_read();
+		error = camara_cntrl_error_read();
+		if(done){
+			camara_cntrl_init_write(0);
+			if(!error){
+				return col;
+			}
+		}
+	}
+}
+
 
 static void console_service(void)
 {
@@ -224,20 +473,35 @@ static void console_service(void)
 		rgbled_test();
 	else if(strcmp(token, "vga") == 0)
 		vga_test();
+	else if(strcmp(token, "movimiento") == 0)
+		movimiento_test();
+	else if(strcmp(token, "servomotor") == 0)
+		servomotor_test();
+	else if(strcmp(token, "ultrasonido") == 0)
+		ultrasonido_test();
+	else if(strcmp(token, "infrarojo") == 0)
+		infrarojo_test();
+	else if(strcmp(token, "radar") == 0)
+		radar_test();
+	else if(strcmp(token, "camara") == 0)
+		camara_test();
 	prompt();
 }
 
+
 int main(void)
 {
+#ifdef CONFIG_CPU_HAS_INTERRUPT
 	irq_setmask(0);
 	irq_setie(1);
+#endif
 	uart_init();
 
-	puts("\nSoC - RiscV project UNAL 2020-2-- CPU testing software built "__DATE__" "__TIME__"\n");
+	puts("\nSoC - RiscV project UNAL 2021-2 Grupo 1 :D-- CPU testing software built "__DATE__" "__TIME__"\n");
 	help();
 	prompt();
 
-	while(1) {
+	while(1){
 		console_service();
 	}
 

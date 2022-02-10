@@ -1,12 +1,12 @@
-Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
-------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
-| Date         : Mon Nov 23 22:41:27 2020
-| Host         : ferney-pc running 64-bit Ubuntu 20.04.1 LTS
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.2.1 (lin64) Build 2729669 Thu Dec  5 04:48:12 MST 2019
+| Date         : Tue Feb  8 19:11:46 2022
+| Host         : Sanchez-HP-Laptop-15-da0xxx running 64-bit Ubuntu 20.04.3 LTS
 | Command      : report_control_sets -verbose -file nexys4ddr_control_sets.rpt
 | Design       : nexys4ddr
 | Device       : xc7a100t
-------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
 
 Control Set Information
 
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |   106 |
-|    Minimum number of control sets                        |   106 |
+| Total control sets                                       |   822 |
+|    Minimum number of control sets                        |   822 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |   226 |
+| Unused register locations in slices containing registers |   267 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,15 +39,15 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |   106 |
-| >= 0 to < 4        |     8 |
+| Total control sets |   822 |
+| >= 0 to < 4        |    10 |
 | >= 4 to < 6        |    15 |
-| >= 6 to < 8        |     1 |
+| >= 6 to < 8        |     3 |
 | >= 8 to < 10       |    16 |
 | >= 10 to < 12      |     4 |
-| >= 12 to < 14      |     1 |
-| >= 14 to < 16      |     0 |
-| >= 16              |    61 |
+| >= 12 to < 14      |   514 |
+| >= 14 to < 16      |     1 |
+| >= 16              |   259 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
 
@@ -58,127 +58,843 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |             243 |          103 |
+| No           | No                    | No                     |             562 |          287 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |             619 |          227 |
-| Yes          | No                    | No                     |             534 |          184 |
+| No           | Yes                   | No                     |             673 |          245 |
+| Yes          | No                    | No                     |             908 |          415 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |            1202 |          386 |
+| Yes          | Yes                   | No                     |            1462 |          636 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+----------------+--------------------------------------------------------+--------------------------------------------+------------------+----------------+--------------+
-|  Clock Signal  |                      Enable Signal                     |              Set/Reset Signal              | Slice Load Count | Bel Load Count | Bels / Slice |
-+----------------+--------------------------------------------------------+--------------------------------------------+------------------+----------------+--------------+
-|  clk_IBUF_BUFG |                                                        | ledRGB2_b_i_1_n_0                          |                1 |              1 |         1.00 |
-|  clk_IBUF_BUFG |                                                        | ledRGB2_r_i_1_n_0                          |                1 |              1 |         1.00 |
-|  clk_IBUF_BUFG | picorv32/instr_lui0                                    | picorv32/instr_jalr_i_1_n_0                |                1 |              1 |         1.00 |
-|  clk_IBUF_BUFG | serial_tx_i_1_n_0                                      | basesoc_int_rst                            |                1 |              1 |         1.00 |
-|  clk_IBUF_BUFG |                                                        | ledRGB2_g_i_1_n_0                          |                1 |              1 |         1.00 |
-|  clk_IBUF_BUFG |                                                        | ledRGB1_r_i_1_n_0                          |                1 |              1 |         1.00 |
-|  clk_IBUF_BUFG |                                                        | ledRGB1_g_i_1_n_0                          |                1 |              1 |         1.00 |
-|  clk_IBUF_BUFG |                                                        | ledRGB1_b_i_1_n_0                          |                1 |              1 |         1.00 |
-|  clk_IBUF_BUFG | picorv32/pcpi_timeout_counter[3]_i_2_n_0               | picorv32/pcpi_mul/SS[0]                    |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG |                                                        | picorv32/pcpi_div/instr_rem_i_1_n_0        |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG | picorv32/basesoc_basesoc_uart_tx_fifo_level0_reg[2]    | basesoc_int_rst                            |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG | basesoc_basesoc_uart_rx_fifo_wrport_we__0              | basesoc_int_rst                            |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG | basesoc_basesoc_rx_bitcount                            | basesoc_basesoc_rx_busy                    |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG | picorv32/basesoc_basesoc_uart_rx_fifo_readable_reg_0   | basesoc_int_rst                            |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG | basesoc_basesoc_sink_ready168_out                      | basesoc_basesoc_sink_ready1                |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG |                                                        | picorv32/pcpi_mul/instr_mulhu_i_1_n_0      |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG | picorv32/is_lui_auipc_jal_jalr_addi_add_sub0           | picorv32/instr_timer_i_1_n_0               |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG | basesoc_basesoc_uart_tx_fifo_consume[2]_i_1_n_0        | basesoc_int_rst                            |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG | picorv32/instr_lui0                                    | picorv32/decoded_rs1__0[4]                 |                1 |              5 |         5.00 |
-|  clk_IBUF_BUFG | picorv32/basesoc_basesoc_uart_rx_fifo_readable_reg[0]  | basesoc_int_rst                            |                2 |              5 |         2.50 |
-|  clk_IBUF_BUFG | picorv32/pcpi_mul/instr_jal_reg                        | picorv32/pcpi_mul/mem_do_prefetch_reg      |                3 |              5 |         1.67 |
-|  clk_IBUF_BUFG | picorv32/is_lui_auipc_jal_jalr_addi_add_sub0           | picorv32/instr_lhu_i_1_n_0                 |                1 |              5 |         5.00 |
-|  clk_IBUF_BUFG | picorv32/basesoc_basesoc_uart_tx_fifo_level0_reg[0][0] | basesoc_int_rst                            |                2 |              5 |         2.50 |
-|  clk_IBUF_BUFG | picorv32/latched_rd[5]_i_1_n_0                         |                                            |                2 |              6 |         3.00 |
-|  clk_IBUF_BUFG | picorv32/mem_addr_reg[12]_0[0]                         | basesoc_int_rst                            |                4 |              8 |         2.00 |
-|  clk_IBUF_BUFG | picorv32/mem_addr_reg[3]_2[0]                          | basesoc_int_rst                            |                3 |              8 |         2.67 |
-|  clk_IBUF_BUFG | basesoc_basesoc_tx_reg[7]_i_1_n_0                      |                                            |                2 |              8 |         4.00 |
-|  clk_IBUF_BUFG | picorv32/mem_wdata_reg[1]_0[0]                         |                                            |                2 |              8 |         4.00 |
-|  clk_IBUF_BUFG | picorv32/mem_addr_reg[12]_1[0]                         | basesoc_int_rst                            |                4 |              8 |         2.00 |
-|  clk_IBUF_BUFG | picorv32/mem_addr_reg[4]_1[0]                          | basesoc_int_rst                            |                4 |              8 |         2.00 |
-|  clk_IBUF_BUFG | picorv32/mem_addr_reg[3]_3[0]                          | basesoc_int_rst                            |                5 |              8 |         1.60 |
-|  clk_IBUF_BUFG |                                                        | picorv32/mem_addr_reg[15]_1[0]             |                7 |              8 |         1.14 |
-|  clk_IBUF_BUFG | picorv32/E[0]                                          | basesoc_int_rst                            |                1 |              8 |         8.00 |
-|  clk_IBUF_BUFG | picorv32/mem_addr_reg[3]_0[0]                          | basesoc_int_rst                            |                2 |              8 |         4.00 |
-|  clk_IBUF_BUFG | basesoc_basesoc_rx_reg                                 |                                            |                1 |              8 |         8.00 |
-|  clk_IBUF_BUFG | basesoc_basesoc_uart_tx_fifo_syncfifo_re               |                                            |                2 |              8 |         4.00 |
-|  clk_IBUF_BUFG | basesoc_basesoc_source_payload_data__0                 | basesoc_int_rst                            |                1 |              8 |         8.00 |
-|  clk_IBUF_BUFG | picorv32/mem_addr_reg[2]_0[0]                          | basesoc_int_rst                            |                3 |              8 |         2.67 |
-|  clk_IBUF_BUFG |                                                        | picorv32/mem_addr_reg[2]_4                 |                2 |              8 |         4.00 |
-|  clk_IBUF_BUFG |                                                        | picorv32/mem_addr_reg[15]_0[0]             |                4 |              8 |         2.00 |
-|  clk_IBUF_BUFG | basesoc_pxl_tick                                       | RSTC                                       |                3 |             10 |         3.33 |
-|  clk_IBUF_BUFG |                                                        | picorv32/SR[0]                             |                2 |             10 |         5.00 |
-|  clk_IBUF_BUFG | basesoc_h_count                                        | clear                                      |                4 |             10 |         2.50 |
-|  clk_IBUF_BUFG | picorv32/is_lui_auipc_jal_jalr_addi_add_sub0           | picorv32/decoded_imm[30]_i_1_n_0           |                2 |             11 |         5.50 |
-|  clk_IBUF_BUFG | picorv32/mem_addr_reg[11]_0[0]                         | basesoc_int_rst                            |                5 |             12 |         2.40 |
-|  clk_IBUF_BUFG | picorv32/basesoc_basesoc_uart_tx_fifo_wrport_we        |                                            |                2 |             16 |         8.00 |
-|  clk_IBUF_BUFG | basesoc_basesoc_uart_rx_fifo_wrport_we__0              |                                            |                2 |             16 |         8.00 |
-|  clk_IBUF_BUFG | picorv32/mem_xfer                                      |                                            |                3 |             18 |         6.00 |
-|  clk_IBUF_BUFG |                                                        | basesoc_dgt_tick_count[0]_i_1_n_0          |                5 |             18 |         3.60 |
-|  clk_IBUF_BUFG |                                                        | picorv32/mem_addr_reg[11]_1[0]             |               10 |             19 |         1.90 |
-|  clk_IBUF_BUFG | picorv32/mem_addr_reg[2]_2[0]                          | basesoc_int_rst                            |                7 |             20 |         2.86 |
-|  clk_IBUF_BUFG | picorv32/builder_error                                 | picorv32/mem_valid_reg_0                   |                5 |             20 |         4.00 |
-|  clk_IBUF_BUFG | picorv32/is_lui_auipc_jal_jalr_addi_add_sub0           | picorv32/mem_state2                        |                8 |             22 |         2.75 |
-|  clk_IBUF_BUFG | picorv32/builder_csrbank4_g_width0_re                  | picorv32/builder_state_reg_8               |                9 |             31 |         3.44 |
-|  clk_IBUF_BUFG | picorv32/builder_csrbank3_r_width0_re                  | picorv32/builder_state_reg_0               |               11 |             31 |         2.82 |
-|  clk_IBUF_BUFG | picorv32/pcpi_div/divisor                              | picorv32/pcpi_div/divisor[30]_i_1_n_0      |               10 |             31 |         3.10 |
-|  clk_IBUF_BUFG | picorv32/builder_csrbank4_r_period0_re                 | picorv32/builder_state_reg_5               |               11 |             31 |         2.82 |
-|  clk_IBUF_BUFG | picorv32/builder_csrbank4_b_period0_re                 | picorv32/builder_state_reg_9               |               11 |             31 |         2.82 |
-|  clk_IBUF_BUFG | picorv32/builder_csrbank3_g_width0_re                  | picorv32/builder_state_reg_2               |               11 |             31 |         2.82 |
-|  clk_IBUF_BUFG | picorv32/builder_csrbank3_b_period0_re                 | picorv32/builder_state_reg_3               |                8 |             31 |         3.88 |
-|  clk_IBUF_BUFG | picorv32/builder_csrbank3_r_period0_re                 | picorv32/builder_state_reg                 |               10 |             31 |         3.10 |
-|  clk_IBUF_BUFG | picorv32/builder_csrbank4_r_width0_re                  | picorv32/builder_state_reg_6               |               10 |             31 |         3.10 |
-|  clk_IBUF_BUFG | picorv32/builder_csrbank3_b_width0_re                  | picorv32/builder_state_reg_4               |               10 |             31 |         3.10 |
-|  clk_IBUF_BUFG | picorv32/builder_csrbank4_g_period0_re                 | picorv32/builder_state_reg_7               |                7 |             31 |         4.43 |
-|  clk_IBUF_BUFG | picorv32/builder_csrbank3_g_period0_re                 | picorv32/builder_state_reg_1               |               10 |             31 |         3.10 |
-|  clk_IBUF_BUFG | picorv32/builder_csrbank4_b_width0_re                  | picorv32/builder_state_reg_10              |                7 |             31 |         4.43 |
-|  clk_IBUF_BUFG | picorv32/mem_addr_reg[3]_1[0]                          | basesoc_int_rst                            |                9 |             32 |         3.56 |
-|  clk_IBUF_BUFG | picorv32/mem_addr_reg[13]_0[0]                         | basesoc_int_rst                            |                6 |             32 |         5.33 |
-|  clk_IBUF_BUFG | picorv32/mem_addr_reg[3]_4[0]                          | basesoc_int_rst                            |                9 |             32 |         3.56 |
-|  clk_IBUF_BUFG | picorv32/pcpi_mul/pcpi_wr0                             |                                            |               14 |             32 |         2.29 |
-|  clk_IBUF_BUFG | picorv32/pcpi_div/dividend                             |                                            |                8 |             32 |         4.00 |
-|  clk_IBUF_BUFG |                                                        | picorv32/mem_addr_reg[2]_3[0]              |               12 |             32 |         2.67 |
-|  clk_IBUF_BUFG |                                                        | picorv32/mem_addr_reg[14]_0[0]             |               13 |             32 |         2.46 |
-|  clk_IBUF_BUFG |                                                        | basesoc_ledRGB_2_g_counter[0]_i_1_n_0      |                8 |             32 |         4.00 |
-|  clk_IBUF_BUFG |                                                        | p_8_in                                     |                8 |             32 |         4.00 |
-|  clk_IBUF_BUFG |                                                        | basesoc_ledRGB_1_r_counter[0]_i_1_n_0      |                8 |             32 |         4.00 |
-|  clk_IBUF_BUFG |                                                        | basesoc_ledRGB_2_b_counter[0]_i_1_n_0      |                8 |             32 |         4.00 |
-|  clk_IBUF_BUFG |                                                        | basesoc_ledRGB_1_g_counter[0]_i_1_n_0      |                8 |             32 |         4.00 |
-|  clk_IBUF_BUFG |                                                        | picorv32/mem_addr_reg[15]_2[0]             |               19 |             32 |         1.68 |
-|  clk_IBUF_BUFG |                                                        | basesoc_ledRGB_2_r_counter[0]_i_1_n_0      |                8 |             32 |         4.00 |
-|  clk_IBUF_BUFG |                                                        | picorv32/mem_addr_reg[14]_1[0]             |               14 |             32 |         2.29 |
-|  clk_IBUF_BUFG |                                                        | picorv32/mem_addr_reg[15]_3[0]             |               18 |             32 |         1.78 |
-|  clk_IBUF_BUFG |                                                        | basesoc_ledRGB_1_b_counter[0]_i_1_n_0      |                8 |             32 |         4.00 |
-|  clk_IBUF_BUFG | picorv32/reg_op2[31]_i_1_n_0                           |                                            |               10 |             32 |         3.20 |
-|  clk_IBUF_BUFG | picorv32/mem_addr_reg[2]_1[0]                          | basesoc_int_rst                            |                7 |             32 |         4.57 |
-|  clk_IBUF_BUFG | picorv32/reg_op1[31]_i_1_n_0                           |                                            |               24 |             32 |         1.33 |
-|  clk_IBUF_BUFG | picorv32/mem_wdata[31]_i_1_n_0                         |                                            |               11 |             32 |         2.91 |
-|  clk_IBUF_BUFG | picorv32/pcpi_div/divisor                              |                                            |               11 |             32 |         2.91 |
-|  clk_IBUF_BUFG | picorv32/pcpi_div/quotient                             | picorv32/pcpi_div/quotient_msk[31]_i_1_n_0 |               13 |             32 |         2.46 |
-|  clk_IBUF_BUFG | picorv32/timer                                         | picorv32/mem_state2                        |               16 |             32 |         2.00 |
-|  clk_IBUF_BUFG | basesoc_basesoc_timer_update_value_re                  | basesoc_int_rst                            |                7 |             32 |         4.57 |
-|  clk_IBUF_BUFG | picorv32/pcpi_div/quotient_msk                         | picorv32/pcpi_div/quotient_msk[31]_i_1_n_0 |                9 |             32 |         3.56 |
-|  clk_IBUF_BUFG | picorv32/irq_mask                                      | picorv32/mem_state2                        |               16 |             32 |         2.00 |
-|  clk_IBUF_BUFG | basesoc_basesoc_soccontroller_bus_errors               | basesoc_int_rst                            |                8 |             32 |         4.00 |
-|  clk_IBUF_BUFG | picorv32/mem_addr[31]_i_1_n_0                          |                                            |               25 |             34 |         1.36 |
-|  clk_IBUF_BUFG | picorv32/instr_lui0                                    |                                            |               12 |             34 |         2.83 |
-|  clk_IBUF_BUFG | picorv32/pcpi_mul/basesoc_int_rst_reg                  | picorv32/pcpi_mul/mul_counter[6]           |               18 |             47 |         2.61 |
-|  clk_IBUF_BUFG | picorv32/is_lui_auipc_jal_jalr_addi_add_sub0           |                                            |               19 |             52 |         2.74 |
-|  clk_IBUF_BUFG | picorv32/reg_pc                                        | picorv32/mem_state2                        |               24 |             64 |         2.67 |
-|  clk_IBUF_BUFG | picorv32/irq_delay                                     | picorv32/mem_state2                        |               17 |             65 |         3.82 |
-|  clk_IBUF_BUFG | picorv32/builder_csrbank10_mem_adr0_re                 | basesoc_int_rst                            |               22 |             67 |         3.05 |
-|  clk_IBUF_BUFG |                                                        | basesoc_int_rst                            |               29 |             69 |         2.38 |
-|  clk_IBUF_BUFG |                                                        | picorv32/mem_state2                        |               28 |             81 |         2.89 |
-|  clk_IBUF_BUFG | picorv32/p_0_in__0                                     |                                            |               22 |             88 |         4.00 |
-|  clk_IBUF_BUFG | picorv32/pcpi_mul/basesoc_int_rst_reg                  |                                            |               38 |            166 |         4.37 |
-|  clk_IBUF_BUFG |                                                        |                                            |              103 |            243 |         2.36 |
-+----------------+--------------------------------------------------------+--------------------------------------------+------------------+----------------+--------------+
++----------------------------------+-----------------------------------------------+--------------------------------------------+------------------+----------------+
+|           Clock Signal           |                 Enable Signal                 |              Set/Reset Signal              | Slice Load Count | Bel Load Count |
++----------------------------------+-----------------------------------------------+--------------------------------------------+------------------+----------------+
+|  clk_IBUF_BUFG                   | picorv32/instr_lui0                           | picorv32/instr_jalr_i_1_n_0                |                1 |              1 |
+|  ultrasonido/freq1/clk_1MHz      | ultrasonido/trig_i_1_n_0                      |                                            |                1 |              1 |
+|  ultrasonido/freq1/clk_1MHz      |                                               |                                            |                1 |              1 |
+|  clk_IBUF_BUFG                   |                                               | ledRGB2_r_i_1_n_0                          |                1 |              1 |
+|  clk_IBUF_BUFG                   |                                               | ledRGB1_r_i_1_n_0                          |                1 |              1 |
+|  clk_IBUF_BUFG                   |                                               | ledRGB2_b_i_1_n_0                          |                1 |              1 |
+|  clk_IBUF_BUFG                   |                                               | ledRGB1_g_i_1_n_0                          |                1 |              1 |
+|  clk_IBUF_BUFG                   |                                               | ledRGB1_b_i_1_n_0                          |                1 |              1 |
+|  clk_IBUF_BUFG                   |                                               | ledRGB2_g_i_1_n_0                          |                1 |              1 |
+|  clk_IBUF_BUFG                   | serial_tx_rs232phytx_next_value_ce1           | int_rst                                    |                1 |              1 |
+|  clk_IBUF_BUFG                   | uart_tx_fifo_consume[2]_i_1_n_0               | int_rst                                    |                1 |              4 |
+|  clk_IBUF_BUFG                   |                                               | picorv32/pcpi_mul/instr_mulhu_i_1_n_0      |                1 |              4 |
+|  clk_IBUF_BUFG                   | picorv32/uart_tx_fifo_wrport_we__0            | int_rst                                    |                1 |              4 |
+|  clk_IBUF_BUFG                   | picorv32/pcpi_timeout_counter[3]_i_2_n_0      | picorv32/pcpi_mul/SS[0]                    |                1 |              4 |
+|  clk_IBUF_BUFG                   | uart_rx_fifo_consume[2]_i_1_n_0               | int_rst                                    |                1 |              4 |
+|  clk_IBUF_BUFG                   | uart_rx_fifo_wrport_we__0                     | int_rst                                    |                1 |              4 |
+|  clk_IBUF_BUFG                   | tx_tick                                       | tx_phase[31]_i_1_n_0                       |                1 |              4 |
+|  clk_IBUF_BUFG                   |                                               | picorv32/mem_addr_reg[3]_rep__2_0          |                2 |              4 |
+|  clk_IBUF_BUFG                   | picorv32/is_lui_auipc_jal_jalr_addi_add_sub0  | picorv32/instr_timer_i_1_n_0               |                1 |              4 |
+|  clk_IBUF_BUFG                   |                                               | picorv32/pcpi_div/instr_rem_i_1_n_0        |                1 |              4 |
+|  clk_IBUF_BUFG                   | rx_tick                                       | rx_phase[31]_i_1_n_0                       |                2 |              4 |
+|  clk_IBUF_BUFG                   | uart_rx_fifo_level0[4]_i_1_n_0                | int_rst                                    |                2 |              5 |
+|  clk_IBUF_BUFG                   | picorv32/instr_lui0                           | picorv32/decoded_rs1__0[4]                 |                1 |              5 |
+|  clk_IBUF_BUFG                   | picorv32/uart_tx_fifo_level0_reg[0][0]        | int_rst                                    |                2 |              5 |
+|  clk_IBUF_BUFG                   | picorv32/is_lui_auipc_jal_jalr_addi_add_sub0  | picorv32/instr_lhu_i_1_n_0                 |                2 |              5 |
+|  clk_IBUF_BUFG                   | picorv32/latched_rd[5]_i_1_n_0                |                                            |                1 |              6 |
+|  clk_IBUF_BUFG                   | picorv32/pcpi_mul/instr_jal_reg               | picorv32/pcpi_mul/mem_do_prefetch_reg      |                2 |              6 |
+|  clk_IBUF_BUFG                   | tx_data1_in0                                  |                                            |                1 |              7 |
+|  CAM_pclk_IBUF_BUFG              |                                               |                                            |                6 |              8 |
+|  clk_IBUF_BUFG                   | uart_tx_fifo_syncfifo_re                      |                                            |                2 |              8 |
+|  clk_IBUF_BUFG                   |                                               | picorv32/mem_addr_reg[13]_12               |                3 |              8 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[5]_1[0]                 | int_rst                                    |                4 |              8 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[6]_0[0]                 | int_rst                                    |                3 |              8 |
+|  clk_IBUF_BUFG                   | uart_rx_fifo_rdport_re                        |                                            |                2 |              8 |
+|  clk_IBUF_BUFG                   | rx_data_rs232phyrx_next_value_ce1             |                                            |                1 |              8 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[6]_1[0]                 | int_rst                                    |                3 |              8 |
+|  clk_IBUF_BUFG                   |                                               | picorv32/mem_addr_reg[12]_4[0]             |                4 |              8 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[2]_0[0]                | int_rst                                    |                3 |              8 |
+|  clk_IBUF_BUFG                   | picorv32/E[0]                                 | int_rst                                    |                3 |              8 |
+|  clk_IBUF_BUFG                   |                                               | picorv32/mem_addr_reg[13]_3[0]             |                4 |              8 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[6]_2[0]                 | int_rst                                    |                4 |              8 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[13]_0[0]                | int_rst                                    |                3 |              8 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[5]_4[0]                 | int_rst                                    |                3 |              8 |
+|  clk_IBUF_BUFG                   |                                               | picorv32/mem_addr_reg[15]_0[0]             |                4 |              9 |
+|  clk_IBUF_BUFG                   |                                               | picorv32/SR[0]                             |                8 |             10 |
+|  clk_IBUF_BUFG                   | h_count                                       | clear                                      |                4 |             10 |
+|  ultrasonido/freq1/clk_1MHz      | ultrasonido/distance[8]_i_1_n_0               |                                            |                4 |             10 |
+|  clk_IBUF_BUFG                   | pxl_tick                                      | RSTC                                       |                3 |             10 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__1_26  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep_27    |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__0_11 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__0_10 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep_18    |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__1_27 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep__0_5  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[12]_rep_0     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_19        |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep_26    |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__1_31  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep__1_20  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep_39     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__0_11  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__0_15 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep_16     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep_17    |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep__0_3  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep__0_4  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__0_1   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__1_18 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__1_17 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__1_13  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__1_20 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep_13     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__1_12  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/px_wr_reg_8                   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__0_17 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep_10    |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep_35     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[7]_rep_1      |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep_33     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_15        |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__1_35  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep_20    |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__1_32  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep__1_14 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep_38     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep__1_19  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_18        |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_20        |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep_34     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__0_13  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep_16    |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[12]_rep__0_9  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep_15    |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[7]_rep__0_2   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep_30     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep_19    |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep_19     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_3          |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep_28    |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep_14    |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[12]_rep_1     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep_36     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep__0_7   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep__1_12 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep_18    |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__1_12 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep__1_5   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__0_2   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep__0_0  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep_8      |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_3          |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__1_3   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep_13    |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_9         |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep_9     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__1_19 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__1_10 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep_8     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[6]_rep_1      |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep__1_6   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__1_9  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__1_3  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep_2      |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep__0_3   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep_5     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[7]_rep__0_1   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_0         |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_2         |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep_3      |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep_10     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_8         |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_7         |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep_7      |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_2          |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_5         |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__1_4  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep_3      |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep__1_0   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__1_13 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep_7     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep_4      |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__1_8   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep__0_6   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep_6     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__1_9   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep__0_2   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep__0_5   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__1_16  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__1_15  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep_14     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__1_1   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep_2      |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep_15    |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep_16    |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep_15     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/px_wr_reg_3                   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_6         |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep__1_2   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep_5      |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep__1_3   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep_1      |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep_14    |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep__1_1   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__0_1  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep_21     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_5         |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep__1_9   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep__1_8   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__1_18  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_4         |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_7         |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep_19     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__1_20  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep__0_6  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep__1_10  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep_18     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_22        |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_23        |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__1_28  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[7]_rep_0      |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep_21    |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__1_29  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep_17     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep_29    |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_1          |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[12]_rep__0_10 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__1_28 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__1_38  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__0_10  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__0_14 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__1_34  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[12]_rep__0_11 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep__1_17  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep__0_19 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep_2     |                                            |                4 |             12 |
+|  clk_IBUF_BUFG                   | picorv32/is_lui_auipc_jal_jalr_addi_add_sub0  | picorv32/decoded_imm[31]_i_1_n_0           |                5 |             12 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[5]_0[0]                 | int_rst                                    |                9 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep__0_0   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep__1_2  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep_0     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[7]_rep__0_0   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[6]_rep_0      |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__0_0  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep__1_3  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep__0_1   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep__1_1  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__0_0   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep_4     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep__1_0  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__1_30  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__1_0  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep_3     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep_1      |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep_0      |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/px_wr_reg_0                   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep_1     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_3         |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__1_17  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep_16     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_2         |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep__1_7   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__1_19  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep_17     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_6         |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[12]_rep__0_8  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__1_37  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep_40     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_6          |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep_32     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_26        |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_25        |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_24        |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep__1_10 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep_23    |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_27        |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep__1_16  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep_22    |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__0_12 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep__1_15 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep__1_9  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__1_26 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[12]_rep__0_7  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__1_27  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep_20     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__0_13 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[12]_rep__0_3  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep_28     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__1_36  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_5          |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep_22     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__1_33  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep_37     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep_13    |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep_24    |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_2          |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__0_14  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_16        |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_17        |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[12]_rep__0_4  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep__1_13 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep__1_21  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep_18     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep__0_20 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep_25    |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__0_12  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[12]_rep__0_5  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[12]_rep__0_6  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[6]_rep__1_0   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep_17    |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[6]_rep_2      |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep__0_8   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep__1_18  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_14        |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep__1_11 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__0_18 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep_29     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep_31     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_21        |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep_20    |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__0_16 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_0          |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep_23    |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep_21    |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep_22    |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__0_27 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep__0_15  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__0_26  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__0_24  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__0_22 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__0_28  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/px_wr_reg_10                  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__0_24 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__0_28 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep__0_14  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__1_30 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__0_23 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__1_29 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__0_19  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__0_20 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__0_35 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep__1_26 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__0_20  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__0_26 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep__0_10  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__0_19 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__0_25  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__1_31 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep_43     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__1_34 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__1_33 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__0_25 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__0_40 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__1_36 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__0_22  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep__1_29 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__1_32 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep__1_22  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep__0_12  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep__1_27 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__0_4  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep_3     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep_13     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep_14     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep_6     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep_7     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_8         |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep__1_13  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__1_23 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__1_22  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__0_8   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep__0_14 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[12]_rep__0_2  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__0_8  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep_19    |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep_22     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep_23     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep_11    |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__0_18  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep_42     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__0_33 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__0_32 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__0_39 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__0_38 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep__0_11  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__0_21 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep__1_28 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep__0_13  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__0_21  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep__1_4  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__0_9  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep__0_7  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep_4     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__1_21  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep_5     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep_37    |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/px_wr_reg_14                  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep_44     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_17        |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__1_40  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__1_37 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep_39    |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_15        |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep_46     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_8          |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__1_38 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_12        |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_13        |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep_40    |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_19        |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep_42    |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep__0_17  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_9          |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/px_wr_reg_11                  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_18        |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/px_wr_reg_16                  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_30        |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep_53     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_32        |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/px_wr_reg_15                  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep__1_26  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep_41    |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep_45     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_33        |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep_52     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__1_41  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep_49     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep_51     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep__1_24  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_14        |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__0_37 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_29        |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep_47     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep__0_16  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__0_34 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep_36    |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__0_27  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__0_23  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__0_30 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__1_39 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__0_29 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__1_35 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__0_31 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep__1_23  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__0_36 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep__1_25 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__0_29  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep_48     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_11        |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_28        |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__1_40 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep__1_27  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep_38    |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_16        |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_20        |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/px_wr_reg_13                  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep__0_18 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/px_wr_reg_12                  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_7          |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__1_39  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_31        |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__1_42  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep__1_25  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep_50     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep_6      |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_4         |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/px_wr_reg_2                   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__1_14  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_1         |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep_12     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__1_0   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep_7      |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_4          |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep__1_17 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_3         |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__1_16 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_1         |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__1_2   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep_0      |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__1_10  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep_11     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[12]_rep__0_1  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[7]_rep_2      |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep_41     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep__1_21 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep_24     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep__1_19 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[6]_rep_3      |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[13]_0         |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep__0_9   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep__1_18 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/px_wr_reg_7                   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/px_wr_reg_9                   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep_23     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep_33    |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep__1_20 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep_31    |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep_34    |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep__1_16 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__1_5  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__1_8  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep__0_2  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep_4      |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep__0_1  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_0          |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__1_6   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep__0_4   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__1_1  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__1_7  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/px_wr_reg_4                   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__1_6  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__1_5   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_0         |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__1_7   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_10        |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__1_11 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep__1_4   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep_9      |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/px_wr_reg_6                   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__1_14 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__1_4   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__1_11  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep_5      |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[12]_rep__0_0  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__1_2  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__1_15 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep_30    |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep_8      |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_1          |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/px_wr_reg_5                   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep_11    |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep_12    |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep_6      |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/px_wr_reg_1                   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep_1     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_9         |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep_8     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_13        |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep_24     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep_25     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep_10    |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__1_24  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_12        |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_11        |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep_12     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__0_9   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep_2     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__1_25 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__0_2  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep__1_12  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep__1_7  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep__0_9  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep__0_13 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep__1_11  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__0_5   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__1_24 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep__0_10 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep__0_12 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep__1_8  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep_12    |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep__1_15  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep__1_6  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep_21     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__0_6   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__1_25  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep_15     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_10        |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep__1_14  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep_9     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[6]_rep__1_1   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__1_23  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep_0     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__0_7  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep__1_5  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__0_5  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep__0_8  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[7]_rep__1_0   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__0_15  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__0_3  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep__1_22 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep__1_23 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__0_17  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__0_16  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep__1_24 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep_35    |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep_32    |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__0_3   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep__0_15 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__1_22 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep_26     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__0_7   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__0_6  |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep_27     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[10]_rep__1_21 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep__0_17 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep__0_16 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[11]_rep__0_11 |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep__0_4   |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep_10     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep_11     |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[8]_rep_9      |                                            |                4 |             12 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr_reg[9]_rep_20     |                                            |                4 |             12 |
+|  camara/clk24_25_nexys4/CLK_OUT1 |                                               |                                            |                9 |             14 |
+|  clk_IBUF_BUFG                   | uart_rx_fifo_wrport_we__0                     |                                            |                2 |             16 |
+|  clk_IBUF_BUFG                   | picorv32/uart_tx_fifo_wrport_we__0            |                                            |                2 |             16 |
+|  ultrasonido/freq1/clk_1MHz      | ultrasonido/FSM_sequential_status[1]_i_1_n_0  |                                            |               11 |             17 |
+|  clk_IBUF_BUFG                   |                                               | dgt_tick_count[0]_i_1_n_0                  |                5 |             18 |
+|  clk_IBUF_BUFG                   | picorv32/mem_xfer                             |                                            |                7 |             18 |
+|  clk_IBUF_BUFG                   |                                               | picorv32/mem_addr_reg[15]_1[0]             |               12 |             19 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[12]_1[0]                | int_rst                                    |               13 |             20 |
+|  clk_IBUF_BUFG                   | picorv32/error                                | picorv32/mem_valid_reg_0                   |                5 |             20 |
+|  clk_IBUF_BUFG                   | picorv32/is_lui_auipc_jal_jalr_addi_add_sub0  | picorv32/mem_state2                        |                6 |             22 |
+|  clk_IBUF_BUFG                   |                                               | ultrasonido/freq1/clear                    |                8 |             29 |
+|  clk_IBUF_BUFG                   | picorv32/pcpi_div/divisor                     | picorv32/pcpi_div/divisor[30]_i_1_n_0      |               10 |             31 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_data[1]_i_1_n_0        |                                            |               19 |             31 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[12]_rep_14              |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[12]_rep_11              |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[13]_9                   |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[11]_rep_10              |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[12]_rep_10              |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[11]_rep_9               |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wdata[31]_i_1_n_0                |                                            |               22 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/csrbank6_r_period0_re                | picorv32/state_reg_5                       |               11 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/csrbank5_r_period0_re                | picorv32/state_reg                         |               11 |             32 |
+|  clk_IBUF_BUFG                   |                                               | picorv32/mem_addr_reg[13]_2[0]             |               15 |             32 |
+|  clk_IBUF_BUFG                   |                                               | ledRGB_1_b_counter[0]_i_1_n_0              |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/csrbank5_r_width0_re                 | picorv32/state_reg_0                       |               12 |             32 |
+|  clk_IBUF_BUFG                   |                                               | ledRGB_1_g_counter[0]_i_1_n_0              |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[5]_3[0]                 | int_rst                                    |               14 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[12]_0[0]                | int_rst                                    |               18 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[5]_2[0]                 | int_rst                                    |               16 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/csrbank6_r_width0_re                 | picorv32/state_reg_6                       |               10 |             32 |
+|  clk_IBUF_BUFG                   |                                               | ledRGB_2_b_counter[0]_i_1_n_0              |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/pcpi_mul/pcpi_wr0                    |                                            |               13 |             32 |
+|  clk_IBUF_BUFG                   |                                               | tx_phase[31]_i_1_n_0                       |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/pcpi_div/dividend                    |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/pcpi_div/quotient                    | picorv32/pcpi_div/quotient_msk[31]_i_1_n_0 |               11 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/pcpi_div/divisor                     |                                            |               11 |             32 |
+|  clk_IBUF_BUFG                   | bus_errors                                    | int_rst                                    |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[9]_rep_5                |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[3]_8                   |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/csrbank5_b_width0_re                 | picorv32/state_reg_4                       |               11 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/pcpi_div/quotient_msk                | picorv32/pcpi_div/quotient_msk[31]_i_1_n_0 |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/csrbank6_g_width0_re                 | picorv32/state_reg_8                       |               13 |             32 |
+|  clk_IBUF_BUFG                   |                                               | picorv32/mem_addr_reg[11]_0[0]             |               16 |             32 |
+|  clk_IBUF_BUFG                   |                                               | picorv32/mem_addr_reg[13]_1[0]             |               13 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/csrbank6_g_period0_re                | picorv32/state_reg_7                       |               15 |             32 |
+|  clk_IBUF_BUFG                   |                                               | picorv32/mem_addr_reg[12]_2[0]             |               12 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/csrbank6_b_width0_re                 | picorv32/state_reg_10                      |               15 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/csrbank5_g_period0_re                | picorv32/state_reg_1                       |               11 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/csrbank5_g_width0_re                 | picorv32/state_reg_2                       |               12 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/csrbank6_b_period0_re                | picorv32/state_reg_9                       |               16 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[11]_rep_11              |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[10]_rep_8               |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[9]_rep_6                |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[13]_8                   |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[10]_rep_12              |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[12]_rep_12              |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[11]_rep_15              |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[11]_rep_14              |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[11]_rep_13              |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[10]_rep_9               |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[10]_rep_11              |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[11]_rep_12              |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[9]_rep_7                |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[12]_rep_13              |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[10]_rep_13              |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[10]_rep_10              |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[12]_rep_9               |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[11]_rep__0_0            |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[11]_rep_17              |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[12]_rep_21              |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[9]_rep_10               |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[12]_rep_22              |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[10]_rep_19              |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[11]_rep__0_1            |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[10]_rep_14              |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[12]_rep_17              |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[10]_rep_16              |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[10]_rep_17              |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[12]_rep_20              |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[11]_rep__0_3            |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[12]_rep_16              |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[11]_rep_20              |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[12]_rep_23              |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[10]_rep_18              |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[12]_rep_19              |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[9]_rep_8                |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[9]_rep_9                |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[12]_rep_18              |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[11]_rep__0_4            |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[10]_rep_20              |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[11]_rep_18              |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[10]_rep_15              |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[12]_rep_15              |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[11]_rep_19              |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[13]_10                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[13]_11                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/reg_op1[31]_i_1_n_0                  |                                            |               22 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[13]_37                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   |                                               | rx_phase[31]_i_1_n_0                       |                8 |             32 |
+|  clk_IBUF_BUFG                   |                                               | ledRGB_2_g_counter[0]_i_1_n_0              |                8 |             32 |
+|  clk_IBUF_BUFG                   |                                               | ledRGB_1_r_counter[0]_i_1_n_0              |                8 |             32 |
+|  clk_IBUF_BUFG                   | timer_update_value_re                         | int_rst                                    |               13 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[13]_41                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[13]_36                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[13]_44                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[13]_43                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[13]_39                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[13]_33                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[13]_35                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[13]_32                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[13]_38                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[13]_40                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   |                                               | ledRGB_2_r_counter[0]_i_1_n_0              |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[13]_34                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[13]_42                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[9]_rep_1                |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[10]_rep_1               |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[10]_rep_0               |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[11]_rep_0               |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[13]_5                   |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[13]_4                   |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[11]_rep_1               |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[12]_rep_0               |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[9]_rep_0                |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[11]_rep_16              |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[11]_rep__0_2            |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[11]_rep__0_5            |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[3]_3                   |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[3]_1                   |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[0]_8                   |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[2]_12                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[2]_8                   |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[2]_15                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[0]_5                   |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[1]_13                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[2]_5                   |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[0]_4                   |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[1]_8                   |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[13]_23                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[3]_7                   |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[3]_5                   |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[3]_6                   |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[2]_11                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[3]_0                   |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[1]_12                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[13]_13                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[1]_3                   |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[1]_7                   |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[3]_9                   |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[1]_5                   |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[0]_0                   |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[2]_6                   |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[2]_1                   |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[0]_9                   |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[10]_rep_21              |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[3]_4                   |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[1]_2                   |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[2]_7                   |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[13]_30                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[0]_15                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[2]_2                   |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[2]_3                   |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[2]_4                   |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[0]_7                   |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[10]_rep_22              |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[0]_3                   |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[0]_6                   |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[13]_25                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[13]_27                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[13]_26                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[10]_rep_23              |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[3]_2                   |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[2]_16                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[2]_13                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[1]_4                   |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[3]_11                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[1]_15                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[0]_10                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[0]_11                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[2]_9                   |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[2]_10                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[3]_10                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[0]_12                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[2]_14                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[1]_0                   |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[0]_13                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[1]_6                   |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[11]_rep_2               |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[1]_1                   |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[10]_rep_7               |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[12]_rep_4               |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[11]_rep_3               |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[10]_rep_2               |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[11]_rep_4               |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[10]_rep_6               |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[12]_rep_6               |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[11]_rep_7               |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[11]_rep_8               |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[13]_6                   |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[9]_rep_2                |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[9]_rep_3                |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[10]_rep_3               |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[13]_7                   |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[9]_rep_4                |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[12]_rep_3               |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[12]_rep_2               |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[12]_rep_8               |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[12]_rep_1               |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[10]_rep_5               |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[11]_rep_6               |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[10]_rep_4               |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[12]_rep_7               |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[12]_rep_5               |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[11]_rep_5               |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[0]_2                   |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/irq_mask                             | picorv32/mem_state2                        |               17 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[9]_rep_11               |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[0]_1                   |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[11]_rep__0_6            |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[13]_31                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[1]_11                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[3]_12                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[3]_13                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[3]_14                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[13]_14                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[13]_15                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[13]_16                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[13]_17                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[13]_29                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[13]_22                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[13]_18                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[13]_19                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[13]_21                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[3]_15                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[13]_28                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[13]_24                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[1]_9                   |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[1]_10                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[0]_14                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr_reg[13]_20                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/csrbank5_b_period0_re                | picorv32/state_reg_3                       |               14 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/mem_wstrb_reg[1]_14                  |                                            |                8 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/reg_op2[31]_i_1_n_0                  |                                            |               12 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/timer                                | picorv32/mem_state2                        |               12 |             32 |
+|  clk_IBUF_BUFG                   | picorv32/instr_lui0                           |                                            |               10 |             34 |
+|  clk_IBUF_BUFG                   | picorv32/pcpi_mul/int_rst_reg                 | picorv32/pcpi_mul/mul_counter[6]           |               17 |             47 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_data[7]_i_1_n_0        |                                            |               40 |             48 |
+|  clk_IBUF_BUFG                   | picorv32/is_lui_auipc_jal_jalr_addi_add_sub0  |                                            |               18 |             51 |
+|  camara/clk24_25_nexys4/CLK_OUT1 | camara/Analyzer/sumaB_0                       | camara/Analyzer/sumaB[17]_i_1_n_0          |               13 |             54 |
+|  clk_IBUF_BUFG                   | picorv32/reg_pc                               | picorv32/mem_state2                        |               23 |             64 |
+|  clk_IBUF_BUFG                   | picorv32/irq_delay                            | picorv32/mem_state2                        |               17 |             65 |
+|  clk_IBUF_BUFG                   | picorv32/csrbank14_mem_adr0_re                | int_rst                                    |               40 |             67 |
+|  clk_IBUF_BUFG                   |                                               | int_rst                                    |               38 |             81 |
+|  clk_IBUF_BUFG                   |                                               | picorv32/mem_state2                        |               29 |             81 |
+|  clk_IBUF_BUFG                   | picorv32/p_0_in__0                            |                                            |               22 |             88 |
+|  CAM_pclk_IBUF_BUFG              | camara/cam_read/mem_px_addr[14]_i_2_n_0       | camara/cam_read/mem_px_addr[14]_i_1_n_0    |               79 |            116 |
+|  camara/clk24_25_nexys4/CLK_OUT1 | camara/Analyzer/start                         | camara/Analyzer/count                      |               78 |            116 |
+|  clk_IBUF_BUFG                   | picorv32/pcpi_mul/int_rst_reg                 |                                            |               40 |            166 |
+|  clk_IBUF_BUFG                   | picorv32/mem_addr[31]_i_1_n_0                 |                                            |              170 |            303 |
+|  clk_IBUF_BUFG                   |                                               |                                            |              271 |            539 |
++----------------------------------+-----------------------------------------------+--------------------------------------------+------------------+----------------+
 
 

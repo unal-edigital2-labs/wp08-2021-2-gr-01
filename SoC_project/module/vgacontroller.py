@@ -1,10 +1,8 @@
 from migen import *
 from migen.genlib.cdc import MultiReg
-
 from litex.soc.interconnect.csr import *
 
-# VGA Controller ---------------------------------------------------------------------------
-
+# Modulo de Controlador de VGA ---------------------------------------------------------------------------
 class VGAcontroller(Module, AutoCSR):
     """VGA display controller
     

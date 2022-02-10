@@ -4,6 +4,11 @@ from litex.build.xilinx import XilinxPlatform, VivadoProgrammer
 # IOs ----------------------------------------------------------------------------------------------
 
 _io = [
+    # Clock Reset Generation
+    ("cpu_reset", 0, Pins("C12"), IOStandard("LVCMOS33")),
+    ("clk", 0, Pins("E3"), IOStandard("LVCMOS33")),
+
+    # Leds
     ("led",  0, Pins("H17"), IOStandard("LVCMOS33")),
     ("led",  1, Pins("K15"), IOStandard("LVCMOS33")),
     ("led",  2, Pins("J13"), IOStandard("LVCMOS33")),
@@ -21,6 +26,7 @@ _io = [
     ("led", 14, Pins("V12"), IOStandard("LVCMOS33")),
     ("led", 15, Pins("V11"), IOStandard("LVCMOS33")),
 
+    # Switchs
     ("sw",  0, Pins("J15"), IOStandard("LVCMOS33")),
     ("sw",  1, Pins("L16"), IOStandard("LVCMOS33")),
     ("sw",  2, Pins("M13"), IOStandard("LVCMOS33")),
@@ -38,24 +44,14 @@ _io = [
     ("sw", 14, Pins("U11"), IOStandard("LVCMOS33")),
     ("sw", 15, Pins("V10"), IOStandard("LVCMOS33")),
     
+    # Buttons
     ("btnc", 0, Pins("N17"), IOStandard("LVCMOS33")),
     ("btnd", 0, Pins("P18"), IOStandard("LVCMOS33")),
     ("btnu", 0, Pins("M18"), IOStandard("LVCMOS33")),
     ("btnr", 0, Pins("M17"), IOStandard("LVCMOS33")),
     ("btnl", 0, Pins("P17"), IOStandard("LVCMOS33")),
 
-    ("ledRGB", 1,
-        Subsignal("r", Pins("N15")),
-        Subsignal("g", Pins("M16")),
-        Subsignal("b", Pins("R12")),
-        IOStandard("LVCMOS33")),
-
-    ("ledRGB", 2,
-        Subsignal("r", Pins("N16")),
-        Subsignal("g", Pins("R11")),
-        Subsignal("b", Pins("G14")),
-        IOStandard("LVCMOS33")),
-       
+    # 7segments Display
     ("display_digit",  0, Pins("J17"), IOStandard("LVCMOS33")),
     ("display_digit",  1, Pins("J18"), IOStandard("LVCMOS33")),
     ("display_digit",  2, Pins("T9"), IOStandard("LVCMOS33")),
@@ -72,8 +68,20 @@ _io = [
     ("display_segment", 5, Pins("T11"), IOStandard("LVCMOS33")),
     ("display_segment", 6, Pins("L18"), IOStandard("LVCMOS33")),
     ("display_segment", 7, Pins("H15"), IOStandard("LVCMOS33")),
+
+    # RGB leds
+    ("ledRGB", 1,
+        Subsignal("r", Pins("N15")),
+        Subsignal("g", Pins("M16")),
+        Subsignal("b", Pins("R12")),
+        IOStandard("LVCMOS33")),
+    ("ledRGB", 2,
+        Subsignal("r", Pins("N16")),
+        Subsignal("g", Pins("R11")),
+        Subsignal("b", Pins("G14")),
+        IOStandard("LVCMOS33")),
     
-  	
+    # VGA
     ("vga_red", 0, Pins("A3"), IOStandard("LVCMOS33")),
     ("vga_red", 1, Pins("B4"), IOStandard("LVCMOS33")),
     ("vga_red", 2, Pins("C5"), IOStandard("LVCMOS33")),
@@ -89,16 +97,51 @@ _io = [
     ("hsync", 0, Pins("B11"), IOStandard("LVCMOS33")),
     ("vsync", 0, Pins("B12"), IOStandard("LVCMOS33")),
     
-    ("cpu_reset", 0, Pins("C12"), IOStandard("LVCMOS33")),
+    # Movimiento
+    ("left", 0, Pins("F6"), IOStandard("LVCMOS33")),
+    ("left", 1, Pins("K1"), IOStandard("LVCMOS33")),
+    ("right", 0, Pins("J2"), IOStandard("LVCMOS33")),
+    ("right", 1, Pins("G6"), IOStandard("LVCMOS33")),
     
-    ("clk", 0, Pins("E3"), IOStandard("LVCMOS33")),
+    # Servomotor
+    ("servo", 0, Pins("E6"), IOStandard("LVCMOS33")),
 
+    # Ultrasonido
+    ("echo", 0, Pins("J3"), IOStandard("LVCMOS33")),
+    ("trig", 0, Pins("E7"), IOStandard("LVCMOS33")),
+
+    # Infrarojo
+    ("iL", 0, Pins("J4"), IOStandard("LVCMOS33")),
+    ("iLC", 0, Pins("J4"), IOStandard("LVCMOS33")),
+    ("iC", 0, Pins("J4"), IOStandard("LVCMOS33")),
+    ("iRC", 0, Pins("J4"), IOStandard("LVCMOS33")),
+    ("iR", 0, Pins("J4"), IOStandard("LVCMOS33")),
+
+    # Camara
+    ("CAM_xclk", 0, Pins("H14"), IOStandard("LVCMOS33")),
+    ("CAM_pclk", 0, Pins("G17"), IOStandard("LVCMOS33")),
+    ("CAM_href", 0, Pins("G16"), IOStandard("LVCMOS33")),
+    ("CAM_vsync", 0, Pins("E18"), IOStandard("LVCMOS33")),
+ 
+    ("CAM_px_data", 0, Pins("H16"), IOStandard("LVCMOS33")),
+    ("CAM_px_data", 1, Pins("G18"), IOStandard("LVCMOS33")),
+    ("CAM_px_data", 2, Pins("G13"), IOStandard("LVCMOS33")),
+    ("CAM_px_data", 3, Pins("F18"), IOStandard("LVCMOS33")),
+    ("CAM_px_data", 4, Pins("F13"), IOStandard("LVCMOS33")),
+    ("CAM_px_data", 5, Pins("E17"), IOStandard("LVCMOS33")),
+    ("CAM_px_data", 6, Pins("E16"), IOStandard("LVCMOS33")),
+    ("CAM_px_data", 7, Pins("D17"), IOStandard("LVCMOS33")),
+
+
+
+    # Serial Port
     ("serial", 0,
         Subsignal("tx", Pins("D4")),
         Subsignal("rx", Pins("C4")),
         IOStandard("LVCMOS33"),
     ),
 
+    # DDRAM
     ("ddram", 0,
         Subsignal("a", Pins(
             "M4 P4 M6 T1 L3 P5 M2 N1",
@@ -123,12 +166,12 @@ _io = [
         Subsignal("cs_n", Pins("K6"), IOStandard("SSTL18_II")),
         Misc("SLEW=FAST"),
     ),
-
+    
+    # Ethernet
     ("eth_clocks", 0,
         Subsignal("ref_clk", Pins("D5")),
         IOStandard("LVCMOS33"),
     ),
-
     ("eth", 0,
         Subsignal("rst_n", Pins("B3")),
         Subsignal("rx_data", Pins("C11 D10")),
@@ -152,6 +195,7 @@ class Platform(XilinxPlatform):
     def __init__(self):
         XilinxPlatform.__init__(self, "xc7a100t-CSG324-1", _io, toolchain="vivado")
         self.add_platform_command("set_property INTERNAL_VREF 0.750 [get_iobanks 34]")
+        self.add_platform_command("set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets CAM_pclk_IBUF]")
 
     def create_programmer(self):
         return VivadoProgrammer()

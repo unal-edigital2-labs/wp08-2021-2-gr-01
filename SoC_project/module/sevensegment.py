@@ -1,11 +1,8 @@
-
 from migen import *
 from migen.genlib.cdc import MultiReg
-
 from litex.soc.interconnect.csr import *
 
-# Seven Segment ---------------------------------------------------------------------------
-
+# Modulo se Siete Segmentos
 class SevenSegment(Module, AutoCSR):
     def __init__(self, segment_out, digit_out):
         
@@ -21,7 +18,6 @@ class SevenSegment(Module, AutoCSR):
         self.displays = Array(Signal(len(segment_out)) for i in range(nb_dig))
         
     # CSR -----------------------------------------------------------------------------
-    
         self._dig_0 = CSRStorage(8)
         self._dig_1 = CSRStorage(8)
         self._dig_2 = CSRStorage(8)

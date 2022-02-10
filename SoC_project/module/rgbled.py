@@ -3,7 +3,7 @@ from migen.genlib.cdc import MultiReg
 from litex.soc.interconnect.csr import *
 from litex.soc.cores import pwm
 
-# RGB LED ---------------------------------------------------------------------------
+# Modulo de LED RGB
 class RGBLed(Module, AutoCSR):
     def __init__(self, pads):
         self.submodules.r = pwm.PWM(pads.r)
