@@ -102,11 +102,10 @@ class BaseSoC(SoCCore):
 		SoCCore.add_csr(self,"infrarojo_cntrl")
 		self.submodules.infrarojo_cntrl = infrarojo.infrarojo(platform.request("iL"), platform.request("iLC"), platform.request("iC"), platform.request("iRC"), platform.request("iR"))
 
-		""" #camara
-		SoCCore.add_csr(self,"camara_cntrl")
-		CAM_px_data = Cat(*[platform.request("CAM_px_data", i) for i in range(8)])		
-		self.submodules.camara_cntrl = camara.camara(platform.request("CAM_pclk"), platform.request("CAM_href"), platform.request("CAM_vsync"), CAM_px_data, platform.request("CAM_xclk"))
-		 """
+		#camara
+	#	SoCCore.add_csr(self,"camara_cntrl")
+	#	CAM_px_data = Cat(*[platform.request("CAM_px_data", i) for i in range(8)])		
+	#	self.submodules.camara_cntrl = camara.camara(platform.request("CAM_pclk"), platform.request("CAM_href"), platform.request("CAM_vsync"), CAM_px_data, platform.request("CAM_xclk"))
 
 
 # Build --------------------------------------------------------------------------------------------
