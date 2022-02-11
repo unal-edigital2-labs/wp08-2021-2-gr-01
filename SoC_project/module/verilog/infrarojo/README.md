@@ -26,8 +26,8 @@ A continuación podemos observar el diagrama de bloques que describe la conexió
 
 ![Screenshot](/images/infra_mem.png)
 
-Por ultimo vemos su espacio de memoria dentro del archivo **Soc_MemoryMap.csv**.
+Por ultimo vemos su espacio de memoria dentro del archivo [Soc_MemoryMap.csv](/SoC_project/Soc_MemoryMap.csv)
 
-<p align="center">
-  <img src="/Imagenes/mem_infra.PNG" align="center">
-</p>
+```
+csr_base,infrarojo_cntrl,0x82005000,,
+```
