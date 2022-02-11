@@ -226,15 +226,30 @@ static void avanzar(void)
 	_Bool RC = infrarojo_cntrl_oRC_read();
 	_Bool R = infrarojo_cntrl_oR_read();
 
-	while(!(L && R))
+	_Bool IR[5] = {L, LC, C, RC, R};
+
+	while(L == 0 && R == 0)
 	{
-		if(!L && C && !R){
+//////////////////////////////7
+		L = infrarojo_cntrl_oL_read();
+		LC = infrarojo_cntrl_oLC_read();
+		C = infrarojo_cntrl_oC_read();
+		RC = infrarojo_cntrl_oRC_read();
+		R = infrarojo_cntrl_oR_read();
+
+		for(int i = 0; i<5; i++){
+			printf("%i, ", IR[i]);
+		}
+		printf("\n");
+////////////////
+
+		if(L == 0 && C == 1 && R == 0){
 			movimiento_cntrl_estado_write(AvanzarMotor);
 		}
-		else if(L || LC){
+		else if(L == 1 || LC == 1){
 			movimiento_cntrl_estado_write(IzquierdaMotor);
 		}
-		else if(R || RC){
+		else if(R == 1 || RC == 1){
 			movimiento_cntrl_estado_write(DerechaMotor);
 		}
 	}
@@ -250,20 +265,21 @@ static void girar(int direccion)
 	switch (direccion)
 	{
 		case 1: movimiento_cntrl_estado_write(IzquierdaMotor);
-				delay_ms(2000);
-				movimiento_cntrl_estado_write(PararMotor);
 			break;
 		case 3: movimiento_cntrl_estado_write(DerechaMotor);
-				delay_ms(2000);
-				movimiento_cntrl_estado_write(PararMotor);
 			break;
 		case 0: movimiento_cntrl_estado_write(DerechaMotor);
-				delay_ms(4000);
-				movimiento_cntrl_estado_write(PararMotor);
+				delay_ms(1000);
 			break;
 		default:movimiento_cntrl_estado_write(PararMotor);
 			break;
 	}
+
+	delay_ms(500);
+
+	while(infrarojo_cntrl_oC_read() == 0){}
+
+	movimiento_cntrl_estado_write(PararMotor);
 }
 
 /* static int camara(void)
@@ -348,18 +364,61 @@ static void infrarojo_test(void)
 	printf("Test de Modulo de Infrarojo. Para interrumpir oprimir el botton 1\n");
 	while(!(buttons_in_read()&1))
 	{
-		int L = infrarojo_cntrl_oL_read();
-		int LC = infrarojo_cntrl_oLC_read();
-		int C = infrarojo_cntrl_oC_read();
-		int RC = infrarojo_cntrl_oRC_read();
-		int R = infrarojo_cntrl_oR_read();
+		_Bool L = infrarojo_cntrl_oL_read();
+		_Bool LC = infrarojo_cntrl_oLC_read();
+		_Bool C = infrarojo_cntrl_oC_read();
+		_Bool RC = infrarojo_cntrl_oRC_read();
+		_Bool R = infrarojo_cntrl_oR_read();
 
-		int IR[5] = {L, LC, C, RC, R};
+		_Bool IR[5] = {L, LC, C, RC, R};
 
 		for(int i = 0; i<5; i++){
 			printf("%i, ", IR[i]);
 		}
 		printf("\n");
+	}
+}
+
+static void avanzar_test(void)
+{
+	while(!(buttons_in_read()&1)){
+		if(buttons_in_read()&(1<<1)){ 
+			avanzar();
+
+			servomotor_test();
+
+			girar(3);
+
+			avanzar();
+			
+			servomotor_test();
+
+			girar(3);
+
+			avanzar();
+
+			servomotor_test();
+
+			girar(0);
+
+			avanzar();
+			
+			servomotor_test();
+
+			girar(1);
+
+			avanzar();
+			
+			servomotor_test();
+
+			girar(1);
+
+			avanzar();
+			
+			servomotor_test();
+
+			girar(0);
+		}
 	}
 }
 
@@ -414,6 +473,8 @@ static void console_service(void)
 		ultrasonido_test();
 	else if(strcmp(token, "infrarojo") == 0)
 		infrarojo_test();
+	else if(strcmp(token, "avanzar") == 0)
+		avanzar_test();
 	/* else if(strcmp(token, "camara") == 0)
 		camara_test(); */
 	prompt();
