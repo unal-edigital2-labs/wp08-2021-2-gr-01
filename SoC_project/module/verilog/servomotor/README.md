@@ -13,7 +13,7 @@ csr_base,servomotor_cntrl,0x82004000,,
 El diagrama de bloques que describe el funcionamiento del módulo es el siguiente: 
 
 <p align="center">
-  <img src="/images/servo_mem.png" align="center">
+  <img src="/images/servom_mem.png" align="center">
 </p>
 
 
@@ -53,4 +53,12 @@ end
 endmodule
  ```
  
-El funcionamiento del código se basa en que ..... 
+El funcionamiento del código se basa en un PWM, en el que se define un periodo de acuerdo al reloj de entrada (clk), y las 3 posibles posiciones que se definieron son Centro, Izquierda y Derecha y su relación con respecto al PWM es la siguiente:
+
+<p align="center">
+  <img src="/images/PWM.jpeg" align="center">
+</p>
+
+<p align="center">
+  <img src="/images/PWM_pos.jpeg" align="center">
+</p>
