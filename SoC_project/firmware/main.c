@@ -309,15 +309,15 @@ static void movimiento_test(void)
 	movimiento_cntrl_estado_write(Parar);
 	delay_ms(1000);
 	movimiento_cntrl_estado_write(Izquierda);
-	delay_ms(400);
+	delay_ms(700);
 	movimiento_cntrl_estado_write(Parar);
 	delay_ms(1000);
 	movimiento_cntrl_estado_write(Derecha);
-	delay_ms(400);
+	delay_ms(700);
 	movimiento_cntrl_estado_write(Parar);
 	delay_ms(1000);
 	movimiento_cntrl_estado_write(Derecha);
-	delay_ms(1000);
+	delay_ms(1400);
 	movimiento_cntrl_estado_write(Parar);
 }
 
