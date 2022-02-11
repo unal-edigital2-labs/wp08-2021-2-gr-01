@@ -91,7 +91,6 @@ static void reboot(void)
 }
 
 
-
 static void led_test(void)
 {
 	unsigned int i;
