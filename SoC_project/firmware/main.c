@@ -485,6 +485,34 @@ static int ajusteY(int orientacion, int direccion, int Yactual)
 	return Xactual;
 }
 
+static int ajusteX(int orientacion, int direccion)
+{
+	const int norte = 0;
+	const int sur = 1;
+	const int este = 2;
+	const int oeste = 3;
+	const int izquierda = 1;
+	const int centro = 2;
+	const int derecha = 3;
+	const int atras = 0;
+	switch (orientacion)
+	{
+	case norte:	Xactual = (direccion == derecha) ? Xactual+1: Xactual;
+				Xactual = (direccion == izquierda) ? Xactual-1: Xactual;
+			break;
+	case sur: 	Xactual = (direccion == derecha) ? Xactual-1: Xactual;
+				Xactual = (direccion == izquierda) ? Xactual+1: Xactual;
+			break;
+	case este: 	Xactual = (direccion == centro) ? Xactual+1: Xactual;
+				Xactual = (direccion == atras) ? Xactual-1: Xactual;
+			break;
+	case oeste: Xactual = (direccion == centro) ? Xactual-1: Xactual;
+				Xactual = (direccion == atras) ? Xactual+1: Xactual;
+			break;
+	}
+	return Xactual;
+}
+
 static void integracion(void){
 	const int norte = 0;
 	const int sur = 1;
