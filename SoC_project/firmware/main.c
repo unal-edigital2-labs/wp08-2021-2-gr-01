@@ -228,23 +228,14 @@ static void avanzar(void)
 	_Bool C = infrarojo_cntrl_oC_read();
 	_Bool RC = infrarojo_cntrl_oRC_read();
 	_Bool R = infrarojo_cntrl_oR_read();
-
-	_Bool IR[5] = {L, LC, C, RC, R};
-
+	
 	while(L == 0 && R == 0)
 	{
-//////////////////////////////7
 		L = infrarojo_cntrl_oL_read();
 		LC = infrarojo_cntrl_oLC_read();
 		C = infrarojo_cntrl_oC_read();
 		RC = infrarojo_cntrl_oRC_read();
 		R = infrarojo_cntrl_oR_read();
-
-		for(int i = 0; i<5; i++){
-			printf("%i, ", IR[i]);
-		}
-		printf("\n");
-////////////////
 
 		if(L == 0 && C == 1 && R == 0){
 			movimiento_cntrl_estado_write(AvanzarMotor);
@@ -575,7 +566,8 @@ static int ajusteO(int orientacion, int direccion)
 	return orientacion;
 }
 
-static void integracion(void){
+static void integracion(void)
+{
 	const int norte = 0;
 	const int sur = 1;
 	const int este = 2;
@@ -586,58 +578,84 @@ static void integracion(void){
 	const int atras = 0;
 
 	int mapa[10][10];
-	_Bool enable = 0;
+	_Bool recorrido = 0;
+	_Bool finalizacion = 0;
 	int Xinicial = 1, Yinicial = 1;
 	int Xactual = Xinicial, Yactual = Yinicial;
-	int orientacion = norte;
+	int orientacion = sur;
 	int direccion = centro; 
 
-	while(!(buttons_in_read()&1)){
-
-		//Inicialización de la matriz del laberinto
-		for(int i=0; i<10; i++){
-			for(int j=0; j<10; j++){  
-				mapa[i][j] = 0;
-			}    
-		}
-		for(int i=0; i<10; i++){  
-			mapa[i][0] = i;
-		}
+	//Inicialización de la matriz del laberinto
+	for(int i=0; i<10; i++){
 		for(int j=0; j<10; j++){  
-			mapa[0][j] = j;
-		}
-		Xactual = Xinicial;
-		Yactual = Yinicial;
-		mapa[Yactual][Xactual] = 1;
+			mapa[i][j] = 0;
+		}    
+	}
+	for(int i=0; i<10; i++){  
+		mapa[i][0] = i;
+	}
+	for(int j=0; j<10; j++){  
+		mapa[0][j] = j;
+	}
+	Xactual = Xinicial;
+	Yactual = Yinicial;
+	mapa[Yactual][Xactual] = 1;
 
-		//Imprecion de la matriz del laberinto
-		print("%i |", mapa[0][0])
+	//Imprecion de la matriz del laberinto
+	print("%i |", mapa[0][0]);
+	for(int j=1; j<10; j++){  
+		printf("%i  ", mapa[0][j]);
+	}
+	printf("\n-------------------------------\n");
+	for(int i=1; i<10; i++){
+		printf("%i |", mapa[i][0]);
 		for(int j=1; j<10; j++){  
-			printf("%i  ", mapa[0][j])
+			printf("%i  ", mapa[i][j]);
 		}
-		printf("\n-------------------------------\n")
-		for(int i=1; i<10; i++){
-			printf("%i |", mapa[i][0])
-			for(int j=1; j<10; j++){  
-				printf("%i  ", mapa[i][j])
-			}
-			printf("\n") 
-		}
+		printf("\n");
+	}
 
-		enable = (buttons_in_read()&(1<<1)) ? 1 : 0;
-		while (enable)
+	while(!(buttons_in_read()&1))
+	{
+		recorrido = (buttons_in_read()&(1<<1)) ? 1 : 0;
+		finalizacion = 0;
+		while (recorrido)
 		{
 			direccion = capitan();
-			
+			girar(direccion);
+			avanzar();
+
 			Xactual = ajusteX(orientacion, direccion, Xactual);
 			Yactual = ajusteX(orientacion, direccion, Yactual);
 			orientacion = ajusteO(orientacion, direccion);
 			
 			mapa[Yactual][Xactual] = 1;
 
-			enable = ((Xactual == Xinicial)&&(Yactual == Yinicial)) ? 0 : 1;
+			recorrido = ((Xactual == Xinicial)&&(Yactual == Yinicial)) ? 0 : 1;
+			finalizacion = ((Xactual == Xinicial)&&(Yactual == Yinicial)) ? 1 : 0;
 		}
-
+		while (finalizacion)
+		{
+			servomotor_cntrl_posicion_read(1);
+			delay_ms(1000);
+			servomotor_cntrl_posicion_read(2);
+			if (buttons_in_read()&(1<<1)){
+				//Imprecion de la matriz del laberinto
+				print("%i |", mapa[0][0]);
+				for(int j=1; j<10; j++){  
+					printf("%i  ", mapa[0][j]);
+				}
+				printf("\n-------------------------------\n");
+				for(int i=1; i<10; i++){
+					printf("%i |", mapa[i][0])
+					for(int j=1; j<10; j++){  
+						printf("%i  ", mapa[i][j]);
+					}
+					printf("\n");
+				}
+				finalizacion = 0;
+			}
+		}
 	}
 }
 
@@ -674,6 +692,8 @@ static void console_service(void)
 		infrarojo_test();
 	else if(strcmp(token, "avanzar") == 0)
 		avanzar_test();
+	else if(strcmp(token, "integracion") == 0)
+		integracion();
 	/* else if(strcmp(token, "camara") == 0)
 		camara_test(); */
 	prompt();
