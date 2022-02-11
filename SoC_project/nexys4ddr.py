@@ -122,7 +122,6 @@ _io = [
 #    ("CAM_pclk", 0, Pins("G17"), IOStandard("LVCMOS33")),
 #    ("CAM_href", 0, Pins("G16"), IOStandard("LVCMOS33")),
 #    ("CAM_vsync", 0, Pins("E18"), IOStandard("LVCMOS33")),
-
 #    ("CAM_px_data", 0, Pins("H16"), IOStandard("LVCMOS33")),
 #    ("CAM_px_data", 1, Pins("G18"), IOStandard("LVCMOS33")),
 #    ("CAM_px_data", 2, Pins("G13"), IOStandard("LVCMOS33")),
@@ -131,7 +130,6 @@ _io = [
 #    ("CAM_px_data", 5, Pins("E17"), IOStandard("LVCMOS33")),
 #    ("CAM_px_data", 6, Pins("E16"), IOStandard("LVCMOS33")),
 #    ("CAM_px_data", 7, Pins("D17"), IOStandard("LVCMOS33")),
-
 
 
     # Serial Port

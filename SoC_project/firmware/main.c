@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <iostream>
+using namespace std;
 
 #include <irq.h>
 #include <uart.h>
@@ -9,6 +11,7 @@
 
 #include "delay.h"
 #include "display.h"
+
 
 static char *readstr(void)
 {
@@ -444,6 +447,229 @@ static void avanzar_test(void)
 
 
 
+static int capitan(void)
+{
+//Dice en qué dirección ir
+	const int CentroServo = 0;
+	const int IzquierdaServo = 1;
+	const int DerechaServo = 2;
+
+	//Distancia para considerar camino libre
+	int distLibre = 15;
+	//Dirección en la que está libre
+	int eleccion = 0; 
+
+	//Girar en las 3 direcciones
+	for (int i = 0; i <= 3; i++)
+	{
+		switch (i)
+		{
+		case 0: servomotor_cntrl_posicion_write(IzquierdaServo);
+				eleccion = 1;
+			break;
+		case 1: servomotor_cntrl_posicion_write(CentroServo);
+				eleccion = 2;
+			break;
+		case 2: servomotor_cntrl_posicion_write(DerechaServo);
+				eleccion = 3;
+			break;
+		default:servomotor_cntrl_posicion_write(IzquierdaServo);
+				eleccion = 0;
+			break;
+		}
+
+		delay_ms(1000);
+
+		if (medir_distancia() > distLibre) 
+		{
+			servomotor_cntrl_posicion_write(IzquierdaServo);
+			return eleccion;	//Escoger direccion libre
+		}
+	}
+}
+
+static int ajusteX(int orientacion, int direccion, int Xactual)
+{
+	const int norte = 0;
+	const int sur = 1;
+	const int este = 2;
+	const int oeste = 3;
+	const int izquierda = 1;
+	const int centro = 2;
+	const int derecha = 3;
+	const int atras = 0;
+	switch (orientacion)
+	{
+	case norte:	Xactual = (direccion == derecha) ? Xactual+1: Xactual;
+				Xactual = (direccion == izquierda) ? Xactual-1: Xactual;
+			break;
+	case sur: 	Xactual = (direccion == derecha) ? Xactual-1: Xactual;
+				Xactual = (direccion == izquierda) ? Xactual+1: Xactual;
+			break;
+	case este: 	Xactual = (direccion == centro) ? Xactual+1: Xactual;
+				Xactual = (direccion == atras) ? Xactual-1: Xactual;
+			break;
+	case oeste: Xactual = (direccion == centro) ? Xactual-1: Xactual;
+				Xactual = (direccion == atras) ? Xactual+1: Xactual;
+			break;
+	}
+	return Xactual;
+}
+
+static int ajusteY(int orientacion, int direccion, int Yactual)
+{
+	const int norte = 0;
+	const int sur = 1;
+	const int este = 2;
+	const int oeste = 3;
+	const int izquierda = 1;
+	const int centro = 2;
+	const int derecha = 3;
+	const int atras = 0;
+	switch (orientacion)
+	{
+	case norte:	Yactual = (direccion == centro) ? Yactual-1: Yactual;
+				Yactual = (direccion == atras) ? Yactual+1: Yactual;
+			break;	
+	case sur:	Yactual = (direccion == centro) ? Yactual+1: Yactual;
+				Yactual = (direccion == atras) ? Yactual-1: Yactual;
+			break; 	
+	case este:	Yactual = (direccion == derecha) ? Yactual+1: Yactual;
+				Yactual = (direccion == izquierda) ? Yactual-1: Yactual;
+			break;
+	case oeste: Yactual = (direccion == derecha) ? Yactual-1: Yactual;
+				Yactual = (direccion == izquierda) ? Yactual+1: Yactual;
+			break;
+	}
+	return Yactual;
+}
+
+static int ajusteO(int orientacion, int direccion)
+{
+	const int norte = 0;
+	const int sur = 1;
+	const int este = 2;
+	const int oeste = 3;
+	const int izquierda = 1;
+	const int centro = 2;
+	const int derecha = 3;
+	const int atras = 0;
+	switch (orientacion)
+	{
+	case norte:	orientacion = (direccion == derecha) ? este: norte;
+				orientacion = (direccion == izquierda) ? oeste: norte;
+				orientacion = (direccion == atras) ? sur: norte;
+			break;
+	case sur: 	orientacion = (direccion == derecha) ? oeste: sur;
+				orientacion = (direccion == izquierda) ? este: sur;
+				orientacion = (direccion == atras) ? norte: sur;
+			break;
+	case este: 	orientacion = (direccion == derecha) ? sur: este;
+				orientacion = (direccion == izquierda) ? norte: este;
+				orientacion = (direccion == atras) ? oeste: este;
+			break;
+	case oeste: orientacion = (direccion == derecha) ? norte: oeste;
+				orientacion = (direccion == izquierda) ? sur: oeste;
+				orientacion = (direccion == atras) ? este: oeste;
+			break;
+	}
+	return orientacion;
+}
+
+static void integracion(void)
+{
+	const int norte = 0;
+	const int sur = 1;
+	const int este = 2;
+	const int oeste = 3;
+	const int izquierda = 1;
+	const int centro = 2;
+	const int derecha = 3;
+	const int atras = 0;
+
+	int mapa[10][10];
+	_Bool recorrido = 0;
+	_Bool finalizacion = 0;
+	int Xinicial = 1, Yinicial = 1;
+	int Xactual = Xinicial, Yactual = Yinicial;
+	int orientacion = sur;
+	int direccion = centro; 
+
+	//Inicialización de la matriz del laberinto
+	for(int i=0; i<10; i++){
+		for(int j=0; j<10; j++){  
+			mapa[i][j] = 0;
+		}    
+	}
+	for(int i=0; i<10; i++){  
+		mapa[i][0] = i;
+	}
+	for(int j=0; j<10; j++){  
+		mapa[0][j] = j;
+	}
+	Xactual = Xinicial;
+	Yactual = Yinicial;
+	mapa[Yactual][Xactual] = 1;
+
+	//Imprecion de la matriz del laberinto
+	print("%i |", mapa[0][0]);
+	for(int j=1; j<10; j++){  
+		printf("%i  ", mapa[0][j]);
+	}
+	printf("\n-------------------------------\n");
+	for(int i=1; i<10; i++){
+		printf("%i |", mapa[i][0]);
+		for(int j=1; j<10; j++){  
+			printf("%i  ", mapa[i][j]);
+		}
+		printf("\n");
+	}
+
+	while(!(buttons_in_read()&1))
+	{
+		recorrido = (buttons_in_read()&(1<<1)) ? 1 : 0;
+		finalizacion = 0;
+		while (recorrido)
+		{
+			direccion = capitan();
+			girar(direccion);
+			avanzar();
+
+			Xactual = ajusteX(orientacion, direccion, Xactual);
+			Yactual = ajusteX(orientacion, direccion, Yactual);
+			orientacion = ajusteO(orientacion, direccion);
+			
+			mapa[Yactual][Xactual] = 1;
+
+			recorrido = ((Xactual == Xinicial)&&(Yactual == Yinicial)) ? 0 : 1;
+			finalizacion = ((Xactual == Xinicial)&&(Yactual == Yinicial)) ? 1 : 0;
+		}
+		while (finalizacion)
+		{
+			servomotor_cntrl_posicion_read(1);
+			delay_ms(1000);
+			servomotor_cntrl_posicion_read(2);
+			if (buttons_in_read()&(1<<1)){
+				//Imprecion de la matriz del laberinto
+				print("%i |", mapa[0][0]);
+				for(int j=1; j<10; j++){  
+					printf("%i  ", mapa[0][j]);
+				}
+				printf("\n-------------------------------\n");
+				for(int i=1; i<10; i++){
+					printf("%i |", mapa[i][0])
+					for(int j=1; j<10; j++){  
+						printf("%i  ", mapa[i][j]);
+					}
+					printf("\n");
+				}
+				finalizacion = 0;
+			}
+		}
+	}
+}
+
+
 static void console_service(void)
 {
 	char *str;
@@ -476,6 +702,8 @@ static void console_service(void)
 		infrarojo_test();
 	else if(strcmp(token, "avanzar") == 0)
 		avanzar_test();
+	else if(strcmp(token, "integracion") == 0)
+		integracion();
 	/* else if(strcmp(token, "camara") == 0)
 		camara_test(); */
 	prompt();
