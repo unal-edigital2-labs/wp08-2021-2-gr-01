@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 Build started at 2022-02-10T17:42:44.868922
+=======
+Build started at 2022-02-10T17:25:32.975185
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 Main binary: /usr/bin/python3
 Build Options: -Dmultilib=false -Dpicocrt=false -Datomic-ungetc=false -Dthread-local-storage=false -Dio-long-long=true -Dformat-default=integer -Dincludedir=picolibc/riscv64-unknown-elf/include -Dlibdir=picolibc/riscv64-unknown-elf/lib '--cross-file cross.txt'
 Python system: Linux
@@ -39,8 +43,13 @@ Host machine cpu: picorv32
 Target machine cpu family: riscv
 Target machine cpu: picorv32
 Running compile:
+<<<<<<< HEAD
 Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpjfl8y9rn
 Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpjfl8y9rn/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpjfl8y9rn/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 
+=======
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp2oscynch
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp2oscynch/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp2oscynch/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 
 Code:
  
@@ -60,8 +69,13 @@ Compiler stderr:
  
 Checking if "long double check" : compiles: YES 
 Running compile:
+<<<<<<< HEAD
 Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpi75d_uw_
 Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpi75d_uw_/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpi75d_uw_/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 
+=======
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp_t3uoq23
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp_t3uoq23/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp_t3uoq23/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 
 Code:
  
@@ -71,14 +85,23 @@ char size_test[sizeof(double) == sizeof(long double) ? 1 : -1];
 Compiler stdout:
  
 Compiler stderr:
+<<<<<<< HEAD
  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpi75d_uw_/testfile.c:3:6: error: size of array 'size_test' is negative
+=======
+ /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp_t3uoq23/testfile.c:3:6: error: size of array 'size_test' is negative
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
  char size_test[sizeof(double) == sizeof(long double) ? 1 : -1];
       ^~~~~~~~~
 
 Checking if "long double same as double" : compiles: NO 
 Running compile:
+<<<<<<< HEAD
 Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp7n18q0t7
 Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp7n18q0t7/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp7n18q0t7/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 
+=======
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp9en0ypn7
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp9en0ypn7/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp9en0ypn7/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 
 Code:
  
@@ -88,14 +111,23 @@ char size_test[__LDBL_MANT_DIG__ == 64 ? 1 : -1];
 Compiler stdout:
  
 Compiler stderr:
+<<<<<<< HEAD
  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp7n18q0t7/testfile.c:3:6: error: size of array 'size_test' is negative
+=======
+ /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp9en0ypn7/testfile.c:3:6: error: size of array 'size_test' is negative
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
  char size_test[__LDBL_MANT_DIG__ == 64 ? 1 : -1];
       ^~~~~~~~~
 
 Checking if "long double mantissa is 64 bits" : compiles: NO 
 Running compile:
+<<<<<<< HEAD
 Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpkkqsuk0k
 Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpkkqsuk0k/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpkkqsuk0k/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 
+=======
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp25fnc87e
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp25fnc87e/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp25fnc87e/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 
 Code:
  
@@ -108,8 +140,13 @@ Compiler stderr:
  
 Checking if "long double mantissa is 113 bits" : compiles: YES 
 Running compile:
+<<<<<<< HEAD
 Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp2sii4a86
 Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp2sii4a86/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp2sii4a86/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -fno-common 
+=======
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp2iq26pe5
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp2iq26pe5/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp2iq26pe5/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -fno-common 
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 
 Code:
  extern int i;
@@ -121,8 +158,13 @@ Compiler stderr:
  
 Compiler for C supports arguments -fno-common: YES 
 Running compile:
+<<<<<<< HEAD
 Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp8gjrwesf
 Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp8gjrwesf/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp8gjrwesf/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -frounding-math 
+=======
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpt5994xa0
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpt5994xa0/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpt5994xa0/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -frounding-math 
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 
 Code:
  extern int i;
@@ -134,8 +176,13 @@ Compiler stderr:
  
 Compiler for C supports arguments -frounding-math: YES 
 Running compile:
+<<<<<<< HEAD
 Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpygqbpg_6
 Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpygqbpg_6/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpygqbpg_6/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -Wunsupported-floating-point-opt -Wno-unsupported-floating-point-opt 
+=======
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpwbcw2x3l
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpwbcw2x3l/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpwbcw2x3l/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -Wunsupported-floating-point-opt -Wno-unsupported-floating-point-opt 
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 
 Code:
  extern int i;
@@ -148,8 +195,13 @@ Compiler stderr:
 
 Compiler for C supports arguments -Wno-unsupported-floating-point-opt: NO 
 Running compile:
+<<<<<<< HEAD
 Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmptirmbwzh
 Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmptirmbwzh/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmptirmbwzh/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -fno-stack-protector 
+=======
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpyg1kelot
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpyg1kelot/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpyg1kelot/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -fno-stack-protector 
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 
 Code:
  extern int i;
@@ -161,8 +213,13 @@ Compiler stderr:
  
 Compiler for C supports arguments -fno-stack-protector: YES 
 Running compile:
+<<<<<<< HEAD
 Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpb3c9tjc1
 Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpb3c9tjc1/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpb3c9tjc1/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -O0 
+=======
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpylaata3k
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpylaata3k/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpylaata3k/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -O0 
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 
 Code:
  #ifdef __cplusplus
@@ -181,8 +238,13 @@ Symbols have underscore prefix: NO
 Program riscv64-unknown-elf-gcc-nm found: YES
 Program scripts/duplicate-names found: YES (/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/scripts/duplicate-names)
 Running compile:
+<<<<<<< HEAD
 Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpfcctdx8f
 Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpfcctdx8f/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpfcctdx8f/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -Wl,--fatal-warnings -Wl,--defsym=_start=0 -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
+=======
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpyoexvmdl
+Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpyoexvmdl/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpyoexvmdl/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -Wl,--fatal-warnings -Wl,--defsym=_start=0 -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 
 Code:
  int main(void) { return 0; }
@@ -193,8 +255,13 @@ Compiler stderr:
  
 Compiler for C supports link arguments -Wl,--defsym=_start=0: YES 
 Running compile:
+<<<<<<< HEAD
 Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpglpmu7uh
 Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpglpmu7uh/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpglpmu7uh/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -Wl,--fatal-warnings -Wl,-alias,main,testalias -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
+=======
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpfex6_gqy
+Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpfex6_gqy/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpfex6_gqy/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -Wl,--fatal-warnings -Wl,-alias,main,testalias -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 
 Code:
  int main(void) { return 0; }
@@ -207,8 +274,13 @@ collect2: error: ld returned 1 exit status
 
 Compiler for C supports link arguments -Wl,-alias,main,testalias: NO 
 Running compile:
+<<<<<<< HEAD
 Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpseml98xo
 Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpseml98xo/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpseml98xo/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -Werror=attributes 
+=======
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpwzzbbxxc
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpwzzbbxxc/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpwzzbbxxc/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -Werror=attributes 
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 
 Code:
  
@@ -220,8 +292,13 @@ Compiler stderr:
  
 Compiler for C supports function attribute alias: YES 
 Running compile:
+<<<<<<< HEAD
 Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpjch5hkjv
 Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpjch5hkjv/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpjch5hkjv/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -Werror=attributes 
+=======
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpy3npt5t_
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpy3npt5t_/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpy3npt5t_/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -Werror=attributes 
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 
 Code:
  int foo(const char * p, ...) __attribute__((format(printf, 1, 2)));
@@ -252,8 +329,13 @@ Configuring test.specs using configuration
 Configuring picolibc.ld using configuration
 Configuring picolibcpp.ld using configuration
 Running compile:
+<<<<<<< HEAD
 Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpxyxzpn4g
 Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpxyxzpn4g/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpxyxzpn4g/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -Werror=implicit-function-declaration 
+=======
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpmcqoen5a
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpmcqoen5a/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpmcqoen5a/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -Werror=implicit-function-declaration 
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 
 Code:
  extern int i;
@@ -265,8 +347,13 @@ Compiler stderr:
  
 Compiler for C supports arguments -Werror=implicit-function-declaration: YES 
 Running compile:
+<<<<<<< HEAD
 Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp3sbowst7
 Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp3sbowst7/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp3sbowst7/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -Werror=vla 
+=======
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpupxhf61b
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpupxhf61b/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpupxhf61b/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -Werror=vla 
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 
 Code:
  extern int i;
@@ -278,8 +365,13 @@ Compiler stderr:
  
 Compiler for C supports arguments -Werror=vla: YES 
 Running compile:
+<<<<<<< HEAD
 Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp4y3dohxe
 Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp4y3dohxe/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp4y3dohxe/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -Warray-bounds 
+=======
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpti2jhxmg
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpti2jhxmg/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpti2jhxmg/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -Warray-bounds 
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 
 Code:
  extern int i;
@@ -291,8 +383,13 @@ Compiler stderr:
  
 Compiler for C supports arguments -Warray-bounds: YES 
 Running compile:
+<<<<<<< HEAD
 Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmput1dw_md
 Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmput1dw_md/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmput1dw_md/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -Wold-style-definition 
+=======
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmps0susr38
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmps0susr38/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmps0susr38/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -Wold-style-definition 
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 
 Code:
  extern int i;
@@ -304,8 +401,13 @@ Compiler stderr:
  
 Compiler for C supports arguments -Wold-style-definition: YES 
 Running compile:
+<<<<<<< HEAD
 Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmph722shug
 Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmph722shug/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmph722shug/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -Wmissing-braces -Wno-missing-braces 
+=======
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpw4gitbh_
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpw4gitbh_/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpw4gitbh_/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -Wmissing-braces -Wno-missing-braces 
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 
 Code:
  extern int i;
@@ -317,8 +419,13 @@ Compiler stderr:
  
 Compiler for C supports arguments -Wno-missing-braces: YES 
 Running compile:
+<<<<<<< HEAD
 Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpmegj5n4g
 Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpmegj5n4g/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpmegj5n4g/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -Wimplicit-int -Wno-implicit-int 
+=======
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpxr7l5duf
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpxr7l5duf/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpxr7l5duf/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -Wimplicit-int -Wno-implicit-int 
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 
 Code:
  extern int i;
@@ -330,8 +437,13 @@ Compiler stderr:
  
 Compiler for C supports arguments -Wno-implicit-int: YES 
 Running compile:
+<<<<<<< HEAD
 Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpznhojy69
 Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpznhojy69/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpznhojy69/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -Wreturn-type -Wno-return-type 
+=======
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmps8suaaru
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmps8suaaru/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmps8suaaru/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -Wreturn-type -Wno-return-type 
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 
 Code:
  extern int i;
@@ -343,8 +455,13 @@ Compiler stderr:
  
 Compiler for C supports arguments -Wno-return-type: YES 
 Running compile:
+<<<<<<< HEAD
 Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpqmc0f8ia
 Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpqmc0f8ia/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpqmc0f8ia/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -Wunused-command-line-argument -Wno-unused-command-line-argument 
+=======
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp7es3vbms
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp7es3vbms/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp7es3vbms/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -Wunused-command-line-argument -Wno-unused-command-line-argument 
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 
 Code:
  extern int i;
@@ -357,8 +474,13 @@ Compiler stderr:
 
 Compiler for C supports arguments -Wno-unused-command-line-argument: NO 
 Running compile:
+<<<<<<< HEAD
 Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp8w_sh7ap
 Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp8w_sh7ap/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp8w_sh7ap/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 
+=======
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp3p7s1qls
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp3p7s1qls/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp3p7s1qls/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 
 Code:
  
@@ -371,8 +493,13 @@ Compiler stderr:
  
 Checking if "packed structs may contain bitfields" : compiles: YES 
 Running compile:
+<<<<<<< HEAD
 Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpzxeu0qt4
 Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpzxeu0qt4/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpzxeu0qt4/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
+=======
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpyc7brstr
+Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpyc7brstr/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpyc7brstr/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 
 Code:
  
@@ -388,8 +515,13 @@ Compiler stderr:
 
 Checking if "has __builtin_mul_overflow" : links: YES 
 Running compile:
+<<<<<<< HEAD
 Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmphjtglxk_
 Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmphjtglxk_/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmphjtglxk_/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 
+=======
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpnm5q1gjl
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpnm5q1gjl/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpnm5q1gjl/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 
 Code:
  
@@ -401,8 +533,13 @@ Compiler stderr:
  
 Checking if "supports _Complex" : compiles: YES 
 Running compile:
+<<<<<<< HEAD
 Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp9q49dt4a
 Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp9q49dt4a/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp9q49dt4a/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
+=======
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpzcsdjqz8
+Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpzcsdjqz8/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpzcsdjqz8/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 
 Code:
  
@@ -418,8 +555,13 @@ Compiler stderr:
 
 Checking if "has __builtin_expect" : links: YES 
 Running compile:
+<<<<<<< HEAD
 Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp4avknh1n
 Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp4avknh1n/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp4avknh1n/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -Werror 
+=======
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpvbuavo0_
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpvbuavo0_/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpvbuavo0_/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -Werror 
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 
 Code:
  extern int i;
@@ -431,8 +573,13 @@ Compiler stderr:
  
 Compiler for C supports arguments -Werror: YES 
 Running compile:
+<<<<<<< HEAD
 Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmptcp4nuku
 Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmptcp4nuku/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmptcp4nuku/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -Werror 
+=======
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp7wriz1_9
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp7wriz1_9/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp7wriz1_9/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -Werror 
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 
 Code:
  
@@ -442,6 +589,7 @@ void *foobar2(size_t, size_t) __attribute__((__alloc_size__(1, 2)));
 Compiler stdout:
  
 Compiler stderr:
+<<<<<<< HEAD
  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmptcp4nuku/testfile.c:2:1: error: parameter names (without types) in function declaration [-Werror]
  void *foobar(size_t) __attribute__((__alloc_size__(1)));
  ^~~~
@@ -450,6 +598,16 @@ Compiler stderr:
  void *foobar2(size_t, size_t) __attribute__((__alloc_size__(1, 2)));
  ^~~~
 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmptcp4nuku/testfile.c:3:1: error: alloc_size parameter outside range [-Werror=attributes]
+=======
+ /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp7wriz1_9/testfile.c:2:1: error: parameter names (without types) in function declaration [-Werror]
+ void *foobar(size_t) __attribute__((__alloc_size__(1)));
+ ^~~~
+/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp7wriz1_9/testfile.c:2:1: error: alloc_size parameter outside range [-Werror=attributes]
+/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp7wriz1_9/testfile.c:3:1: error: parameter names (without types) in function declaration [-Werror]
+ void *foobar2(size_t, size_t) __attribute__((__alloc_size__(1, 2)));
+ ^~~~
+/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp7wriz1_9/testfile.c:3:1: error: alloc_size parameter outside range [-Werror=attributes]
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 cc1: all warnings being treated as errors
 
 Checking if "attribute __alloc_size__" : compiles: NO 
@@ -466,8 +624,13 @@ Cached compiler stderr:
  
 Compiler for C supports arguments -Werror: YES (cached)
 Running compile:
+<<<<<<< HEAD
 Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpfdu1xji7
 Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpfdu1xji7/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpfdu1xji7/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -Werror 
+=======
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpx8dxg604
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpx8dxg604/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpx8dxg604/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -Werror 
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 
 Code:
  
@@ -480,8 +643,13 @@ Compiler stderr:
  
 Checking if "attributes constructor/destructor" : compiles: YES 
 Running compile:
+<<<<<<< HEAD
 Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpfp5ie5ax
 Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpfp5ie5ax/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpfp5ie5ax/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
+=======
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp47g0ieee
+Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp47g0ieee/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp47g0ieee/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 
 Code:
  
@@ -495,8 +663,13 @@ Compiler stderr:
 
 Checking if "test for __builtin_alloca" : links: YES 
 Running compile:
+<<<<<<< HEAD
 Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp3ge6mtmi
 Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp3ge6mtmi/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp3ge6mtmi/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
+=======
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpy1_evbr5
+Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpy1_evbr5/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpy1_evbr5/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 
 Code:
  
@@ -510,8 +683,13 @@ Compiler stderr:
 
 Checking if "test for __builtin_ffs" : links: YES 
 Running compile:
+<<<<<<< HEAD
 Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp2v87t2cl
 Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp2v87t2cl/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp2v87t2cl/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
+=======
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp0ljyuohc
+Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp0ljyuohc/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp0ljyuohc/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 
 Code:
  
@@ -525,8 +703,13 @@ Compiler stderr:
 
 Checking if "test for __builtin_ffsl" : links: YES 
 Running compile:
+<<<<<<< HEAD
 Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpe9pzbrgj
 Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpe9pzbrgj/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpe9pzbrgj/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
+=======
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpxda1m9qz
+Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpxda1m9qz/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpxda1m9qz/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 
 Code:
  
@@ -540,8 +723,13 @@ Compiler stderr:
 
 Checking if "test for __builtin_ffsll" : links: YES 
 Running compile:
+<<<<<<< HEAD
 Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp1efzs7_5
 Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp1efzs7_5/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp1efzs7_5/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
+=======
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpay8ju0rz
+Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpay8ju0rz/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpay8ju0rz/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 
 Code:
  
@@ -555,8 +743,13 @@ Compiler stderr:
 
 Checking if "test for __builtin_ctz" : links: YES 
 Running compile:
+<<<<<<< HEAD
 Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmppdskjz6w
 Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmppdskjz6w/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmppdskjz6w/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
+=======
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpn_tbx5em
+Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpn_tbx5em/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpn_tbx5em/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 
 Code:
  
@@ -570,8 +763,13 @@ Compiler stderr:
 
 Checking if "test for __builtin_ctzl" : links: YES 
 Running compile:
+<<<<<<< HEAD
 Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpk0yx4vyl
 Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpk0yx4vyl/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpk0yx4vyl/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
+=======
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpobz8dm84
+Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpobz8dm84/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpobz8dm84/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 
 Code:
  
@@ -585,8 +783,13 @@ Compiler stderr:
 
 Checking if "test for __builtin_ctzll" : links: YES 
 Running compile:
+<<<<<<< HEAD
 Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpgqa2yiqk
 Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpgqa2yiqk/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpgqa2yiqk/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
+=======
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp0zfj2bhl
+Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp0zfj2bhl/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp0zfj2bhl/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 
 Code:
  
@@ -600,8 +803,13 @@ Compiler stderr:
 
 Checking if "test for __builtin_copysignl" : links: YES 
 Running compile:
+<<<<<<< HEAD
 Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpszdf_q0e
 Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpszdf_q0e/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpszdf_q0e/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
+=======
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpea9_x4m1
+Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpea9_x4m1/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpea9_x4m1/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 
 Code:
  
@@ -615,8 +823,13 @@ Compiler stderr:
 
 Checking if "test for __builtin_copysign" : links: YES 
 Running compile:
+<<<<<<< HEAD
 Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpee4xc3pq
 Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpee4xc3pq/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpee4xc3pq/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
+=======
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpc6ddn1e8
+Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpc6ddn1e8/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpc6ddn1e8/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 
 Code:
  
@@ -630,8 +843,13 @@ Compiler stderr:
 
 Checking if "test for __builtin_isinfl" : links: YES 
 Running compile:
+<<<<<<< HEAD
 Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpqzz4c9gm
 Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpqzz4c9gm/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpqzz4c9gm/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
+=======
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpncbso136
+Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpncbso136/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpncbso136/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 
 Code:
  
@@ -645,8 +863,13 @@ Compiler stderr:
 
 Checking if "test for __builtin_isinf" : links: YES 
 Running compile:
+<<<<<<< HEAD
 Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpldk97_4m
 Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpldk97_4m/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpldk97_4m/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
+=======
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp205j8gqt
+Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp205j8gqt/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp205j8gqt/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 
 Code:
  
@@ -660,8 +883,13 @@ Compiler stderr:
 
 Checking if "test for __builtin_isnanl" : links: YES 
 Running compile:
+<<<<<<< HEAD
 Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmplvn16xz8
 Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmplvn16xz8/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmplvn16xz8/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
+=======
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmptj81pyh7
+Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmptj81pyh7/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmptj81pyh7/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 
 Code:
  
@@ -675,8 +903,13 @@ Compiler stderr:
 
 Checking if "test for __builtin_isnan" : links: YES 
 Running compile:
+<<<<<<< HEAD
 Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp2ol9smta
 Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp2ol9smta/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp2ol9smta/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
+=======
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpmtb0jhoc
+Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpmtb0jhoc/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpmtb0jhoc/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 
 Code:
  
@@ -690,8 +923,13 @@ Compiler stderr:
 
 Checking if "test for __builtin_finitel" : links: YES 
 Running compile:
+<<<<<<< HEAD
 Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpw3qbjpyc
 Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpw3qbjpyc/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpw3qbjpyc/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
+=======
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpqshz681x
+Command line:  riscv64-unknown-elf-gcc -L/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpqshz681x/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpqshz681x/output.exe -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -nostdlib -nodefaultlibs -Wl,--no-dynamic-linker -Wl,--build-id=none -MD -MP 
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 
 Code:
  
@@ -705,8 +943,13 @@ Compiler stderr:
 
 Checking if "test for __builtin_isfinite" : links: YES 
 Running compile:
+<<<<<<< HEAD
 Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp2ufcgtj_
 Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp2ufcgtj_/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp2ufcgtj_/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -fno-tree-loop-distribute-patterns 
+=======
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpuw7x4150
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpuw7x4150/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpuw7x4150/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -fno-tree-loop-distribute-patterns 
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 
 Code:
  extern int i;
@@ -718,8 +961,13 @@ Compiler stderr:
  
 Compiler for C supports arguments -fno-tree-loop-distribute-patterns: YES 
 Running compile:
+<<<<<<< HEAD
 Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpj8x8_j0d
 Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpj8x8_j0d/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpj8x8_j0d/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -Werror=attributes 
+=======
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpxrho2hiu
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpxrho2hiu/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpxrho2hiu/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -Werror=attributes 
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 
 Code:
  extern int i;
@@ -731,23 +979,37 @@ Compiler stderr:
  
 Compiler for C supports arguments -Werror=attributes: YES 
 Running compile:
+<<<<<<< HEAD
 Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp8ar9ulgi
 Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp8ar9ulgi/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp8ar9ulgi/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -Werror=attributes 
+=======
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpfoaukct2
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpfoaukct2/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpfoaukct2/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -std=c18 -Werror=attributes 
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 
 Code:
  int __attribute__((no_builtin)) foo(int x) { return x + 1; }
 Compiler stdout:
  
 Compiler stderr:
+<<<<<<< HEAD
  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp8ar9ulgi/testfile.c:1:1: error: 'no_builtin' attribute directive ignored [-Werror=attributes]
+=======
+ /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpfoaukct2/testfile.c:1:1: error: 'no_builtin' attribute directive ignored [-Werror=attributes]
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
  int __attribute__((no_builtin)) foo(int x) { return x + 1; }
  ^~~
 cc1: some warnings being treated as errors
 
 Checking if "no_builtin attribute" : compiles: NO 
 Running compile:
+<<<<<<< HEAD
 Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp3okby7yl
 Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp3okby7yl/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp3okby7yl/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -Werror=attributes 
+=======
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpgdvren1i
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpgdvren1i/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpgdvren1i/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -Werror=attributes 
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 
 Code:
  inline __attribute__((always_inline)) int foo(void) { return 0; }
@@ -757,8 +1019,13 @@ Compiler stderr:
  
 Compiler for C supports function attribute always_inline: YES 
 Running compile:
+<<<<<<< HEAD
 Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpjajd91fq
 Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpjajd91fq/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpjajd91fq/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -Werror=attributes 
+=======
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpdsv1_syx
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpdsv1_syx/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpdsv1_syx/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -Werror=attributes 
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 
 Code:
  inline __attribute__((gnu_inline)) int foo(void) { return 0; }
@@ -768,8 +1035,13 @@ Compiler stderr:
  
 Compiler for C supports function attribute gnu_inline: YES 
 Running compile:
+<<<<<<< HEAD
 Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpe3s2fp6m
 Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpe3s2fp6m/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpe3s2fp6m/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -fno-builtin 
+=======
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpe419ybbh
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpe419ybbh/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpe419ybbh/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -fno-builtin 
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 
 Code:
  extern int i;
@@ -837,8 +1109,13 @@ win_1258
 
 
 Running compile:
+<<<<<<< HEAD
 Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpjl4f6mf_
 Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpjl4f6mf_/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpjl4f6mf_/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -ffunction-sections 
+=======
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpnusg27lk
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpnusg27lk/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpnusg27lk/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -ffunction-sections 
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 
 Code:
  extern int i;
@@ -850,8 +1127,13 @@ Compiler stderr:
  
 Compiler for C supports arguments -ffunction-sections: YES 
 Running compile:
+<<<<<<< HEAD
 Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmplmqhk8ua
 Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmplmqhk8ua/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmplmqhk8ua/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -fstack-protector-all 
+=======
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpfviuxbm1
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpfviuxbm1/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpfviuxbm1/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -fstack-protector-all 
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 
 Code:
  extern int i;
@@ -863,8 +1145,13 @@ Compiler stderr:
  
 Compiler for C supports arguments -fstack-protector-all: YES 
 Running compile:
+<<<<<<< HEAD
 Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmppqxfcvb5
 Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmppqxfcvb5/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmppqxfcvb5/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -fstack-protector-strong 
+=======
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpbw30okhs
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpbw30okhs/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpbw30okhs/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -fstack-protector-strong 
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 
 Code:
  extern int i;
@@ -876,8 +1163,13 @@ Compiler stderr:
  
 Compiler for C supports arguments -fstack-protector-strong: YES 
 Running compile:
+<<<<<<< HEAD
 Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpgqrtj1he
 Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpgqrtj1he/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpgqrtj1he/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -fno-builtin-malloc 
+=======
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpbxa9cibx
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpbxa9cibx/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpbxa9cibx/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -fno-builtin-malloc 
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 
 Code:
  extern int i;
@@ -889,8 +1181,13 @@ Compiler stderr:
  
 Compiler for C supports arguments -fno-builtin-malloc: YES 
 Running compile:
+<<<<<<< HEAD
 Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp2scw149a
 Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp2scw149a/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmp2scw149a/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -fno-builtin-free 
+=======
+Working directory:  /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpwrzatvak
+Command line:  riscv64-unknown-elf-gcc -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio -I/tools/Litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include -I/tools/Litex/litex/litex/soc/software/libbase -I/tools/Litex/litex/litex/soc/software/include -I/tools/Litex/litex/litex/soc/software -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include -I/home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/include/../libc -I/tools/Litex/litex/litex/soc/cores/cpu/picorv32 /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpwrzatvak/testfile.c -o /home/diego_sanchez/Dokumente/GitHub/wp08-2021-2-gr-01/SoC_project/build/nexys4ddr/software/libc/meson-private/tmpwrzatvak/output.obj -c -Os -mno-save-restore -march=rv32im -mabi=ilp32 -D__picorv32__ -g3 -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -fexceptions -Wpragmas -D_FILE_OFFSET_BITS=64 -O0 -fno-builtin-free 
+>>>>>>> a357aa12ba45b759416b83e97c7134b26712f856
 
 Code:
  extern int i;
