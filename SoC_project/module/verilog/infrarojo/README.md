@@ -11,20 +11,20 @@ A continuación observamos el módulo en verilog del infrarrojo, el desarrollo d
 
 ```verilog
 module infrarojo(   
-                    // Conexiones del Dispositivo
-                    input iL,
-                    input iLC,
-                    input iC,
-                    input iRC,
-                    input iR,
+    // Conexiones del Dispositivo
+    input iL,
+    input iLC,
+    input iC,
+    input iRC,
+    input iR,
 
-                    // Registros
-                    output reg oL,
-                    output reg oLC,
-                    output reg oC,
-                    output reg oRC,
-                    output reg oR
-                    );
+    // Registros
+    output reg oL,
+    output reg oLC,
+    output reg oC,
+    output reg oRC,
+    output reg oR
+    );
 
 always @* begin
     oL = iL;
