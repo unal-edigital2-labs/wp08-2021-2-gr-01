@@ -19,7 +19,7 @@ Para la implementación del puente H, se establecieron 5 posibles estados, los c
 
 Teniendo en cuenta la anterior tabla se desarrollo el módulo [movimiento.v](/SoC_project/module/verilog/movimiento/) que cumple la función de driver para los motores. El diagrama que describe las conexiones de este driver con el periférico es el siguiente:
 
-![Screenshot](/Imagenes/punteH.png)
+![Screenshot](/images/mov_mem.png)
 
 Y la ubicación del registro en el mapa de memoria es:
 ```
