@@ -4,40 +4,53 @@ El driver de este periférico corresponde a un simple módulo PWM, ya que el des
 
 ![Screenshot](/Imagenes/servos.png)
 
-Y las ubicaciones de los registros en el mapa de memoria (**Soc_MemoryMap.csv**) son las siguientes:
+La ubicación del registro en el mapa de memoria [Soc_MemoryMap.csv](/SoC_project/Soc_MemoryMap.csv) es:
 
-<p align="center">
-  <img src="/Imagenes/mem_servo.PNG" align="center">
-</p>
-
+```
+csr_base,servomotor_cntrl,0x82004000,,
+```
 
 El diagrama de bloques que describe el funcionamiento del módulo es el siguiente: 
 
 <p align="center">
-  <img src="/Imagenes/pwm.PNG" align="center">
+  <img src="/images/servo_mem.png" align="center">
 </p>
 
 
 El código utilizado para realizar este módulo es el siguiente:
 
 ```verilog
-      reg[27:0] counter=28'd0;
-      reg[15:0] limite;
-      reg[15:0] activo;
+module servomotor(  input clk, // Reloj
 
-      always @(posedge clk) begin
+// Registros
+input [1:0] posicion,
 
-      counter <= counter + 28'd1;
+// Conexiones del Dispositivo
+output reg servo 
+);
 
-           if(counter>=(period-1))
-              counter <= 28'd0;
+// Registros auxiliares
+reg [20:0] contador = 0;
 
-           if(counter <= dutty)
-              pwm <= 1;
-              else
-              pwm <=0;
+always@(posedge clk)begin
+	contador = contador + 1;
+	if(contador == 'd1_000_000) begin
+	    contador = 0;
+	end
+	
+	case(posicion)
+        // Centro
+        2'b00:  servo = (contador < 'd150_000) ? 1:0;
+        // Izquierda
+        2'b01:  servo = (contador < 'd250_000) ? 1:0;
+        // Derecha
+        2'b10:  servo = (contador < 'd50_000) ? 1:0;
+        // Caso por Defecto (Centro)
+        default:servo = (contador < 'd150_000) ? 1:0;
+    endcase
+end
 
-      end
+endmodule
  ```
  
 El funcionamiento del código se basa en que se define un contador que aumenta con cada ciclo del reloj, y cuando el valor del contador es menor que la señal de entrada **dutty** correspondiente al ciclo útil, la señal de salida **pwm** tiene valor alto mientras que si el contador es mayor al ciclo útil la señal de salida se torna a valor bajo, y en el momento que el contador tiene el mismo valor que la señal de entrada **period**, este se reinicia repitiendo el proceso descrito anteriormente. 
