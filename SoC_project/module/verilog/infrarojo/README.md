@@ -24,7 +24,7 @@ endmodule
 ```
 A continuación podemos observar el diagrama de bloques que describe la conexión del periférico de los sensores infrarrojos en nuestro proyecto, esto es posible gracias al módulo ([infrarrojo.py](/SoC_project/module/infrarojo.py)) que obtiene un espacio de memoria gracias al modulo general de ([buildSoCproject.py](/SoC_project/buildSoCproject.py))   
 
-![Screenshot](/images/infra_mem)
+![Screenshot](/images/infra_mem.png)
 
 Por ultimo vemos su espacio de memoria dentro del archivo **Soc_MemoryMap.csv**.
 
