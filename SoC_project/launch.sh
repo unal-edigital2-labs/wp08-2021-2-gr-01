@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo chmod 666 /dev/ttyUSB1
+
 python3 load.py
 echo 'Load done'
 echo '================================'
