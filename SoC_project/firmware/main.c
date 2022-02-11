@@ -386,8 +386,86 @@ static void infrarojo_test(void)
 	}
 } */
 
+
+
+static int capitan(void)
+{
+//Dice en qué dirección ir
+	const int CentroServo = 0;
+	const int IzquierdaServo = 1;
+	const int DerechaServo = 2;
+
+	//Distancia para considerar camino libre
+	int distLibre = 15;
+	//Dirección en la que está libre
+	int eleccion = 0; 
+
+	//Girar en las 3 direcciones
+	for (int i = 0; i <= 3; i++)
+	{
+		switch (i)
+		{
+		case 0: servomotor_cntrl_posicion_write(IzquierdaServo);
+				eleccion = 1;
+			break;
+		case 1: servomotor_cntrl_posicion_write(CentroServo);
+				eleccion = 2;
+			break;
+		case 2: servomotor_cntrl_posicion_write(DerechaServo);
+				eleccion = 3;
+			break;
+		default:servomotor_cntrl_posicion_write(IzquierdaServo);
+				eleccion = 0;
+			break;
+		}
+
+		delay_ms(1000);
+
+		if (medir_distancia() > distLibre) 
+		{
+			servomotor_cntrl_posicion_write(IzquierdaServo);
+			return eleccion;	//Escoger direccion libre
+		}
+	}
+}
+
+static int ajusteX(int orientacion, int direccion, int Xactual)
+{
+	switch (orientacion)
+		{
+		case norte:	
+				break;
+		case sur: 	servomotor_cntrl_posicion_write(CentroServo);
+					eleccion = 2;
+				break;
+		case este: 	servomotor_cntrl_posicion_write(DerechaServo);
+					eleccion = 3;
+				break;
+		case oeste: servomotor_cntrl_posicion_write(DerechaServo);
+					eleccion = 3;
+				break;
+		default:	servomotor_cntrl_posicion_write(IzquierdaServo);
+					eleccion = 0;
+				break;
+		}
+}
+
 static void integracion(void){
+	const int norte = 0;
+	const int sur = 1;
+	const int este = 2;
+	const int oeste = 3;
+	const int izquierda = 1;
+	const int centro = 2;
+	const int derecha = 3;
+	const int atras = 0;
+
 	int mapa[10][10];
+	_Bool enable = 0;
+	int Xinicial = 1, Yinicial = 1;
+	int Xactual = Xinicial, Yactual = Yinicial;
+	int orientacion = norte;
+	int direccion = centro; 
 
 	//Inicialización de la matriz del laberinto
 	for(int i=0; i<10; i++){
@@ -395,7 +473,24 @@ static void integracion(void){
             mapa[i][j] = 0;
         }    
     }
+	for(int i=0; i<10; i++){  
+		mapa[i][0] = i;
+	}
+	for(int j=0; j<10; j++){  
+		mapa[0][j] = j;
+	}
+	mapa[Yactual][Xactual] = 1;
+
+	enable = (buttons_in_read()&1) ? 1 : 0;
+
+	while (enable)
+	{
+		direccion = capitan();
+		
+	}
+
 }
+
 
 
 static void console_service(void)
