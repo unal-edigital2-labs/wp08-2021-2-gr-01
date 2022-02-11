@@ -66,4 +66,3 @@ A continuación se muestran los videos correspondientes a las pruebas de funcion
 - [Video 1 - Funcionamiento servomotor](https://youtu.be/PJH74lH_T-I)
 - [Video 2 - Funcionamiento ultrasonido](https://youtu.be/FX3cMMHn51o)
 - [Video 3 - Funcionamiento seguidor de línea](https://youtu.be/vsc-NS2_3Oc)
-- Video Final - Recorrido mapa completo
