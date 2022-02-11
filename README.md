@@ -56,16 +56,17 @@ Para la construcción del carrito se utilizaron los siguientes materiales:
 
 ## Módulos 💻
 Aquí presentamos una lista de los módulos usados en el robot cartógrafo, cada uno de estos links mostraran el módulo en verilog.
-- [Cámara](/SoC_project/module/verilog/camara/)
 - [Infrarrojos](/SoC_project/module/verilog/infrarojo/)
 - [Movimiento](/SoC_project/module/verilog/movimiento/)
 - [Servomotor](/SoC_project/module/verilog/servomotor/)
-- [SHT40](/SoC_project/module/verilog/sht40/)
 - [Ultrasonido](/SoC_project/module/verilog/ultrasonido/)
 
 
 ## Pruebas de Funcionamiento ⚙
 
-En los siguientes enlaces se encuentran los videos correspondientes a las pruebas de funcionamiento realizadas al robot cartógrafo, en ellos se puede observar al robot recorriendo el laberinto de forma autónoma a medida que reconoce los colores de las paredes. De igual forma, se observa simultaneamente la impresión del mapeo realizado por el robot que se envía a un celular por medio de bluetooth.
-- [Video 1](https://www.youtube.com/watch?v=-sIw7MB7exA)
-- [Video 2](https://www.youtube.com/watch?v=XjEla83Jrmw)
+A continuación se muestran los videos correspondientes a las pruebas de funcionamiento realizadas del robot cartógrafo, inicialmente se realizaron algunas pruebas de los periféricos de forma individual, y al final se muestra el funcionamiento completo del robot recorriendo el camino propuesto.
+- [Video 1 - Funcionamiento servomotor](https://youtu.be/PJH74lH_T-I)
+- [Video 2 - Funcionamiento ultrasonido](https://youtu.be/FX3cMMHn51o)
+- [Video 3 - Funcionamiento seguidor de línea](https://youtu.be/vsc-NS2_3Oc)
+- [Video 4 - Recorrido completo del robot](https://www.youtube.com/watch?v=XjEla83Jrmw)
+
