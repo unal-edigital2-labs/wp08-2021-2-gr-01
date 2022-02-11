@@ -1,4 +1,4 @@
-# Infrarrojo 〰
+# Infrarrojo 🚨
 El periférico de los sensores seguidores de línea está conformado por 5 sensores infrarrojos tal como se observa a continuación:
 
 <p align="center">
