@@ -468,23 +468,23 @@ static int ajusteY(int orientacion, int direccion, int Yactual)
 	const int atras = 0;
 	switch (orientacion)
 	{
-	case norte:	Yactual = (direccion == centro) ? Xactual-1: Xactual;
-				Yactual = (direccion == atras) ? Xactual+1: Xactual;
+	case norte:	Yactual = (direccion == centro) ? Yactual-1: Yactual;
+				Yactual = (direccion == atras) ? Yactual+1: Yactual;
 			break;	
-	case sur:	Yactual = (direccion == centro) ? Xactual+1: Xactual;
-				Yactual = (direccion == atras) ? Xactual-1: Xactual;
+	case sur:	Yactual = (direccion == centro) ? Yactual+1: Yactual;
+				Yactual = (direccion == atras) ? Yactual-1: Yactual;
 			break; 	
-	case este:	Yactual = (direccion == derecha) ? Xactual+1: Xactual;
-				Yactual = (direccion == izquierda) ? Xactual-1: Xactual;
+	case este:	Yactual = (direccion == derecha) ? Yactual+1: Yactual;
+				Yactual = (direccion == izquierda) ? Yactual-1: Yactual;
 			break;
-	case oeste: Yactual = (direccion == derecha) ? Xactual-1: Xactual;
-				Yactual = (direccion == izquierda) ? Xactual+1: Xactual;
+	case oeste: Yactual = (direccion == derecha) ? Yactual-1: Yactual;
+				Yactual = (direccion == izquierda) ? Yactual+1: Yactual;
 			break;
 	}
-	return Xactual;
+	return Yactual;
 }
 
-static int ajusteX(int orientacion, int direccion)
+static int ajusteO(int orientacion, int direccion)
 {
 	const int norte = 0;
 	const int sur = 1;
@@ -496,20 +496,24 @@ static int ajusteX(int orientacion, int direccion)
 	const int atras = 0;
 	switch (orientacion)
 	{
-	case norte:	Xactual = (direccion == derecha) ? Xactual+1: Xactual;
-				Xactual = (direccion == izquierda) ? Xactual-1: Xactual;
+	case norte:	orientacion = (direccion == derecha) ? este: norte;
+				orientacion = (direccion == izquierda) ? oeste: norte;
+				orientacion = (direccion == atras) ? sur: norte;
 			break;
-	case sur: 	Xactual = (direccion == derecha) ? Xactual-1: Xactual;
-				Xactual = (direccion == izquierda) ? Xactual+1: Xactual;
+	case sur: 	orientacion = (direccion == derecha) ? oeste: sur;
+				orientacion = (direccion == izquierda) ? este: sur;
+				orientacion = (direccion == atras) ? norte: sur;
 			break;
-	case este: 	Xactual = (direccion == centro) ? Xactual+1: Xactual;
-				Xactual = (direccion == atras) ? Xactual-1: Xactual;
+	case este: 	orientacion = (direccion == derecha) ? sur: este;
+				orientacion = (direccion == izquierda) ? norte: este;
+				orientacion = (direccion == atras) ? oeste: este;
 			break;
-	case oeste: Xactual = (direccion == centro) ? Xactual-1: Xactual;
-				Xactual = (direccion == atras) ? Xactual+1: Xactual;
+	case oeste: orientacion = (direccion == derecha) ? norte: oeste;
+				orientacion = (direccion == izquierda) ? sur: oeste;
+				orientacion = (direccion == atras) ? este: oeste;
 			break;
 	}
-	return Xactual;
+	return orientacion;
 }
 
 static void integracion(void){
@@ -529,30 +533,54 @@ static void integracion(void){
 	int orientacion = norte;
 	int direccion = centro; 
 
-	//Inicialización de la matriz del laberinto
-	for(int i=0; i<10; i++){
-        for(int j=0; j<10; j++){  
-            mapa[i][j] = 0;
-        }    
-    }
-	for(int i=0; i<10; i++){  
-		mapa[i][0] = i;
-	}
-	for(int j=0; j<10; j++){  
-		mapa[0][j] = j;
-	}
-	mapa[Yactual][Xactual] = 1;
+	while(!(buttons_in_read()&1)){
 
-	enable = (buttons_in_read()&1) ? 1 : 0;
+		//Inicialización de la matriz del laberinto
+		for(int i=0; i<10; i++){
+			for(int j=0; j<10; j++){  
+				mapa[i][j] = 0;
+			}    
+		}
+		for(int i=0; i<10; i++){  
+			mapa[i][0] = i;
+		}
+		for(int j=0; j<10; j++){  
+			mapa[0][j] = j;
+		}
+		Xactual = Xinicial;
+		Yactual = Yinicial;
+		mapa[Yactual][Xactual] = 1;
 
-	while (enable)
-	{
-		direccion = capitan();
-		
+		//Imprecion de la matriz del laberinto
+		print("%i |", mapa[0][0])
+		for(int j=1; j<10; j++){  
+			printf("%i  ", mapa[0][j])
+		}
+		printf("\n-------------------------------\n")
+		for(int i=1; i<10; i++){
+			printf("%i |", mapa[i][0])
+			for(int j=1; j<10; j++){  
+				printf("%i  ", mapa[i][j])
+			}
+			printf("\n") 
+		}
+
+		enable = (buttons_in_read()&(1<<1)) ? 1 : 0;
+		while (enable)
+		{
+			direccion = capitan();
+			
+			Xactual = ajusteX(orientacion, direccion, Xactual);
+			Yactual = ajusteX(orientacion, direccion, Yactual);
+			orientacion = ajusteO(orientacion, direccion);
+			
+			mapa[Yactual][Xactual] = 1;
+
+			enable = ((Xactual == Xinicial)&&(Yactual == Yinicial)) ? 0 : 1;
+		}
+
 	}
-
 }
-
 
 
 static void console_service(void)
