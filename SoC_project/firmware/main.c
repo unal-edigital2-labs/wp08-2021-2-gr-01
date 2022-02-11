@@ -226,22 +226,18 @@ static void avanzar(void)
 	_Bool RC = infrarojo_cntrl_oRC_read();
 	_Bool R = infrarojo_cntrl_oR_read();
 
-	_Bool IR[5] = {L, LC, C, RC, R};
+	while(L == 1 && R == 1)
+	{
+		movimiento_cntrl_estado_write(AvanzarMotor);
+	}
 
 	while(L == 0 && R == 0)
 	{
-//////////////////////////////7
 		L = infrarojo_cntrl_oL_read();
 		LC = infrarojo_cntrl_oLC_read();
 		C = infrarojo_cntrl_oC_read();
 		RC = infrarojo_cntrl_oRC_read();
 		R = infrarojo_cntrl_oR_read();
-
-		for(int i = 0; i<5; i++){
-			printf("%i, ", IR[i]);
-		}
-		printf("\n");
-////////////////
 
 		if(L == 0 && C == 1 && R == 0){
 			movimiento_cntrl_estado_write(AvanzarMotor);
@@ -383,6 +379,10 @@ static void avanzar_test(void)
 {
 	while(!(buttons_in_read()&1)){
 		if(buttons_in_read()&(1<<1)){ 
+			avanzar();
+
+			servomotor_test();
+
 			avanzar();
 
 			servomotor_test();
