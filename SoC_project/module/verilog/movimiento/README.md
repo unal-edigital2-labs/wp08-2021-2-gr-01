@@ -92,4 +92,4 @@ endmodule
 
 ```
       
-El funcionamiento del módulo se basa en que según el valor de la señal de entrada **estado** se establecen los valores de los 4 pines de salida siguiendo la tabla descrita anteriormente para que los motores realicen la acción deseada. 
+El funcionamiento del módulo se basa en una máquina de estados, en la que se define el movimiento del carro de acuerdo al valor de la señal de entrada **estado**, en la que se establecen los valores de salida al igual que se muestra previamente en la tabla.
