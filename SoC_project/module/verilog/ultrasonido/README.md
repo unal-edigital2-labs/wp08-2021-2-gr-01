@@ -1,7 +1,5 @@
 ## Ultrasonido 🔊
 
-Para el desarrollo de los drivers correspondientes a este periférico nos guiamos por el trabajo realizado por el Grupo 2 del semestre 2020-II ([Ultrasonido](https://github.com/unal-edigital2/w07_entrega-_final-grupo02/tree/main/Hardware/Modulos/ultrasonido)), en donde para determinar la distancia se utilizan principalmente dos módulos ([contador.v](/Soc_project/module/verilog/ultrasonido/contador.v) y [genpulsos.v](/Soc_project/module/verilog/ultrasonido/genpulsos.v)) junto a otros módulos auxiliares que cumplen la función de divisores de frecuencia para hacer relojes o se encargan de que se cumpla la máquina de estados. El diagrama que describe la conexión entre los drivers de este periférico es el siguiente (para más informacion remitase a [HC-SR04](/datasheets/HC-SR04.pdf)):
-
 ![Screenshot](/images/ultra_mem.png)
 
 Y las ubicaciones de los registros en el mapa de memoria [Soc_MemoryMap.csv](/SoC_project/Soc_MemoryMap.csv) son las siguientes:
@@ -10,7 +8,50 @@ Y las ubicaciones de los registros en el mapa de memoria [Soc_MemoryMap.csv](/So
 csr_base,ultrasonido_cntrl,0x82004800,,
 ```
 
-El código utilizado para realizar este proceso es el siguiente: [ultrasonido.v](/SoC_project/module/verilog/ultrasonido/ultrasonido.v) y su funcionamiento se basa en una máquina de estados y cuenta con 3: Start, Pulse, Echo.
+El código utilizado para realizar este proceso es el siguiente: [ultrasonido.v](/SoC_project/module/verilog/ultrasonido/ultrasonido.v) y su funcionamiento se basa en una máquina de estados y cuenta con 3: Start, Pulse, Echo, el código de esta máquina es el siguiente:
+
+```
+always @ (posedge clk_1MHz) begin
+    case(status)
+        Start:  begin
+                    // Cuando init es 1, se reinician los registros.
+                    if(init) begin
+                        done = 0;
+                        counter = 0;
+                        distance = 0;
+                        status = Pulse;
+                    end
+                end
+        Pulse:  begin
+                    // Trig cambia a 1 por 11 us, luego regresa 0.
+                    trig = 1'b1;
+                    counter = counter + 1'b1;
+                    if(counter == 'd11) begin
+                        trig = 0;
+                        counter = 0;
+                        status = Echo;
+                    end
+                end
+        Echo:   begin
+                    // Se espera a que echo sea 1, luego se contabiliza el tiempo hasta que echo sea 0.
+                    if(echo) begin
+                        echoStart = 1;
+                        counter = counter + 1'b1;
+                    end
+                    if(echo == 0 && echoStart == 1) begin
+                        // Si el contador es 0, se vuelve al estado anterior hasta que el resultado sea diferente a 0.
+                        if(counter == 0) status = Pulse;
+                        else begin
+                            // Se divide el contador entre 58 para encontrar la distancia
+                            distance = counter/'d58;
+                            status = Start;
+                            done = 1;
+                        end
+                    end
+                end
+    endcase 
+end
+```
 
 En el estado Start se espera a la señal de inicialización init, con la cuál se reinician todos los registros de este módulo y se pasa al siguiente estado.
 
