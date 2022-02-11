@@ -11,4 +11,4 @@ echo '================================'
 cd .. 
 echo '================================'
 echo 'Press RESET Button'
-litex_term /dev/ttyUSB1 --kernel firmware/firmware.bin
+litex_term /dev/ttyUSB2 --kernel firmware/firmware.bin
