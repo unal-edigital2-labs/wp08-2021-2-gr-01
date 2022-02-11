@@ -2,7 +2,7 @@
 
 Se utilizaron dos motorreductores controlados mediante un puente H (L298N) para el movimiento del robot cartógrafo, despues de varias pruebas se decidio alimentar a los motores con 12V para que tuvieran un desempeño óptimo.
 <p align="center">
-  <img src="/Imagenes/DC.jpeg" align="center" width="400px" >
+  <img src="/images/motorss.jpeg" align="center" width="400px" >
 </p>
 
 Para la implementación del puente H, se establecieron 5 posibles estados, los cuales permiten que el robot avance, gire o se detenga, en la siguiente tabla muestran las acciones de movimiento que se realizan de acuerdo al valor de las entradas del puente H.
