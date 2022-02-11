@@ -34,11 +34,11 @@ class BaseSoC(SoCCore):
 		platform.add_source("module/verilog/ultrasonido/ultrasonido.v")
 		platform.add_source("module/verilog/ultrasonido/divFreq.v")
 		platform.add_source("module/verilog/infrarojo/infrarojo.v")
-		""" platform.add_source("module/verilog/camara/camara.v")
-		platform.add_source("module/verilog/camara/Analyzer.v")
-		platform.add_source("module/verilog/camara/cam_read.v")
-		platform.add_source("module/verilog/camara/buffer_ram_dp.v")
-		platform.add_source("module/verilog/camara/clk24_25_nexys4.v") """
+#		platform.add_source("module/verilog/camara/camara.v")
+#		platform.add_source("module/verilog/camara/Analyzer.v")
+#		platform.add_source("module/verilog/camara/cam_read.v")
+#		platform.add_source("module/verilog/camara/buffer_ram_dp.v")
+#		platform.add_source("module/verilog/camara/clk24_25_nexys4.v")
 
 		# SoC with CPU
 		SoCCore.__init__(self, platform,
@@ -103,13 +103,13 @@ class BaseSoC(SoCCore):
 		self.submodules.infrarojo_cntrl = infrarojo.infrarojo(platform.request("iL"), platform.request("iLC"), platform.request("iC"), platform.request("iRC"), platform.request("iR"))
 
 		#camara
-	#	SoCCore.add_csr(self,"camara_cntrl")
-	#	CAM_px_data = Cat(*[platform.request("CAM_px_data", i) for i in range(8)])		
-	#	self.submodules.camara_cntrl = camara.camara(platform.request("CAM_pclk"), platform.request("CAM_href"), platform.request("CAM_vsync"), CAM_px_data, platform.request("CAM_xclk"))
+#		SoCCore.add_csr(self,"camara_cntrl")
+#		CAM_px_data = Cat(*[platform.request("CAM_px_data", i) for i in range(8)])		
+#		self.submodules.camara_cntrl = camara.camara(platform.request("CAM_pclk"), platform.request("CAM_href"), platform.request("CAM_vsync"), CAM_px_data, platform.request("CAM_xclk"))
+		
 
 
 # Build --------------------------------------------------------------------------------------------
 if __name__ == "__main__":
 	builder = Builder(BaseSoC(),csr_csv="Soc_MemoryMap.csv")
 	builder.build()
-

@@ -29,17 +29,26 @@ module infrarojo(
                     input iR,
 
                     // Registros
-                    output oL,
-                    output oLC,
-                    output oC,
-                    output oRC,
-                    output oR
+                    output reg oL,
+                    output reg oLC,
+                    output reg oC,
+                    output reg oRC,
+                    output reg oR
                     );
 
+always @* begin
+    oL = iL;
+    oLC = iLC;
+    oC = iC;
+    oRC = iRC;
+    oR = iR;
+end
+
+/*
 assign oL = iL;
 assign oLC = iLC;
 assign oC = iC;
-assign oRC = oRC;
+assign oRC = iRC;
 assign oR = iR;
-
+*/
 endmodule
