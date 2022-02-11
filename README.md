@@ -8,7 +8,7 @@
 
 Este es el repositorio del proyecto final de la asignatura Electrónica Digital II del semestre 2021-2 (Universidad Nacional de Colombia - Sede Bogotá). La propuesta de proyecto consiste en un Robot Cartográfico conformado por una arquitectura de SoC, donde a partir de un micropocesador y diferentes periféricos se logran realizar operaciones que le permiten al robot recorrer un laberinto con el fin de identificar y mapear en una matriz los muros encontrados y el color correspondiente a estos. 
 
-![Screenshot](/Imagenes/robot.jpeg)
+![Screenshot](/images/pathss.jpeg)
 
 Los periféricos que se utilizaron en este proyecto, fueron una camara (OV7670), 4 sensores infrarrojos, 2 Motorreductores con caja reductora 6V 1:48 controlados a partir de un puente H, un sensor de ultrasonido HC-SR04, un sensor de humedad y temperatura SHT40 y finalmente se utilizó un microprocesador Arduino Uno para realizar diferentes procesos que se explican posteriormente.
 
