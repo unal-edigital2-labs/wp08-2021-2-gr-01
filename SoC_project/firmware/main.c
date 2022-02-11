@@ -383,44 +383,45 @@ static void avanzar_test(void)
 	while(!(buttons_in_read()&1)){
 		if(buttons_in_read()&(1<<1)){ 
 			avanzar();
-
 			servomotor_test();
 
 			avanzar();
-
 			servomotor_test();
-
 			girar(3);
 
 			avanzar();
-			
 			servomotor_test();
-
 			girar(3);
 
 			avanzar();
-
 			servomotor_test();
-
-			girar(0);
-
-			avanzar();
-			
-			servomotor_test();
-
 			girar(1);
 
 			avanzar();
-			
 			servomotor_test();
-
 			girar(1);
 
 			avanzar();
-			
+			servomotor_test();
+			girar(0);
+
+			avanzar();
 			servomotor_test();
 
+			avanzar();
+			servomotor_test();
 			girar(0);
+
+/*			int direccion;
+			for (int i = 0; i <= 8; i++)
+			{
+				direccion = capitan();
+				if(direccion != 0)
+				{
+					girar(direccion);
+				}
+				avanzar();
+*/			
 		}
 	}
 }

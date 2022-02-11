@@ -2,7 +2,7 @@
 
 El driver de este periférico corresponde a un simple módulo PWM, ya que el desplazamiento angular del servomotor se define por el ciclo útil de una señal PWM con período de 20 milisegundos.  El diagrama que describe la conexión entre el driver y el periférico es el siguiente (para más informacion remitase a [Futaba S3003](/datasheets/s003.pdf)):
 
-![Screenshot](/Imagenes/servos.png)
+![Screenshot](/images/servoss.jpeg)
 
 La ubicación del registro en el mapa de memoria [Soc_MemoryMap.csv](/SoC_project/Soc_MemoryMap.csv) es:
 
