@@ -6,10 +6,9 @@ Para el desarrollo de los drivers correspondientes a este periférico nos guiamo
 
 Y las ubicaciones de los registros en el mapa de memoria [Soc_MemoryMap.csv](/SoC_project/Soc_MemoryMap.csv) son las siguientes:
 
-<p align="center">
-  <img src="/Imagenes/mem_ultra.PNG" align="center">
-</p>
-
+```
+csr_base,ultrasonido_cntrl,0x82004800,,
+```
 
 A continuación se hace la descripción del funcionamiento de los módulos principales correspondientes al ultrasonido.
 
