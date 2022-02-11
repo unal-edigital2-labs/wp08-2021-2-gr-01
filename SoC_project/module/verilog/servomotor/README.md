@@ -13,7 +13,7 @@ csr_base,servomotor_cntrl,0x82004000,,
 El diagrama de bloques que describe el funcionamiento del módulo es el siguiente: 
 
 <p align="center">
-  <img src="/images/servo_mem.png" align="center">
+  <img src="/images/servom_mem.png" align="center">
 </p>
 
 
