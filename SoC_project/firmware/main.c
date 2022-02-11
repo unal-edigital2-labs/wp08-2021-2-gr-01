@@ -400,6 +400,24 @@ static void avanzar_test(void)
 			servomotor_test();
 
 			girar(0);
+
+			avanzar();
+			
+			servomotor_test();
+
+			girar(1);
+
+			avanzar();
+			
+			servomotor_test();
+
+			girar(1);
+
+			avanzar();
+			
+			servomotor_test();
+
+			girar(0);
 		}
 	}
 }
