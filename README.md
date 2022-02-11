@@ -49,8 +49,6 @@ Para la construcción del carrito se utilizaron los siguientes materiales:
 - [5 sensores infrarrojos](/images/infra.png)
 - [1 puente H L298N](/images/puente.png)
 - [1 mini Protoboard](/images/mini.png)
-- [Cámara OV7670](/images/cam.png)
-- [Sensor de humedad y temperatura SHT40](/images/sht40.png)
 
 
 
@@ -68,3 +66,4 @@ A continuación se muestran los videos correspondientes a las pruebas de funcion
 - [Video 1 - Funcionamiento servomotor](https://youtu.be/PJH74lH_T-I)
 - [Video 2 - Funcionamiento ultrasonido](https://youtu.be/FX3cMMHn51o)
 - [Video 3 - Funcionamiento seguidor de línea](https://youtu.be/vsc-NS2_3Oc)
+- Video Final - Recorrido mapa completo
