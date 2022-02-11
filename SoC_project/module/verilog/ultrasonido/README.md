@@ -10,5 +10,10 @@ Y las ubicaciones de los registros en el mapa de memoria [Soc_MemoryMap.csv](/So
 csr_base,ultrasonido_cntrl,0x82004800,,
 ```
 
-El código utilizado para realizar este proceso es el siguiente: [ultrasonido.v](/SoC_project/module/verilog/ultrasonido/ultrasonido.v)
-su funcionamiento se basa en una máquina de estados
+El código utilizado para realizar este proceso es el siguiente: [ultrasonido.v](/SoC_project/module/verilog/ultrasonido/ultrasonido.v) y su funcionamiento se basa en una máquina de estados y cuenta con 3: Start, Pulse, Echo.
+
+En el estado Start se espera a la señal de inicialización init, con la cuál se reinician todos los registros de este módulo y se pasa al siguiente estado.
+
+El siguiente estado es Pulse, en el cual se manda la señal de trig al periférico del ultrasonido, esta operación se realiza durante 11us, posterior a esto se pasa al siguiente estado.
+
+Y finalmente, tenemos el estado Echo, el cual contabiliza el tiempo desde el cual se inicia la señal echo, hasta el momento en que esta es igual a 0, finalmente se procede a hallar la distancia dividiendo el valor que obtuvimos del contador entre 58, y acá se reinicia la máquina de estados pasando al estado inicial.
