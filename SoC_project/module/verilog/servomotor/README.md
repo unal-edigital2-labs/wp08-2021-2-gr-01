@@ -1,4 +1,4 @@
-## Servomotor 
+## Servomotor 🔧
 
 El driver de este periférico corresponde a un simple módulo PWM, ya que el desplazamiento angular del servomotor se define por el ciclo útil de una señal PWM con período de 20 milisegundos.  El diagrama que describe la conexión entre el driver y el periférico es el siguiente (para más informacion remitase a [Futaba S3003](/datasheets/s003.pdf)):
 
@@ -53,4 +53,4 @@ end
 endmodule
  ```
  
-El funcionamiento del código se basa en que se define un contador que aumenta con cada ciclo del reloj, y cuando el valor del contador es menor que la señal de entrada **dutty** correspondiente al ciclo útil, la señal de salida **pwm** tiene valor alto mientras que si el contador es mayor al ciclo útil la señal de salida se torna a valor bajo, y en el momento que el contador tiene el mismo valor que la señal de entrada **period**, este se reinicia repitiendo el proceso descrito anteriormente. 
+El funcionamiento del código se basa en que ..... 
