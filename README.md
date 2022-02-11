@@ -31,7 +31,7 @@ El diagrama que describe cómo se encuentra conformado el robot cartógrafo y la
 
 ![Screenshot](/images/SoC.png)
 
-## [ Mapa de Memoria ](https://github.com/unal-edigital2/w07_entrega-_final-grupo11/tree/main/module) 🧠
+## [ Mapa de Memoria ](/SoC_project/Soc_MemoryMap.csv) 🧠
 
 En la presente sección se encuentran los diferentes perífericos que se usaron para la elaboración del robot cartógrafo junto con sus respectivos espacios en memoria que fueron utilizados y como cada uno de estos se creo en hardware y del mismo modo se implemento.
 
