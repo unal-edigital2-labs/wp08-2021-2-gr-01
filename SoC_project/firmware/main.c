@@ -431,23 +431,58 @@ static int capitan(void)
 
 static int ajusteX(int orientacion, int direccion, int Xactual)
 {
+	const int norte = 0;
+	const int sur = 1;
+	const int este = 2;
+	const int oeste = 3;
+	const int izquierda = 1;
+	const int centro = 2;
+	const int derecha = 3;
+	const int atras = 0;
 	switch (orientacion)
-		{
-		case norte:	
-				break;
-		case sur: 	servomotor_cntrl_posicion_write(CentroServo);
-					eleccion = 2;
-				break;
-		case este: 	servomotor_cntrl_posicion_write(DerechaServo);
-					eleccion = 3;
-				break;
-		case oeste: servomotor_cntrl_posicion_write(DerechaServo);
-					eleccion = 3;
-				break;
-		default:	servomotor_cntrl_posicion_write(IzquierdaServo);
-					eleccion = 0;
-				break;
-		}
+	{
+	case norte:	Xactual = (direccion == derecha) ? Xactual+1: Xactual;
+				Xactual = (direccion == izquierda) ? Xactual-1: Xactual;
+			break;
+	case sur: 	Xactual = (direccion == derecha) ? Xactual-1: Xactual;
+				Xactual = (direccion == izquierda) ? Xactual+1: Xactual;
+			break;
+	case este: 	Xactual = (direccion == centro) ? Xactual+1: Xactual;
+				Xactual = (direccion == atras) ? Xactual-1: Xactual;
+			break;
+	case oeste: Xactual = (direccion == centro) ? Xactual-1: Xactual;
+				Xactual = (direccion == atras) ? Xactual+1: Xactual;
+			break;
+	}
+	return Xactual;
+}
+
+static int ajusteY(int orientacion, int direccion, int Yactual)
+{
+	const int norte = 0;
+	const int sur = 1;
+	const int este = 2;
+	const int oeste = 3;
+	const int izquierda = 1;
+	const int centro = 2;
+	const int derecha = 3;
+	const int atras = 0;
+	switch (orientacion)
+	{
+	case norte:	Yactual = (direccion == centro) ? Xactual-1: Xactual;
+				Yactual = (direccion == atras) ? Xactual+1: Xactual;
+			break;	
+	case sur:	Yactual = (direccion == centro) ? Xactual+1: Xactual;
+				Yactual = (direccion == atras) ? Xactual-1: Xactual;
+			break; 	
+	case este:	Yactual = (direccion == derecha) ? Xactual+1: Xactual;
+				Yactual = (direccion == izquierda) ? Xactual-1: Xactual;
+			break;
+	case oeste: Yactual = (direccion == derecha) ? Xactual-1: Xactual;
+				Yactual = (direccion == izquierda) ? Xactual+1: Xactual;
+			break;
+	}
+	return Xactual;
 }
 
 static void integracion(void){
