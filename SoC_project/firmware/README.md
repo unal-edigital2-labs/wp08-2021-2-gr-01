@@ -1,13 +1,5 @@
-# Infrarrojo 🚨
-El periférico de los sensores seguidores de línea está conformado por 5 sensores infrarrojos tal como se observa a continuación:
-
-<p align="center">
-  <img src="/images/infrarss.jpeg" align="center">
-</p>
-
-Los sensores infrarrojos poseen 3 pines(GND, Vcc, out), de esta forma, solo tenemos 5 conexiones del periférico con el driver [infrarojo](/SoC_project/module/verilog/infrarojo/infrarojo.v).
-
-A continuación observamos el módulo en verilog del infrarrojo, el desarrollo de únicamente consta de la asignación de las entradas a los registros de salida del driver.
+# Firmware 🚨
+A continuacion se enunciara las funciones mas importantes para el desarrollo de software de este proyecto, las cuales son utilizadas para realizar pruebas en los perifericos y finalmente realizar una integracion total del funcionamiento de los mismos 
 
 ```verilog
 module infrarojo(   
