@@ -1,5 +1,5 @@
-# Firmware 🚨
-A continuacion se enunciara las funciones mas importantes para el desarrollo de software de este proyecto, las cuales son utilizadas para realizar pruebas en los perifericos y finalmente realizar una integracion total del funcionamiento de los mismos 
+# Firmware
+A continuación se enuncian las funciones más importantes para el desarrollo de software de este proyecto, las cuales son utilizadas para realizar pruebas en los periféricos y finalmente realizar una integración total del funcionamiento de los mismos
 
 ## Funciones de prueba de Modulos
 
